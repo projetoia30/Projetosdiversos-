@@ -1,0 +1,287 @@
+<title>Unidad 1 · Familia y personas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 1 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<section class="page opener">
+  <div class="eyebrow">🟢 Nivel A1 · Tiempo verbal: Presente</div>
+  <h1>UNIDAD 1</h1>
+  <p class="t2">FAMILIA Y PERSONAS</p>
+  <p class="sub"><i>Família e pessoas</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial moderna e acolhedora de uma família espanhola de três gerações reunida no domingo à mesa de almoço de um apartamento em Valência: avó servindo paella, pai e mãe conversando, um adolescente com celular e uma menina rindo. Varanda com plantas ao fundo e luz natural de meio-dia. Paleta quente com vermelho e amarelo suaves, estilo flat com textura leve, sem texto, espaço livre no canto superior para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ presentarte y presentar a tu familia<br>✔ describir cómo son las personas (físico y personalidad)<br>✔ usar los verbos <b>ser</b>, <b>tener</b> y <b>vivir</b> en presente<br>✔ hablar de lo que tu familia hace normalmente</p>
+  <span class="pno">1</span>
+</section>
+
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">El presente: ser, tener y vivir</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm</span>Ícone flat minimalista de um relógio com o ponteiro em "agora", vermelho e amarelo, fundo transparente.</div>
+  <p>Usamos el <b>presente</b> para hablar de quiénes somos, de cómo son las personas, de lo que tenemos y de lo que hacemos normalmente. Es el tiempo verbal más usado del español cotidiano: aparece cuando nos presentamos, cuando hablamos de la familia y cuando contamos nuestra rutina.</p>
+  <div class="box"><b>📐 FÓRMULA</b><br><code>sujeto + verbo en presente + complemento</code><br><span class="es">Mi madre es profesora. · Yo tengo dos hermanos. · Nosotros vivimos en Madrid.</span></div>
+  <div class="tw"><table>
+    <tr><th></th><th>SER (irregular)</th><th>TENER (irregular)</th><th>VIVIR (regular)</th></tr>
+    <tr><td>yo</td><td>soy</td><td>tengo</td><td>vivo</td></tr>
+    <tr><td>tú</td><td>eres</td><td>tienes</td><td>vives</td></tr>
+    <tr><td>él / ella / usted</td><td>es</td><td>tiene</td><td>vive</td></tr>
+    <tr><td>nosotros/as</td><td>somos</td><td>tenemos</td><td>vivimos</td></tr>
+    <tr><td>vosotros/as</td><td>sois</td><td>tenéis</td><td>vivís</td></tr>
+    <tr><td>ellos / ustedes</td><td>son</td><td>tienen</td><td>viven</td></tr>
+  </table></div>
+  <p class="es">—¿Quién es? —Es mi primo Javier. · Mi abuela tiene ochenta años, pero es muy activa. · ¿Dónde vives? —Vivo con mis padres.</p>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>Idade usa TENER:</b> <span class="es">Tengo 25 años</span>, e nunca ~~Soy 25 años~~.<br>
+  • <b>Falso cognato:</b> <span class="es">exquisito</span> = delicioso, e não "esquisito" (que é <span class="es">raro</span>).<br>
+  • <b>Falso cognato:</b> <span class="es">apellido</span> = sobrenome; "apelido" é <span class="es">apodo</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">embarazada</span> = grávida; "envergonhada" é <span class="es">avergonzada</span>.</div>
+  <span class="pno">2</span>
+</section>
+
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">Los domingos de los Ortega</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Lucía, uma mulher de 32 anos, cabelo castanho curto, óculos, arquiteta, chega com uma sacola de pães à porta de um apartamento antigo em Valência. Lá dentro, a avó Carmen (78 anos, baixinha, avental florido) cozinha paella, o pai lê jornal e uma menina de 6 anos corre. Estilo de livro didático moderno, traços limpos, cores quentes, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span>Me llamo <strong>Lucía</strong>, <strong>tengo</strong> treinta y dos años y <strong>soy</strong> arquitecta. <strong>Vivo</strong> sola en un piso pequeño en el centro de Valencia, pero todos los domingos <strong>como</strong> con mi <strong>familia</strong> en casa de mi <strong>abuela</strong> Carmen. Ella <strong>tiene</strong> setenta y ocho años, <strong>es</strong> <strong>bajita</strong>, muy <strong>habladora</strong> y <strong>cocina</strong> la mejor paella del barrio.</p>
+  <p><span class="ln">5</span>Mi <strong>padre</strong>, Andrés, <strong>es</strong> <strong>alto</strong> y <strong>serio</strong>, pero en realidad <strong>es</strong> muy <strong>cariñoso</strong>. <strong>Trabaja</strong> en un banco y siempre <strong>lee</strong> el periódico antes de comer. Mi <strong>madre</strong>, Elena, <strong>es</strong> profesora de música y <strong>tiene</strong> una risa que se oye desde la calle.</p>
+  <p><span class="ln">9</span><strong>Tengo</strong> un <strong>hermano</strong> mayor, Diego. Él <strong>está casado</strong> con Sofía, una chica argentina muy <strong>simpática</strong>. <strong>Tienen</strong> una <strong>hija</strong> de seis años, Martina, que <strong>es</strong> mi <strong>sobrina</strong> favorita… bueno, <strong>es</strong> la única. Martina <strong>es</strong> <strong>tímida</strong> con los desconocidos, pero en casa no <strong>para</strong> de hablar.</p>
+  <p><span class="ln">13</span>Los domingos son ruidosos: todos <strong>hablamos</strong> al mismo tiempo, mi padre y Diego <strong>discuten</strong> de fútbol y mi abuela <strong>dice</strong> que nadie <strong>come</strong> suficiente. A veces <strong>es</strong> un poco caótico, pero para mí <strong>es</strong> el mejor momento de la semana. Cuando <strong>vuelvo</strong> a mi piso por la noche, <strong>está</strong> muy silencioso… y ya <strong>echo de menos</strong> el ruido.</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Uma paellera fumegante sobre a mesa, com seis pratos e copos ao redor e a mãozinha de uma criança pegando um pedaço de pão. Mesmo estilo, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="kw es">
+    <p><span>PERSONAS</span> familia • padre • madre • padres • hermano • hermana • abuelo • abuela • hijo • hija • tío • tía • primo • prima • sobrino • sobrina • marido • mujer • pareja</p>
+    <p><span>VERBOS</span> ser • tener • vivir • llamarse • trabajar • comer • hablar • estar casado • echar de menos</p>
+    <p><span>ADJETIVOS</span> alto • bajo • bajito • serio • cariñoso • simpático • tímido • hablador • mayor • menor • joven • divertido</p>
+  </div>
+  <h2 style="margin-top:26px">💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Uma mulher jovem e um senhor de cabelos brancos conversando num banco de praça, balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿Cómo te llamas y cuántos años tienes?</p>
+  <p class="q es">2. ¿Con quién vives?</p>
+  <p class="q es">3. ¿Tienes hermanos? ¿Cómo se llaman?</p>
+  <p class="q es">4. ¿Cómo es tu madre (o tu padre)? Describe su físico y su personalidad.</p>
+  <p class="q es">5. ¿Qué hace tu familia normalmente los fines de semana?</p>
+  <p class="q es">6. ¿Qué persona de tu familia es la más importante para ti? ¿Por qué?</p>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<section class="page">
+  <h2>⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 Me llamo…</div><div class="card">📌 Tengo … años.</div>
+    <div class="card">📌 Te presento a…</div><div class="card">📌 Encantado / Encantada.</div>
+    <div class="card">📌 Se parece a…</div><div class="card">📌 Nos llevamos muy bien.</div>
+    <div class="card">📌 Es el / la mayor (menor).</div><div class="card">📌 Echo de menos a…</div>
+  </div>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm</span>Onda sonora contínua em linhas vermelhas e amarelas ligando bolhas de palavras, estilo minimalista, fundo claro.</div>
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <p class="es" style="font-size:17px">me‿llamo • tengo‿un • mi‿hermano • vive‿en • es‿alta • los‿abuelos • nos‿llevamos‿bien</p>
+  <p>En la conversación real, los españoles <b>no hablan palabra por palabra</b>: unen el final de una palabra con el comienzo de la siguiente. <span class="es">Mi hermano es alto</span> suena como <b>"mi‿ermano‿esalto"</b>. Practicar estas uniones te ayuda a <b>entender</b> a los nativos y a <b>hablar con más ritmo</b>.</p>
+  <span class="pno">6</span>
+</section>
+
+<section class="page">
+  <div class="cols">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">Habla de tu familia (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm</span>Ícone flat de microfone com cronômetro marcando 1:00.</div>
+      <ul class="steps"><li>dónde vive tu familia</li><li>quiénes forman tu familia</li><li>cómo son (físico y personalidad)</li><li>qué hacéis juntos</li><li>qué sientes por ellos</li></ul>
+      <div class="box"><i class="es">Ejemplo: Mi familia vive en Recife. Somos cuatro: mis padres, mi hermana y yo. Mi padre es bajo y muy divertido. Mi hermana es mayor que yo y…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Una persona especial</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm</span>Ícone flat de caderno aberto com lápis.</div>
+      <p>Escribe <b>5–8 frases</b> sobre una persona de tu familia.</p>
+      <ul class="steps"><li>nombre y edad (<span class="es">tener</span>)</li><li>relación contigo y profesión</li><li>físico y personalidad</li><li>dónde vive (<span class="es">vivir</span>)</li></ul>
+      <div class="box"><i class="es">Ejemplo: Mi tía se llama Rosa. Tiene cincuenta años y es enfermera. Es alta y…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">En una fiesta de cumpleaños</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Festa de aniversário num quintal com bandeirinhas e bolo: um rapaz de camiseta vermelha (A) e uma moça de vestido amarelo (B) se apresentam com copos na mão; ao fundo, uma senhora sorri. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="a">🔴 A: ¡Hola! Soy Pablo, el hermano de Marta. ¿Y tú?</p>
+    <p class="b">🟡 B: ¡Encantada! Me llamo Ana. Soy compañera de trabajo de Marta.</p>
+    <p class="a">🔴 A: ¡Ah, qué bien! ¿Vives aquí en Sevilla?</p>
+    <p class="b">🟡 B: Sí, vivo con mi pareja en Triana. ¿Y tú?</p>
+    <p class="a">🔴 A: Yo vivo en Madrid, pero vengo mucho a ver a mi familia. Mira, esa señora es mi madre.</p>
+    <p class="b">🟡 B: ¡Te pareces mucho a ella!</p>
+    <p class="a">🔴 A: Sí, todo el mundo lo dice. ¿Tienes hermanos?</p>
+    <p class="b">🟡 B: Tengo una hermana menor. Es muy divertida… ¡y muy habladora!</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles y repetid. Luego usad vuestra información real.</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li>Me llamo Lucía, <span class="hl">tengo</span> treinta y dos años y <span class="hl">soy</span> arquitecta.</li>
+    <li><span class="hl">Vivo</span> sola en un piso pequeño en el centro de Valencia.</li>
+    <li>Ella <span class="hl">tiene</span> setenta y ocho años y <span class="hl">es</span> bajita.</li>
+    <li>Mi padre <span class="hl">es</span> alto y serio.</li>
+    <li>Diego y Sofía <span class="hl">tienen</span> una hija de seis años.</li>
+    <li>Los domingos todos <span class="hl">hablamos</span> al mismo tiempo.</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br><b>SER</b> sirve para decir quién es alguien y cómo es (identidad, profesión, personalidad, físico). <b>TENER</b> sirve para la edad y la posesión o relación. <b>El presente</b> describe hábitos: <span class="es">los domingos como con mi familia.</span></div>
+  <span class="pno">8</span>
+</section>
+
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo</span>Trilha sinuosa vista de cima com 5 marcos numerados terminando numa bandeira com as cores da Espanha, estilo mapa de aventura flat.</div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica el juego de roles con otra persona.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto hablando de tu familia.</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 1</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm</span>Selo circular com as bandeiras do Brasil e da Espanha.</div>
+  <h3>Historia: <i>Os domingos dos Ortega</i></h3>
+  <p>Meu nome é Lucía, tenho trinta e dois anos e sou arquiteta. Moro sozinha num apartamento pequeno no centro de Valência, mas todo domingo almoço com a minha família na casa da minha avó Carmen. Ela tem setenta e oito anos, é baixinha, muito falante e cozinha a melhor paella do bairro.</p>
+  <p>Meu pai, Andrés, é alto e sério, mas na verdade é muito carinhoso. Trabalha num banco e sempre lê o jornal antes de comer. Minha mãe, Elena, é professora de música e tem uma risada que se ouve da rua.</p>
+  <p>Tenho um irmão mais velho, Diego. Ele é casado com Sofía, uma moça argentina muito simpática. Eles têm uma filha de seis anos, Martina, que é a minha sobrinha favorita… bom, é a única. Martina é tímida com desconhecidos, mas em casa não para de falar.</p>
+  <p>Os domingos são barulhentos: todos falamos ao mesmo tempo, meu pai e Diego discutem sobre futebol e minha avó diz que ninguém come o suficiente. Às vezes é um pouco caótico, mas para mim é o melhor momento da semana. Quando volto para o meu apartamento à noite, está tudo muito silencioso… e eu já sinto falta do barulho.</p>
+  <h3>Preguntas</h3>
+  <ol><li>Como você se chama e quantos anos tem?</li><li>Com quem você mora?</li><li>Você tem irmãos? Como eles se chamam?</li><li>Como é sua mãe (ou seu pai)? Descreva o físico e a personalidade.</li><li>O que sua família costuma fazer nos fins de semana?</li><li>Que pessoa da sua família é a mais importante para você? Por quê?</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">Me llamo…</td><td>Meu nome é…</td></tr>
+  <tr><td class="es">Tengo … años.</td><td>Tenho … anos.</td></tr>
+  <tr><td class="es">Te presento a…</td><td>Quero te apresentar…</td></tr>
+  <tr><td class="es">Encantado / Encantada.</td><td>Muito prazer.</td></tr>
+  <tr><td class="es">Se parece a…</td><td>Ele/Ela se parece com…</td></tr>
+  <tr><td class="es">Nos llevamos muy bien.</td><td>A gente se dá muito bem.</td></tr>
+  <tr><td class="es">Es el / la mayor (menor).</td><td>É o/a mais velho(a) (mais novo/a).</td></tr>
+  <tr><td class="es">Echo de menos a…</td><td>Sinto falta de… / Sinto saudade de…</td></tr></table></div>
+  <h3>Reto oral</h3><p>Fale sobre sua família: onde ela mora, quem faz parte dela, como são as pessoas, o que vocês fazem juntos e o que você sente por elas.</p>
+  <span class="pno">10–11</span>
+</section>
+
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 1</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">familia</span> — família<br>🇧🇷 <i>família</i></div>
+    <div class="card"><span class="es">padre</span> — pai<br>🇧🇷 <i>pádre</i></div>
+    <div class="card"><span class="es">madre</span> — mãe<br>🇧🇷 <i>mádre</i></div>
+    <div class="card"><span class="es">hermano</span> — irmão<br>🇧🇷 <i>ermáno</i></div>
+    <div class="card"><span class="es">abuela</span> — avó<br>🇧🇷 <i>abuêla</i></div>
+    <div class="card"><span class="es">hijo</span> — filho<br>🇧🇷 <i>íRRo</i></div>
+    <div class="card"><span class="es">sobrina</span> — sobrinha<br>🇧🇷 <i>sobrína</i></div>
+    <div class="card"><span class="es">mujer</span> — esposa / mulher<br>🇧🇷 <i>muRRér</i></div>
+    <div class="card"><span class="es">pareja</span> — companheiro(a)<br>🇧🇷 <i>paréRRa</i></div>
+    <div class="card"><span class="es">llamarse</span> — chamar-se<br>🇧🇷 <i>jamárse</i></div>
+    <div class="card"><span class="es">vivir</span> — morar / viver<br>🇧🇷 <i>bibír</i></div>
+    <div class="card"><span class="es">cariñoso</span> — carinhoso<br>🇧🇷 <i>carinhôsso</i></div>
+  </div>
+  <h3>🔤 Sonidos que no existen en portugués</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Diagrama de perfil de boca com o dorso da língua elevado perto do fundo da garganta e uma seta indicando o ar "raspando" (som da jota espanhola).</div>
+  <ul>
+    <li><b>J / GE / GI</b> → som raspado na garganta, parecido com o "rr" carioca: <span class="es">hijo</span> → <i>íRRo</i></li>
+    <li><b>H</b> → é muda: <span class="es">hermano</span> → <i>ermáno</i></li>
+    <li><b>LL / Y</b> → soa como "j" de "já" (ou "i"): <span class="es">llamo</span> → <i>jámo</i></li>
+    <li><b>V</b> → soa como "b": <span class="es">vivir</span> → <i>bibír</i></li>
+    <li><b>D e T antes de "i"</b> → nunca viram "dj" ou "tch": <span class="es">tímido</span> = <i>tí-mi-do</i></li>
+    <li><b>Z / CE / CI</b> → "th" do inglês na Espanha, "s" na América Latina</li>
+    <li><b>"O" e "E" finais</b> → não viram "u" e "i": <span class="es">padre</span> = <i>pá-dre</i></li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">Me llamo…</td><td>Me jámo…</td></tr>
+  <tr><td class="es">Tengo veinte años.</td><td>Têngo bêinte ánhos.</td></tr>
+  <tr><td class="es">Encantado / Encantada.</td><td>Encantádo / Encantáda.</td></tr>
+  <tr><td class="es">Se parece a…</td><td>Se parêsse a…</td></tr>
+  <tr><td class="es">Nos llevamos muy bien.</td><td>Nos jebámos mui biên.</td></tr>
+  <tr><td class="es">Echo de menos a…</td><td>Êtcho de mênos a…</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Formas clave</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">ser</td><td>ser</td><td>irregular</td><td>soy, eres, es, somos, son</td><td>sói, éres, és</td></tr>
+  <tr><td class="es">tener</td><td>ter</td><td>irregular</td><td>tengo, tienes, tiene, tenemos</td><td>têngo, tiênes</td></tr>
+  <tr><td class="es">vivir</td><td>morar / viver</td><td>regular</td><td>vivo, vives, vive, vivimos</td><td>bíbo, bíbes</td></tr>
+  <tr><td class="es">llamarse</td><td>chamar-se</td><td>regular</td><td>me llamo, te llamas, se llama</td><td>me jámo</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">Me llamo Lucía y tengo treinta y dos años.</span><br><span class="p">🇧🇷 Me jámo Lussía i têngo trêinta i dôs ánhos.</span><br><span class="pt">Meu nome é Lucía e tenho trinta e dois anos.</span></div>
+    <div class="flash"><span class="es">Vivo con mis padres.</span><br><span class="p">🇧🇷 Bíbo con mis pádres.</span><br><span class="pt">Moro com meus pais.</span></div>
+    <div class="flash"><span class="es">Tengo un hermano mayor.</span><br><span class="p">🇧🇷 Têngo un ermáno majór.</span><br><span class="pt">Tenho um irmão mais velho.</span></div>
+    <div class="flash"><span class="es">Mi madre es muy cariñosa.</span><br><span class="p">🇧🇷 Mi mádre és mui carinhôssa.</span><br><span class="pt">Minha mãe é muito carinhosa.</span></div>
+    <div class="flash"><span class="es">Me parezco a mi padre.</span><br><span class="p">🇧🇷 Me parêsko a mi pádre.</span><br><span class="pt">Eu me pareço com meu pai.</span></div>
+    <div class="flash"><span class="es">Nos llevamos muy bien.</span><br><span class="p">🇧🇷 Nos jebámos mui biên.</span><br><span class="pt">A gente se dá muito bem.</span></div>
+    <div class="flash"><span class="es">Echo de menos a mi familia.</span><br><span class="p">🇧🇷 Êtcho de mênos a mi família.</span><br><span class="pt">Sinto saudade da minha família.</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Lucía na janela do seu apartamento à noite, sorrindo e olhando uma foto da família no celular, com as luzes de Valência ao fundo.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 1. 🇪🇸</b><br><i>Próxima unidad: <span class="es">Casa y vida doméstica</span> (Pasado)</i></p>
+  <span class="pno">14</span>
+</section>
