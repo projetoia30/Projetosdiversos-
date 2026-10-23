@@ -1,0 +1,300 @@
+<title>Unidad 4 · Alimentación y bebidas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 4 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<!-- PÁGINA 1 -->
+<section class="page opener">
+  <div class="eyebrow">🟢 Nivel A1 · Tiempo verbal: Presente (gustar · verbos con cambio vocálico)</div>
+  <h1>UNIDAD 4</h1>
+  <p class="t2">ALIMENTACIÓN Y BEBIDAS</p>
+  <p class="sub"><i>Alimentação e bebidas</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial de um mercado coberto em Lima, Peru, de manhã cedo: bancas cheias de batatas coloridas, milho roxo, pimentas amarelas (ají), limões e peixes frescos. Inés, uma cozinheira peruana de 40 anos com avental verde e cabelo preso num lenço, escolhe limões e conversa com um vendedor sorridente. Luz suave entrando pelo telhado, paleta quente com vermelho e amarelo, estilo flat com textura leve, sem texto, espaço livre no canto superior para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ hablar de comida, bebidas y hábitos alimentarios<br>✔ decir lo que te gusta, lo que prefieres y lo que no soportas<br>✔ pedir en un restaurante y hacer la compra<br>✔ usar <span class="es">gustar</span> y verbos como <span class="es">querer, preferir, pedir, probar</span></p>
+  <span class="pno">1</span>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">Gustar y los verbos que cambian la vocal</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm · o mesmo da Unidad 1</span>Ícone flat de relógio marcando "agora" (presente).</div>
+  <p>Para hablar de comida necesitamos dos herramientas. La primera es <b>gustar</b>, que funciona "al revés" del português: lo que gusta es el sujeto. La segunda son los verbos con <b>cambio vocálico</b> en el presente (<span class="es">quiero, prefiero, pido, pruebo</span>), muy frecuentes en restaurantes, mercados y en la mesa familiar.</p>
+  <div class="box"><b>📐 FÓRMULAS</b><br><code>(a mí) me + gusta + singular / infinitivo</code> → <span class="es">Me gusta el café. · Me gusta cocinar.</span><br><code>(a mí) me + gustan + plural</code> → <span class="es">Me gustan las frutas.</span></div>
+  <div class="tw"><table>
+    <tr><th></th><th>GUSTAR</th><th>QUERER (e→ie)</th><th>PREFERIR (e→ie)</th><th>PEDIR (e→i)</th><th>PROBAR (o→ue)</th></tr>
+    <tr><td>yo</td><td>me gusta(n)</td><td>quiero</td><td>prefiero</td><td>pido</td><td>pruebo</td></tr>
+    <tr><td>tú</td><td>te gusta(n)</td><td>quieres</td><td>prefieres</td><td>pides</td><td>pruebas</td></tr>
+    <tr><td>él / ella / usted</td><td>le gusta(n)</td><td>quiere</td><td>prefiere</td><td>pide</td><td>prueba</td></tr>
+    <tr><td>nosotros/as</td><td>nos gusta(n)</td><td>queremos</td><td>preferimos</td><td>pedimos</td><td>probamos</td></tr>
+    <tr><td>vosotros/as</td><td>os gusta(n)</td><td>queréis</td><td>preferís</td><td>pedís</td><td>probáis</td></tr>
+    <tr><td>ellos / ustedes</td><td>les gusta(n)</td><td>quieren</td><td>prefieren</td><td>piden</td><td>prueban</td></tr>
+  </table></div>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>Gustar não leva "de":</b> <span class="es">Me gusta el pescado</span>, e nunca ~~Me gusta del pescado~~ nem ~~Yo gusto de~~.<br>
+  • <b>Concordância:</b> <span class="es">Me gusta<u>n</u> las uvas</span>. O verbo concorda com a comida, não com a pessoa.<br>
+  • <b>Falso cognato:</b> <span class="es">la taza</span> = xícara, e não "taça" (que é <span class="es">la copa</span>).<br>
+  • <b>Falso cognato:</b> <span class="es">la cena</span> = jantar, e não "cena" de filme (que é <span class="es">la escena</span>).<br>
+  • <b>Falso cognato:</b> <span class="es">la sobremesa</span> = a conversa à mesa depois da refeição; o doce é <span class="es">el postre</span>. E <span class="es">el vaso</span> = copo.</div>
+  <span class="pno">2</span>
+</section>
+
+<!-- PÁGINAS 3–4 -->
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">El menú de Inés</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Ilustração narrativa: o pequeno restaurante de Inés em Barranco, Lima, na hora do almoço. Um quadro-negro na parede com o "menú del día" escrito à mão (desenhado sem letras legíveis). Inés, de avental verde, serve um prato de ceviche a um casal de turistas; seu filho Joaquín, 17 anos, carrega uma jarra de chicha morada. Mesas de madeira, luz quente, plantas penduradas. Estilo de livro didático moderno, traços limpos, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span><strong>Inés</strong> tiene un restaurante pequeño en Barranco, un barrio bohemio de Lima. Todos los días se <strong>levanta</strong> a las cinco y <strong>va al mercado</strong> con su hijo Joaquín. <strong>Compra</strong> <strong>pescado</strong> fresco, <strong>limones</strong>, <strong>cebolla</strong> roja y ají. "El secreto de un buen ceviche es el pescado del día", <strong>dice</strong> siempre.</p>
+  <p><span class="ln">6</span>El restaurante no tiene carta: tiene un <strong>menú del día</strong>. Hay un <strong>primer plato</strong>, un <strong>segundo plato</strong>, un <strong>postre</strong> y una <strong>bebida</strong>, todo por quince soles. Los clientes del barrio <strong>prefieren</strong> el arroz con pollo, pero los turistas casi siempre <strong>piden</strong> ceviche.</p>
+  <p><span class="ln">10</span>A Inés le <strong>encanta</strong> ver la cara de la gente cuando <strong>prueba</strong> algo nuevo. Hoy una pareja de Brasil <strong>pregunta</strong>: "¿Es muy picante?". Ella <strong>sonríe</strong> y les <strong>sirve</strong> un poco en una <strong>cuchara</strong>. "Un poquito… pero vale la pena".</p>
+  <p><span class="ln">13</span>Joaquín no <strong>quiere</strong> ser cocinero: le <strong>gustan</strong> los ordenadores y la música. Pero cuando su madre <strong>tiene</strong> mucho trabajo, él se <strong>pone</strong> el delantal sin protestar. Al final del día, los dos <strong>cenan</strong> juntos en la cocina. No comen ceviche: <strong>piden</strong> una pizza.</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Pequena ilustração de um prato fundo de ceviche com cebola roxa, milho e batata-doce, ao lado de um copo de chicha morada. Mesmo estilo e paleta, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<!-- PÁGINA 5 -->
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="ph"><b>🖼️ Mesa de alimentos con etiquetas</b><span class="sz">Meia página</span>Ilustração vista de cima de uma mesa com alimentos separados por grupos (frutas, verduras, carnes e peixes, laticínios, pães e grãos, bebidas), cada um com uma linha-guia vazia para o aluno escrever o nome em espanhol. Estilo flat, paleta do livro, fundo branco.</div>
+  <div class="kw es">
+    <p><span>COMIDAS</span> desayuno • almuerzo • comida • merienda • cena • primer plato • segundo plato • postre</p>
+    <p><span>ALIMENTOS</span> pan • arroz • huevo • pollo • carne • pescado • marisco • queso • verdura • fruta • patata/papa • cebolla • tomate • limón • fresa • manzana</p>
+    <p><span>BEBIDAS</span> agua (con / sin gas) • zumo/jugo • café con leche • té • refresco • cerveza • vino • vaso • taza • copa</p>
+    <p><span>EN LA MESA</span> plato • cuchara • tenedor • cuchillo • servilleta • la cuenta • la propina</p>
+    <p><span>SABORES</span> rico • picante • dulce • salado • amargo • ácido • soso • delicioso</p>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<!-- PÁGINA 6 -->
+<section class="page">
+  <h2>💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Duas amigas jovens conversando numa mesa de café com xícaras e um bolo, balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿Qué desayunas normalmente?</p>
+  <p class="q es">2. ¿Prefieres café o té?</p>
+  <p class="q es">3. ¿Cuál es tu comida favorita? ¿Y qué comida no soportas?</p>
+  <p class="q es">4. ¿Te gusta la comida picante?</p>
+  <p class="q es">5. ¿Cocinas en casa o prefieres comer fuera? ¿Por qué?</p>
+  <p class="q es">6. ¿Qué plato típico de tu región recomiendas a un extranjero? Explica cómo es.</p>
+  </div>
+  <h2 style="margin-top:26px">⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 Para mí, …, por favor.</div><div class="card">📌 ¿Qué me recomienda?</div>
+    <div class="card">📌 Me encanta / No soporto…</div><div class="card">📌 ¡Qué rico!</div>
+    <div class="card">📌 Tengo hambre / sed.</div><div class="card">📌 ¿Me trae la cuenta?</div>
+    <div class="card">📌 ¡Buen provecho!</div><div class="card">📌 Estoy lleno / llena.</div>
+  </div>
+  <span class="pno">6</span>
+</section>
+
+<!-- PÁGINA 7 -->
+<section class="page">
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm · reaproveitável</span></div>
+  <p class="es" style="font-size:17px">me‿encanta • para‿mí • un‿vaso‿de‿agua • tengo‿hambre • qué‿rico • la‿cuenta • buen‿provecho</p>
+  <p>Fíjate en <span class="es">tengo hambre</span>: la <b>h es muda</b>, así que suena <b>"ten-goam-bre"</b>. Y <span class="es">un vaso de agua</span> se dice casi <b>"um-bá-so-dea-gua"</b>: la <b>n</b> antes de <b>v/b</b> suena como <b>m</b>.</p>
+  <div class="cols" style="margin-top:20px">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">Mi relación con la comida (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <ul class="steps"><li>qué comes en un día normal</li><li>lo que te encanta y lo que no soportas</li><li>quién cocina en tu casa</li><li>tu restaurante favorito</li><li>un plato típico de tu ciudad</li></ul>
+      <div class="box"><i class="es">Ejemplo: Por la mañana desayuno pan con queso y café con leche. Me encanta el feijão de mi abuela, pero no soporto…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Una receta sencilla</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <p>Escribe <b>5–8 frases</b> sobre tu plato favorito: qué es y cómo se prepara.</p>
+      <ul class="steps"><li>nombre del plato y de dónde es</li><li>3 ingredientes</li><li>2 verbos en presente (<span class="es">corto, pongo, mezclo</span>)</li><li>sabor y por qué te gusta</li></ul>
+      <div class="box"><i class="es">Ejemplo: Mi plato favorito es la tapioca. Es de Brasil. Primero pongo la goma en la sartén y…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<!-- PÁGINA 8 -->
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">En el restaurante</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Um cliente (A) de camisa vermelha sentado numa mesa de restaurante com o cardápio na mão, conversando com um garçom (B) de avental amarelo e bloquinho de pedidos. Toalha xadrez, cesta de pão. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="b">🟡 B: ¡Buenas tardes! ¿Qué va a tomar?</p>
+    <p class="a">🔴 A: Buenas tardes. ¿Qué me recomienda?</p>
+    <p class="b">🟡 B: Hoy el pescado está muy rico. Y de primero, tenemos sopa o ensalada.</p>
+    <p class="a">🔴 A: Para mí, la ensalada y de segundo el pescado, por favor.</p>
+    <p class="b">🟡 B: Muy bien. ¿Y para beber?</p>
+    <p class="a">🔴 A: Un vaso de agua sin gas. No me gusta el refresco.</p>
+    <p class="b">🟡 B: ¿Quiere postre?</p>
+    <p class="a">🔴 A: No, gracias, estoy lleno. ¿Me trae la cuenta, por favor?</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles. Después, usad el menú de vuestro restaurante favorito.</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li>Los clientes del barrio <span class="hl">prefieren</span> el arroz con pollo.</li>
+    <li>Los turistas casi siempre <span class="hl">piden</span> ceviche.</li>
+    <li>A Inés <span class="hl">le encanta</span> ver la cara de la gente.</li>
+    <li>…cuando <span class="hl">prueba</span> algo nuevo.</li>
+    <li>Joaquín no <span class="hl">quiere</span> ser cocinero: <span class="hl">le gustan</span> los ordenadores.</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br><b>Gustar / encantar</b> expresan gustos: la cosa que gusta va después y decide si el verbo es singular o plural (<span class="es">le gusta la música · le gustan los ordenadores</span>). Los verbos con cambio vocálico cambian la vocal en casi todas las personas, <b>menos en nosotros y vosotros</b>: <span class="es">prefiero → preferimos</span>, <span class="es">pido → pedimos</span>. El presente describe aquí la <b>rutina</b> del restaurante.</div>
+  <span class="pno">8</span>
+</section>
+
+<!-- PÁGINA 9 -->
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo · reaproveitável</span></div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica la escena del restaurante con otra persona.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto hablando de tu relación con la comida.</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<!-- PÁGINAS 10–11 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 4</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm · reaproveitável</span></div>
+  <h3>Historia: <i>O cardápio de Inés</i></h3>
+  <p>Inés tem um restaurante pequeno em Barranco, um bairro boêmio de Lima. Todos os dias ela se levanta às cinco e vai ao mercado com o filho, Joaquín. Compra peixe fresco, limões, cebola roxa e pimenta (ají). "O segredo de um bom ceviche é o peixe do dia", ela sempre diz.</p>
+  <p>O restaurante não tem cardápio fixo: tem um prato do dia. Há uma entrada, um prato principal, uma sobremesa e uma bebida, tudo por quinze soles. Os clientes do bairro preferem o arroz com frango, mas os turistas quase sempre pedem ceviche.</p>
+  <p>Inés adora ver a cara das pessoas quando provam algo novo. Hoje um casal do Brasil pergunta: "É muito apimentado?". Ela sorri e serve um pouco numa colher. "Um pouquinho… mas vale a pena".</p>
+  <p>Joaquín não quer ser cozinheiro: ele gosta de computadores e de música. Mas quando a mãe tem muito trabalho, ele põe o avental sem reclamar. No fim do dia, os dois jantam juntos na cozinha. Não comem ceviche: pedem uma pizza.</p>
+  <h3>Preguntas</h3>
+  <ol><li>O que você costuma tomar no café da manhã?</li><li>Você prefere café ou chá?</li><li>Qual é sua comida favorita? E que comida você não suporta?</li><li>Você gosta de comida apimentada?</li><li>Você cozinha em casa ou prefere comer fora? Por quê?</li><li>Que prato típico da sua região você recomenda a um estrangeiro? Explique como ele é.</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">Para mí, …, por favor.</td><td>Para mim, …, por favor.</td></tr>
+  <tr><td class="es">¿Qué me recomienda?</td><td>O que o senhor me recomenda?</td></tr>
+  <tr><td class="es">Me encanta / No soporto…</td><td>Adoro… / Não suporto…</td></tr>
+  <tr><td class="es">¡Qué rico!</td><td>Que delícia!</td></tr>
+  <tr><td class="es">Tengo hambre / sed.</td><td>Estou com fome / sede.</td></tr>
+  <tr><td class="es">¿Me trae la cuenta?</td><td>Pode me trazer a conta?</td></tr>
+  <tr><td class="es">¡Buen provecho!</td><td>Bom apetite!</td></tr>
+  <tr><td class="es">Estoy lleno / llena.</td><td>Estou satisfeito(a) / cheio(a).</td></tr></table></div>
+  <h3>Reto oral</h3><p>Fale sobre sua relação com a comida: o que você come num dia normal, o que adora e o que não suporta, quem cozinha na sua casa, seu restaurante favorito e um prato típico da sua cidade.</p>
+  <span class="pno">10–11</span>
+</section>
+
+<!-- PÁGINAS 12–13 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 4</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">desayuno</span> — café da manhã<br>🇧🇷 <i>dessajúno</i></div>
+    <div class="card"><span class="es">almuerzo</span> — almoço<br>🇧🇷 <i>almuêrsso</i></div>
+    <div class="card"><span class="es">cena</span> — jantar<br>🇧🇷 <i>sêna / θêna</i></div>
+    <div class="card"><span class="es">huevo</span> — ovo<br>🇧🇷 <i>uêbo</i></div>
+    <div class="card"><span class="es">pollo</span> — frango<br>🇧🇷 <i>pôjo</i></div>
+    <div class="card"><span class="es">queso</span> — queijo<br>🇧🇷 <i>kêsso</i></div>
+    <div class="card"><span class="es">cebolla</span> — cebola<br>🇧🇷 <i>sebôja</i></div>
+    <div class="card"><span class="es">zumo / jugo</span> — suco<br>🇧🇷 <i>θúmo / RRúgo</i></div>
+    <div class="card"><span class="es">cuchillo</span> — faca<br>🇧🇷 <i>cutchíjo</i></div>
+    <div class="card"><span class="es">tenedor</span> — garfo<br>🇧🇷 <i>tenedór</i></div>
+    <div class="card"><span class="es">postre</span> — sobremesa<br>🇧🇷 <i>póstre</i> (sem "i" final)</div>
+    <div class="card"><span class="es">picante</span> — apimentado<br>🇧🇷 <i>picánte</i> (sem "tchi")</div>
+  </div>
+  <h3>🔤 Sonidos de esta unidad</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Diagrama de perfil da boca pronunciando "ch" (língua no céu da boca, som de "tch") ao lado de um X riscado sobre o som de "x" português, mostrando que "ch" espanhol é sempre "tch". Estilo infográfico limpo, sem texto.</div>
+  <ul>
+    <li><b>CH</b> → sempre <b>"tch"</b>, como em "tchau": <span class="es">leche</span> = <i>lêtche</i>, <span class="es">cuchara</span> = <i>cutchára</i>.</li>
+    <li><b>QUE / QUI</b> → o "u" não soa: <span class="es">queso</span> = <i>kêsso</i>, <span class="es">quiero</span> = <i>kiêro</i>.</li>
+    <li><b>HUE</b> → soa como <b>"uê"</b> (o h é mudo): <span class="es">huevo</span> = <i>uêbo</i>.</li>
+    <li><b>Ditongo do cambio vocálico</b> → <span class="es">quiero, prefiero, pruebo</span>: as duas vogais aparecem, <i>kiê-ro</i>, <i>pruê-bo</i>.</li>
+    <li><b>Vogais abertas e fechadas</b> → o espanhol não tem "é" e "ó" abertos como em "café"/"avó": as vogais são sempre médias e curtas. <span class="es">café</span> fica entre "café" e "cafê".</li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">¿Qué me recomienda?</td><td>Kê me RRecomiênda?</td></tr>
+  <tr><td class="es">Me encanta el chocolate.</td><td>Me encánta el tchocoláte.</td></tr>
+  <tr><td class="es">Tengo hambre.</td><td>Têngo ámbre.</td></tr>
+  <tr><td class="es">¿Me trae la cuenta?</td><td>Me tráe la cuênta?</td></tr>
+  <tr><td class="es">¡Buen provecho!</td><td>Buên probêtcho!</td></tr>
+  <tr><td class="es">Estoy lleno.</td><td>Estói jêno.</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Presente</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">gustar</td><td>gostar</td><td>especial (me/te/le)</td><td>me gusta, me gustan</td><td>me gústa, me gústan</td></tr>
+  <tr><td class="es">encantar</td><td>adorar</td><td>como gustar</td><td>me encanta(n)</td><td>me encánta</td></tr>
+  <tr><td class="es">querer</td><td>querer</td><td>irregular (e→ie)</td><td>quiero, quieres, queremos</td><td>kiêro, kiêres</td></tr>
+  <tr><td class="es">preferir</td><td>preferir</td><td>irregular (e→ie)</td><td>prefiero, prefieres, preferimos</td><td>prefiêro</td></tr>
+  <tr><td class="es">pedir</td><td>pedir</td><td>irregular (e→i)</td><td>pido, pides, pedimos</td><td>pído, pídes</td></tr>
+  <tr><td class="es">probar</td><td>provar</td><td>irregular (o→ue)</td><td>pruebo, pruebas, probamos</td><td>pruêbo</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<!-- PÁGINA 14 -->
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">Me gusta el café, pero prefiero el té.</span><br><span class="p">🇧🇷 Me gústa el café, pêro prefiêro el tê.</span><br><span class="pt">Gosto de café, mas prefiro chá.</span></div>
+    <div class="flash"><span class="es">Me encantan las frutas.</span><br><span class="p">🇧🇷 Me encántan las frútas.</span><br><span class="pt">Adoro frutas.</span></div>
+    <div class="flash"><span class="es">No soporto la comida picante.</span><br><span class="p">🇧🇷 No supórto la comída picánte.</span><br><span class="pt">Não suporto comida apimentada.</span></div>
+    <div class="flash"><span class="es">¿Qué me recomienda?</span><br><span class="p">🇧🇷 Kê me RRecomiênda?</span><br><span class="pt">O que o senhor me recomenda?</span></div>
+    <div class="flash"><span class="es">Para mí, un vaso de agua, por favor.</span><br><span class="p">🇧🇷 Pára mí, um báso de água, por fabór.</span><br><span class="pt">Para mim, um copo de água, por favor.</span></div>
+    <div class="flash"><span class="es">¿Me trae la cuenta, por favor?</span><br><span class="p">🇧🇷 Me tráe la cuênta, por fabór?</span><br><span class="pt">Pode me trazer a conta, por favor?</span></div>
+    <div class="flash"><span class="es">¡Qué rico! ¡Buen provecho!</span><br><span class="p">🇧🇷 Kê RRíco! Buên probêtcho!</span><br><span class="pt">Que delícia! Bom apetite!</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Inés e Joaquín sentados no balcão da cozinha do restaurante já fechado, à noite, rindo e dividindo uma pizza, com panelas penduradas ao fundo. Estilo e paleta do livro, sem texto.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 4. 🇪🇸</b><br><i>Próxima unidad: <span class="es">Trabajo y profesiones</span> (Pasado)</i></p>
+  <span class="pno">14</span>
+</section>
