@@ -1,0 +1,297 @@
+<title>Unidad 2 · Casa y vida doméstica</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 2 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<!-- PÁGINA 1 -->
+<section class="page opener">
+  <div class="eyebrow">🟢 Nivel A1 · Tiempo verbal: Pasado (pretérito indefinido)</div>
+  <h1>UNIDAD 2</h1>
+  <p class="t2">CASA Y VIDA DOMÉSTICA</p>
+  <p class="sub"><i>Casa e vida doméstica</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial de um apartamento antigo em Madri no dia de mudança: caixas de papelão abertas, um sofá verde ainda embrulhado em plástico, plantas na janela com sacada de ferro, e Tomás (28 anos, barba curta, camiseta cinza) e seu colega Nacho carregando uma estante. Luz de fim de tarde, paleta quente com vermelho e amarelo suaves, estilo flat com textura leve, sem texto, espaço livre no canto superior para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ describir tu casa y sus partes<br>✔ hablar de las tareas domésticas<br>✔ contar lo que <span class="es">hiciste</span> ayer o el fin de semana pasado<br>✔ usar el <b>pretérito indefinido</b> de verbos regulares y de <span class="es">ir / hacer</span></p>
+  <span class="pno">1</span>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">El pretérito indefinido: acciones terminadas</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm</span>Ícone flat de uma seta curva apontando para trás sobre um calendário, vermelho e amarelo, fundo transparente.</div>
+  <p>Usamos el <b>pretérito indefinido</b> para contar acciones <b>terminadas</b> en un momento concreto del pasado: <span class="es">ayer, anoche, el sábado, la semana pasada, en 2020</span>. Es el tiempo de las historias: "llegué, abrí la puerta, vi la cocina…".</p>
+  <div class="box"><b>📐 FÓRMULA</b><br><code>marcador de tiempo + verbo en indefinido</code><br><span class="es">Ayer limpié la cocina. · El sábado comimos en casa. · Anoche viví un desastre.</span></div>
+  <div class="tw"><table>
+    <tr><th></th><th>LIMPIAR (-ar)</th><th>BARRER (-er)</th><th>ABRIR (-ir)</th><th>IR / SER</th><th>HACER</th></tr>
+    <tr><td>yo</td><td>limpié</td><td>barrí</td><td>abrí</td><td>fui</td><td>hice</td></tr>
+    <tr><td>tú</td><td>limpiaste</td><td>barriste</td><td>abriste</td><td>fuiste</td><td>hiciste</td></tr>
+    <tr><td>él / ella / usted</td><td>limpió</td><td>barrió</td><td>abrió</td><td>fue</td><td>hizo</td></tr>
+    <tr><td>nosotros/as</td><td>limpiamos</td><td>barrimos</td><td>abrimos</td><td>fuimos</td><td>hicimos</td></tr>
+    <tr><td>vosotros/as</td><td>limpiasteis</td><td>barristeis</td><td>abristeis</td><td>fuisteis</td><td>hicisteis</td></tr>
+    <tr><td>ellos / ustedes</td><td>limpiaron</td><td>barrieron</td><td>abrieron</td><td>fueron</td><td>hicieron</td></tr>
+  </table></div>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>Acento muda o sentido:</b> <span class="es">limpio</span> (eu limpo) × <span class="es">limpió</span> (ele limpou).<br>
+  • <b>Ir e ser são iguais</b> no indefinido: <span class="es">fui al mercado</span> (fui) / <span class="es">fue un día largo</span> (foi).<br>
+  • <b>Falso cognato:</b> <span class="es">el piso</span> = apartamento (Espanha) ou andar; "piso" do chão é <span class="es">el suelo</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">la oficina</span> = escritório; "oficina mecânica" é <span class="es">el taller</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">el polvo</span> = poeira, e não "polvo" (que é <span class="es">el pulpo</span>).</div>
+  <span class="pno">2</span>
+</section>
+
+<!-- PÁGINAS 3–4 -->
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">La mudanza de Tomás</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Ilustração narrativa: Tomás, 28 anos, barba curta, sentado no chão de uma sala vazia em Madri, cercado de caixas, olhando surpreso para uma torneira de cozinha que esguicha água. Nacho ri ao fundo segurando uma pizza. Janela grande com sacada de ferro, noite caindo. Estilo de livro didático moderno, traços limpos, cores quentes, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span>El sábado pasado <strong>me mudé</strong> a un <strong>piso</strong> nuevo en el barrio de Lavapiés, en Madrid. Es pequeño: tiene un <strong>salón</strong>, una <strong>cocina</strong> abierta, un <strong>dormitorio</strong> y un <strong>baño</strong> con ducha. Mi amigo Nacho <strong>me ayudó</strong> con las cajas. <strong>Subimos</strong> todo por la <strong>escalera</strong>, porque el edificio no tiene <strong>ascensor</strong>. ¡Cuatro pisos!</p>
+  <p><span class="ln">6</span>Primero <strong>limpiamos</strong> todo. Yo <strong>barrí</strong> el <strong>suelo</strong> y <strong>quité el polvo</strong> de las <strong>ventanas</strong>, y Nacho <strong>fregó</strong> el baño. Después <strong>montamos</strong> la <strong>cama</strong> y la <strong>estantería</strong>. <strong>Tardamos</strong> tres horas, porque las instrucciones estaban en sueco.</p>
+  <p><span class="ln">10</span>Por la noche <strong>fui</strong> a la cocina a preparar la cena. <strong>Abrí</strong> el <strong>grifo</strong>… y el agua <strong>salió</strong> por todas partes. <strong>Grité</strong>, Nacho <strong>corrió</strong> a cerrar la llave del agua y los dos <strong>terminamos</strong> completamente mojados. Al final <strong>pedimos</strong> una pizza y <strong>cenamos</strong> sentados en el suelo, entre cajas.</p>
+  <p><span class="ln">15</span>El domingo <strong>llamé</strong> al <strong>casero</strong> y él <strong>arregló</strong> el grifo el lunes. Ahora el piso ya está ordenado, pero cuando miro el suelo de la cocina, todavía me río.</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Pequena ilustração de uma caixa de pizza aberta no chão ao lado de um manual de montagem amassado e uma chave Allen. Mesmo estilo e paleta, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<!-- PÁGINA 5 -->
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="kw es">
+    <p><span>LA CASA</span> casa • piso • salón • cocina • dormitorio • baño • ducha • ventana • puerta • suelo • pared • escalera • ascensor • balcón</p>
+    <p><span>MUEBLES</span> cama • sofá • mesa • silla • estantería • armario • nevera • lavadora • grifo</p>
+    <p><span>TAREAS</span> limpiar • barrer • fregar • quitar el polvo • poner la lavadora • tender la ropa • hacer la cama • sacar la basura • ordenar</p>
+    <p><span>OTRAS</span> mudarse • casero • alquiler • compañero de piso • arreglar</p>
+  </div>
+  <h2 style="margin-top:28px">💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Dois colegas de apartamento conversando na cozinha, um segurando uma vassoura e outro uma xícara de café, com balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿Vives en una casa o en un piso?</p>
+  <p class="q es">2. ¿Cuántas habitaciones tiene tu casa?</p>
+  <p class="q es">3. ¿Cuál es tu lugar favorito de la casa? ¿Por qué?</p>
+  <p class="q es">4. ¿Qué tareas domésticas hiciste ayer?</p>
+  <p class="q es">5. ¿Te mudaste alguna vez? ¿Cómo fue?</p>
+  <p class="q es">6. ¿Cómo es tu casa ideal? ¿Dónde está y qué tiene?</p>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<!-- PÁGINA 6 -->
+<section class="page">
+  <h2>⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 Me toca a mí.</div><div class="card">📌 ¿Te echo una mano?</div>
+    <div class="card">📌 Está hecho un desastre.</div><div class="card">📌 Hay que limpiar…</div>
+    <div class="card">📌 Me mudé hace…</div><div class="card">📌 Se rompió el / la…</div>
+    <div class="card">📌 Lo pasé fatal / genial.</div><div class="card">📌 Me siento como en casa.</div>
+  </div>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm</span>Onda sonora contínua em linhas vermelhas e amarelas ligando pequenas bolhas de palavras, estilo minimalista, fundo claro.</div>
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <p class="es" style="font-size:17px">me‿mudé • limpié‿el • abrí‿el‿grifo • fui‿a • hace‿un‿año • echo‿una‿mano • lo‿pasé</p>
+  <p>En español la última consonante se une a la vocal siguiente: <span class="es">abrí el grifo</span> suena como <b>"a-brí-el-grí-fo"</b> y <span class="es">fui a casa</span> como <b>"fuia-ca-sa"</b>. Practicar estas uniones te ayuda a <b>entender</b> a los nativos y a hablar con <b>más ritmo</b>.</p>
+  <span class="pno">6</span>
+</section>
+
+<!-- PÁGINA 7 -->
+<section class="page">
+  <div class="cols">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">Tu fin de semana en casa (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm · ícone reaproveitável</span></div>
+      <ul class="steps"><li>dónde vives y cómo es tu casa</li><li>qué tareas hiciste</li><li>quién te ayudó (o no)</li><li>algo que salió mal o bien</li><li>cómo te sentiste</li></ul>
+      <div class="box"><i class="es">Ejemplo: Vivo en un apartamento en Curitiba. El sábado limpié el salón y puse la lavadora. Mi hermana no me ayudó, porque…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Un mensaje a un amigo</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm · ícone reaproveitável</span></div>
+      <p>Escribe <b>5–8 frases</b> contando a un amigo un día en casa.</p>
+      <ul class="steps"><li>cuándo (<span class="es">ayer, el sábado…</span>)</li><li>3 tareas en indefinido</li><li>una parte de la casa</li><li>un problema</li></ul>
+      <div class="box"><i class="es">Ejemplo: ¡Hola, Marta! Ayer fue un día largo. Por la mañana ordené mi dormitorio y…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<!-- PÁGINA 8 -->
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">Llamada al casero</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Tela dividida: à esquerda uma inquilina jovem (A) de casaco vermelho ao telefone ao lado de uma máquina de lavar soltando espuma; à direita um senhor (B) de camisa amarela ao telefone numa loja de ferramentas. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="a">🔴 A: Hola, Sr. Gómez. Soy Laura, del tercero B.</p>
+    <p class="b">🟡 B: Hola, Laura. ¿Qué pasó?</p>
+    <p class="a">🔴 A: Ayer puse la lavadora y se rompió. Salió agua por todo el suelo.</p>
+    <p class="b">🟡 B: ¡Vaya! ¿Cerraste la llave del agua?</p>
+    <p class="a">🔴 A: Sí, la cerré enseguida y limpié todo.</p>
+    <p class="b">🟡 B: Muy bien. Mañana voy con un técnico. ¿A las diez te va bien?</p>
+    <p class="a">🔴 A: Perfecto. ¡Muchas gracias!</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles. Después, inventad otro problema: la ducha, la nevera, la ventana…</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li>El sábado pasado <span class="hl">me mudé</span> a un piso nuevo.</li>
+    <li>Mi amigo Nacho <span class="hl">me ayudó</span> con las cajas.</li>
+    <li>Yo <span class="hl">barrí</span> el suelo y Nacho <span class="hl">fregó</span> el baño.</li>
+    <li>Por la noche <span class="hl">fui</span> a la cocina.</li>
+    <li><span class="hl">Abrí</span> el grifo y el agua <span class="hl">salió</span> por todas partes.</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br>Porque son acciones <b>terminadas</b> en un momento concreto (<span class="es">el sábado, por la noche, el domingo</span>). Una acción sigue a otra, como en una película: <span class="es">abrí → salió → grité → corrió</span>. Cuando cuentas una historia del pasado, el indefinido hace avanzar la acción.</div>
+  <span class="pno">8</span>
+</section>
+
+<!-- PÁGINA 9 -->
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo · reaproveitável da Unidad 1</span>Trilha sinuosa vista de cima com 5 marcos e uma bandeira final.</div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica la llamada al casero con otra persona.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto contando lo que hiciste en casa el fin de semana.</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<!-- PÁGINAS 10–11 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 2</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm · reaproveitável</span></div>
+  <h3>Historia: <i>A mudança de Tomás</i></h3>
+  <p>No sábado passado eu me mudei para um apartamento novo no bairro de Lavapiés, em Madri. É pequeno: tem uma sala, uma cozinha aberta, um quarto e um banheiro com chuveiro. Meu amigo Nacho me ajudou com as caixas. Subimos tudo pela escada, porque o prédio não tem elevador. Quatro andares!</p>
+  <p>Primeiro limpamos tudo. Eu varri o chão e tirei a poeira das janelas, e Nacho lavou o banheiro. Depois montamos a cama e a estante. Levamos três horas, porque as instruções estavam em sueco.</p>
+  <p>À noite fui à cozinha preparar o jantar. Abri a torneira… e a água saiu para todo lado. Gritei, Nacho correu para fechar o registro e nós dois terminamos completamente molhados. No fim pedimos uma pizza e jantamos sentados no chão, entre as caixas.</p>
+  <p>No domingo liguei para o proprietário, e ele consertou a torneira na segunda. Agora o apartamento já está arrumado, mas quando olho para o chão da cozinha ainda dou risada.</p>
+  <h3>Preguntas</h3>
+  <ol><li>Você mora numa casa ou num apartamento?</li><li>Quantos cômodos tem a sua casa?</li><li>Qual é o seu lugar favorito da casa? Por quê?</li><li>Que tarefas domésticas você fez ontem?</li><li>Você já se mudou alguma vez? Como foi?</li><li>Como é a sua casa ideal? Onde fica e o que tem?</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">Me toca a mí.</td><td>É a minha vez.</td></tr>
+  <tr><td class="es">¿Te echo una mano?</td><td>Quer uma ajuda?</td></tr>
+  <tr><td class="es">Está hecho un desastre.</td><td>Está uma bagunça.</td></tr>
+  <tr><td class="es">Hay que limpiar…</td><td>É preciso limpar…</td></tr>
+  <tr><td class="es">Me mudé hace…</td><td>Eu me mudei há…</td></tr>
+  <tr><td class="es">Se rompió el / la…</td><td>Quebrou o / a…</td></tr>
+  <tr><td class="es">Lo pasé fatal / genial.</td><td>Foi péssimo / ótimo.</td></tr>
+  <tr><td class="es">Me siento como en casa.</td><td>Me sinto em casa.</td></tr></table></div>
+  <h3>Reto oral</h3><p>Fale sobre seu fim de semana em casa: onde você mora e como é a casa, que tarefas fez, quem ajudou, algo que deu certo ou errado e como você se sentiu.</p>
+  <span class="pno">10–11</span>
+</section>
+
+<!-- PÁGINAS 12–13 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 2</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">cocina</span> — cozinha<br>🇧🇷 <i>cossína / coθína</i></div>
+    <div class="card"><span class="es">salón</span> — sala<br>🇧🇷 <i>salón</i> (n final, não "salão")</div>
+    <div class="card"><span class="es">dormitorio</span> — quarto<br>🇧🇷 <i>dormitório</i> (sem "tch")</div>
+    <div class="card"><span class="es">baño</span> — banheiro<br>🇧🇷 <i>bánho</i></div>
+    <div class="card"><span class="es">suelo</span> — chão<br>🇧🇷 <i>suêlo</i></div>
+    <div class="card"><span class="es">escalera</span> — escada<br>🇧🇷 <i>escaléra</i></div>
+    <div class="card"><span class="es">ascensor</span> — elevador<br>🇧🇷 <i>assensór</i></div>
+    <div class="card"><span class="es">estantería</span> — estante<br>🇧🇷 <i>estantería</i></div>
+    <div class="card"><span class="es">grifo</span> — torneira<br>🇧🇷 <i>grífo</i></div>
+    <div class="card"><span class="es">barrer</span> — varrer<br>🇧🇷 <i>baRRér</i> (rr vibrado)</div>
+    <div class="card"><span class="es">fregar</span> — lavar (louça, chão)<br>🇧🇷 <i>fregár</i></div>
+    <div class="card"><span class="es">mudarse</span> — mudar-se<br>🇧🇷 <i>mudárse</i></div>
+  </div>
+  <h3>🔤 Sonidos de esta unidad</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Diagrama de perfil da boca com a ponta da língua vibrando várias vezes contra os alvéolos (o "rr" múltiplo espanhol), setas indicando vibração. Estilo infográfico limpo, sem texto.</div>
+  <ul>
+    <li><b>RR / R inicial</b> → é vibrado com a ponta da língua, como o "r" de algumas regiões do interior de SP ou do português de Portugal. <b>Não</b> é o "rr" carioca de garganta: <span class="es">barrer</span>, <span class="es">romper</span>.</li>
+    <li><b>R entre vogais</b> → é um toque simples, como em "caro": <span class="es">escalera</span>.</li>
+    <li><b>Ñ</b> → soa como o "nh": <span class="es">baño</span> = <i>bánho</i>.</li>
+    <li><b>Acento tônico no indefinido</b> → a sílaba forte muda o sentido: <span class="es">LIMpio</span> (eu limpo) × <span class="es">limPIÓ</span> (ele limpou).</li>
+    <li><b>N final</b> → não fica nasal: <span class="es">salón</span> termina com a língua no céu da boca, e não "salão".</li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">Me toca a mí.</td><td>Me tóca a mí.</td></tr>
+  <tr><td class="es">¿Te echo una mano?</td><td>Te êtcho una máno?</td></tr>
+  <tr><td class="es">Está hecho un desastre.</td><td>Está êtcho un dessástre.</td></tr>
+  <tr><td class="es">Me mudé hace un año.</td><td>Me mudé ásse un ánho.</td></tr>
+  <tr><td class="es">Se rompió la nevera.</td><td>Se RRompió la nebéra.</td></tr>
+  <tr><td class="es">Lo pasé genial.</td><td>Lo passé RRe-niál</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Indefinido</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">limpiar</td><td>limpar</td><td>regular</td><td>limpié, limpió, limpiaron</td><td>limpiár — limpiê</td></tr>
+  <tr><td class="es">mudarse</td><td>mudar-se</td><td>regular</td><td>me mudé, se mudó</td><td>mudárse — me mudé</td></tr>
+  <tr><td class="es">abrir</td><td>abrir</td><td>regular</td><td>abrí, abrió, abrieron</td><td>abrír — abrí</td></tr>
+  <tr><td class="es">ir</td><td>ir</td><td>irregular</td><td>fui, fue, fuimos, fueron</td><td>ír — fuí, fuê</td></tr>
+  <tr><td class="es">hacer</td><td>fazer</td><td>irregular</td><td>hice, hizo, hicimos</td><td>assér — ísse, ísso</td></tr>
+  <tr><td class="es">poner</td><td>pôr</td><td>irregular</td><td>puse, puso, pusimos</td><td>ponér — pússe</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<!-- PÁGINA 14 -->
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">Ayer limpié la cocina.</span><br><span class="p">🇧🇷 Ajêr limpiê la cossína.</span><br><span class="pt">Ontem limpei a cozinha.</span></div>
+    <div class="flash"><span class="es">Me mudé hace un año.</span><br><span class="p">🇧🇷 Me mudé ásse un ánho.</span><br><span class="pt">Eu me mudei há um ano.</span></div>
+    <div class="flash"><span class="es">Mi piso tiene dos dormitorios.</span><br><span class="p">🇧🇷 Mi píso tiêne dôs dormitórios.</span><br><span class="pt">Meu apartamento tem dois quartos.</span></div>
+    <div class="flash"><span class="es">¿Te echo una mano?</span><br><span class="p">🇧🇷 Te êtcho una máno?</span><br><span class="pt">Quer uma ajuda?</span></div>
+    <div class="flash"><span class="es">Se rompió el grifo.</span><br><span class="p">🇧🇷 Se RRompió el grífo.</span><br><span class="pt">A torneira quebrou.</span></div>
+    <div class="flash"><span class="es">Hoy me toca sacar la basura.</span><br><span class="p">🇧🇷 Ôi me tóca sacár la bassúra.</span><br><span class="pt">Hoje é minha vez de tirar o lixo.</span></div>
+    <div class="flash"><span class="es">Me siento como en casa.</span><br><span class="p">🇧🇷 Me siênto cômo en cása.</span><br><span class="pt">Me sinto em casa.</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Tomás deitado no sofá verde do apartamento já arrumado, com plantas, estante montada e luz quente de abajur, sorrindo com uma xícara na mão. Estilo e paleta do livro, sem texto.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 2. 🇪🇸</b><br><i>Próxima unidad: <span class="es">Salud y cuerpo</span> (Futuro)</i></p>
+  <span class="pno">14</span>
+</section>
