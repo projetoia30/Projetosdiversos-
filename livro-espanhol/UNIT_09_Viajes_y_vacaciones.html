@@ -1,0 +1,311 @@
+<title>Unidad 9 · Viajes y vacaciones</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+/* Nivel A2: faixa amarela */
+:root{--level:#d9a400}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5cc3a}}
+:root[data-theme="dark"]{--level:#f5cc3a}
+th{color:#2b2b2b}
+.clock{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.clock div{background:var(--sand);padding:8px 12px;border-radius:4px;font-size:14px}
+/* Nivel B1: faixa laranja */
+:root{--level:#e07a12}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5a04a}}
+:root[data-theme="dark"]{--level:#f5a04a}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 9 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<!-- PÁGINA 1 -->
+<section class="page opener">
+  <div class="eyebrow">🟠 Nivel B1 · Tiempo verbal: Futuro (futuro simple · cuando + subjuntivo)</div>
+  <h1>UNIDAD 9</h1>
+  <p class="t2">VIAJES Y VACACIONES</p>
+  <p class="sub"><i>Viagens e férias</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial panorâmica do Lago Atitlán, na Guatemala, ao amanhecer: três vulcões refletidos na água, um barquinho de madeira colorido, uma vila com casas de cores vivas na margem. Em primeiro plano, de costas, Andrea (34 anos, porto-riquenha, cabelo crespo preso, mochila grande laranja, chapéu de palha) olha a paisagem segurando um caderno de viagem. Paleta quente com vermelho, amarelo e laranja, estilo flat com textura leve, sem texto, espaço livre no topo para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ planear un viaje: transporte, alojamiento y actividades<br>✔ resolver situaciones en el aeropuerto y en el hotel<br>✔ hablar del futuro con <b>futuro simple</b><br>✔ usar <span class="es">cuando + subjuntivo</span> para el futuro: <span class="es">Cuando llegue, te llamaré.</span> (¡tu primer contacto con el subjuntivo!)</p>
+  <span class="pno">1</span>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">«Cuando» + presente de subjuntivo para hablar del futuro</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm · o mesmo da Unidad 3</span>Seta para frente sobre calendário.</div>
+  <p>Ya sabes usar el futuro (<span class="es">viajaré, tendré, podré</span>). En el nivel B1 aprendemos un detalle muy importante: después de <b>cuando</b>, si hablamos del <b>futuro</b>, el español usa el <b>presente de subjuntivo</b>. Es exactamente donde el português usa el futuro do subjuntivo: "quando eu <u>chegar</u>" → <span class="es">cuando <u>llegue</u></span>.</p>
+  <div class="box"><b>📐 FÓRMULA</b><br><code>Cuando + presente de subjuntivo, + futuro</code><br><span class="es">Cuando <u>llegue</u> al hotel, te <u>escribiré</u>. · Cuando <u>tenga</u> vacaciones, <u>iré</u> a México.</span><br><b>¡Atención!</b> Para hábitos se usa el indicativo: <span class="es">Cuando <u>viajo</u>, siempre <u>llevo</u> poca ropa.</span></div>
+  <h3>Cómo se forma el presente de subjuntivo</h3>
+  <p>Toma la forma <b>yo</b> del presente, quita la <b>-o</b> y "cambia de vocal": <b>-ar → -e</b> · <b>-er / -ir → -a</b></p>
+  <div class="tw"><table>
+    <tr><th></th><th>LLEGAR</th><th>VOLVER</th><th>SALIR</th><th>TENER</th><th>IR</th><th>ESTAR</th></tr>
+    <tr><td>(yo) presente</td><td>llego</td><td>vuelvo</td><td>salgo</td><td>tengo</td><td>voy</td><td>estoy</td></tr>
+    <tr><td>yo</td><td>llegue</td><td>vuelva</td><td>salga</td><td>tenga</td><td>vaya</td><td>esté</td></tr>
+    <tr><td>tú</td><td>llegues</td><td>vuelvas</td><td>salgas</td><td>tengas</td><td>vayas</td><td>estés</td></tr>
+    <tr><td>él / ella / usted</td><td>llegue</td><td>vuelva</td><td>salga</td><td>tenga</td><td>vaya</td><td>esté</td></tr>
+    <tr><td>nosotros/as</td><td>lleguemos</td><td>volvamos</td><td>salgamos</td><td>tengamos</td><td>vayamos</td><td>estemos</td></tr>
+    <tr><td>ellos / ustedes</td><td>lleguen</td><td>vuelvan</td><td>salgan</td><td>tengan</td><td>vayan</td><td>estén</td></tr>
+  </table></div>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>O erro nº 1:</b> traduzir "quando eu chegar" como ~~cuando llegar~~ ou ~~cuando llegaré~~. O correto é <span class="es">cuando llegue</span>. O espanhol <b>não tem</b> futuro do subjuntivo na língua moderna.<br>
+  • <b>Mesma regra com outras palavras de tempo:</b> <span class="es">en cuanto llegue</span> (assim que), <span class="es">hasta que vuelva</span>, <span class="es">antes de que salga</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">la maleta</span> = mala de viagem; <span class="es">la mochila</span> = mochila; <span class="es">el equipaje</span> = bagagem.<br>
+  • <b>Falso cognato:</b> <span class="es">embarazada</span> (de novo!) = grávida; no aeroporto você <span class="es">embarca</span>, não fica "embaraçado".<br>
+  • <b>Falso cognato:</b> <span class="es">la propina</span> = gorjeta, e não "propina" (suborno, que é <span class="es">el soborno</span>).</div>
+  <span class="pno">2</span>
+</section>
+
+<!-- PÁGINAS 3–4 -->
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">Mi primer viaje sola</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Ilustração narrativa: a sala de um apartamento em San Juan, Porto Rico, à noite. Andrea, 34 anos, cabelo crespo preso, está sentada no chão rodeada por uma mochila laranja aberta, roupas dobradas, passaporte, um mapa da Guatemala aberto com rotas desenhadas e o notebook mostrando passagens aéreas. A mãe, uma senhora preocupada de roupão, observa da porta com uma xícara de café. Estilo de livro didático moderno, traços limpos, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span><strong>Andrea</strong> tiene treinta y cuatro años, vive en San Juan de Puerto Rico y nunca ha <strong>viajado</strong> sola. Pero el lunes que viene, por fin, <strong>tomará</strong> un <strong>vuelo</strong> a Guatemala. Ha <strong>reservado</strong> un <strong>billete</strong> barato con escala en Panamá y lleva semanas preparando el <strong>itinerario</strong> en un cuaderno.</p>
+  <p><span class="ln">6</span>"<strong>Cuando llegue</strong> a Ciudad de Guatemala, <strong>cogeré</strong> un autobús directo a Antigua", le explica a su madre. "Allí me <strong>alojaré</strong> en un <strong>albergue</strong> cerca de la plaza y <strong>subiré</strong> al volcán Pacaya. Después <strong>iré</strong> al lago Atitlán, donde <strong>haré</strong> un curso de cocina maya".</p>
+  <p><span class="ln">11</span>Su madre no está tranquila. "¿Y si pierdes la <strong>maleta</strong>? ¿Y si te enfermas?". Andrea sonríe: "Mamá, no llevo maleta, llevo <strong>mochila</strong>. Y tengo <strong>seguro de viaje</strong>. <strong>En cuanto aterrice</strong>, te <strong>mandaré</strong> un mensaje. Y te <strong>llamaré</strong> todas las noches, <strong>cuando tenga</strong> wifi".</p>
+  <p><span class="ln">15</span>Esta noche, mientras hace la mochila por tercera vez, Andrea imagina el <strong>viaje</strong>: los colores del <strong>mercado</strong> de Chichicastenango, el olor del café, el amanecer sobre los volcanes. Sabe que <strong>habrá</strong> problemas, <strong>retrasos</strong> y momentos difíciles. "Pero <strong>cuando vuelva</strong>", piensa, "ya no <strong>seré</strong> la misma persona".</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Pequena ilustração de um passaporte aberto com carimbos coloridos, um cartão de embarque, um caderno de viagem com um vulcão desenhado à mão e uma pulseira típica guatemalteca tecida. Mesmo estilo e paleta, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<!-- PÁGINA 5 -->
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="ph"><b>🖼️ Equipaje y documentos</b><span class="sz">Meia página</span>Ilustração vista de cima de uma mala aberta e uma mochila com os itens organizados ao lado (passaporte, cartão de embarque, protetor solar, óculos de sol, carregador, adaptador de tomada, toalha, câmera, mapa, guia de viagem, chinelos), cada um com etiqueta vazia para o aluno escrever. Estilo flat, paleta do livro, fundo branco.</div>
+  <div class="kw es">
+    <p><span>TRANSPORTE</span> vuelo • avión • aeropuerto • billete/boleto • tarjeta de embarque • puerta de embarque • escala • retraso • aterrizar • despegar • facturar • ida y vuelta</p>
+    <p><span>ALOJAMIENTO</span> hotel • albergue/hostal • habitación individual/doble • reserva • recepción • media pensión • llave • alojarse</p>
+    <p><span>EQUIPAJE</span> maleta • mochila • equipaje de mano • pasaporte • seguro de viaje • protector solar • cargador</p>
+    <p><span>ACTIVIDADES</span> hacer turismo • visitar • hacer senderismo • tomar el sol • bucear • hacer una excursión • probar la comida local • sacar fotos</p>
+    <p><span>CONECTORES</span> cuando • en cuanto • hasta que • antes de que • después de que</p>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<!-- PÁGINA 6 -->
+<section class="page">
+  <h2>💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Dois mochileiros sentados num banco de rodoviária, um mostrando fotos no celular ao outro, mochilas aos pés, balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿Te gusta viajar? ¿Prefieres playa, montaña o ciudad?</p>
+  <p class="q es">2. ¿Cuál es el mejor viaje que has hecho?</p>
+  <p class="q es">3. ¿Viajas con mucho equipaje o con poco?</p>
+  <p class="q es">4. ¿Adónde irás en tus próximas vacaciones?</p>
+  <p class="q es">5. ¿Qué harás cuando tengas tiempo y dinero para un viaje largo?</p>
+  <p class="q es">6. ¿Crees que viajar solo cambia a las personas? ¿Por qué? Da ejemplos.</p>
+  </div>
+  <h2 style="margin-top:26px">⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 Tengo una reserva a nombre de…</div><div class="card">📌 ¿El desayuno está incluido?</div>
+    <div class="card">📌 ¿A qué hora sale el próximo…?</div><div class="card">📌 Quería facturar esta maleta.</div>
+    <div class="card">📌 Mi vuelo se ha retrasado.</div><div class="card">📌 ¿Me podría recomendar…?</div>
+    <div class="card">📌 Cuando llegue, te aviso.</div><div class="card">📌 ¡Buen viaje!</div>
+  </div>
+  <span class="pno">6</span>
+</section>
+
+<!-- PÁGINA 7 -->
+<section class="page">
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm · reaproveitável</span></div>
+  <p class="es" style="font-size:17px">cuando‿llegue • en‿cuanto‿aterrice • te‿aviso • ida‿y‿vuelta • el‿equipaje‿de‿mano • ¿a‿qué‿hora‿sale?</p>
+  <p>No aeroporto, os anúncios são rápidos: <span class="es">el vuelo con destino a Madrid</span> soa quase <b>"el-buê-lo-con-des-tí-noa-ma-drí"</b>. A preposição <span class="es">a</span> desaparece dentro das vogais vizinhas. E <span class="es">ida y vuelta</span> vira <b>"í-daibuêl-ta"</b>.</p>
+  <div class="cols" style="margin-top:20px">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">El viaje de mis sueños (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <ul class="steps"><li>adónde irás y con quién</li><li>cómo viajarás y dónde te alojarás</li><li>3 cosas que harás allí</li><li>2 frases con <span class="es">cuando + subjuntivo</span></li><li>cómo te sentirás cuando vuelvas</li></ul>
+      <div class="box"><i class="es">Ejemplo: El año que viene iré a Perú con mi hermano. Volaremos a Lima y, cuando lleguemos a Cuzco, haremos el Camino Inca…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Un correo al hotel</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <p>Escribe <b>5–8 frases</b>: un correo formal a un hotel para reservar y hacer preguntas.</p>
+      <ul class="steps"><li>saludo formal (<span class="es">Estimados señores:</span>)</li><li>fechas y tipo de habitación</li><li>2 preguntas (<span class="es">¿Podrían…?</span>)</li><li>1 frase con <span class="es">cuando</span></li><li>despedida (<span class="es">Un cordial saludo</span>)</li></ul>
+      <div class="box"><i class="es">Ejemplo: Estimados señores: Quería reservar una habitación doble del 3 al 7 de agosto. Llegaré tarde, así que, cuando llegue…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<!-- PÁGINA 8 -->
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">En el mostrador del aeropuerto</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Balcão de companhia aérea num aeroporto: uma passageira (A) de jaqueta vermelha com mochila, nervosa, mostra o celular a uma atendente (B) de uniforme amarelo. Ao fundo, painel de voos com várias linhas em vermelho (atrasados), pessoas sentadas no chão esperando. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="a">🔴 A: Buenas tardes. Mi vuelo a Panamá se ha cancelado y tengo una conexión a Guatemala.</p>
+    <p class="b">🟡 B: Lo siento mucho. Déjeme ver… Puedo ponerla en el vuelo de mañana a las ocho.</p>
+    <p class="a">🔴 A: ¿Y dónde voy a dormir esta noche?</p>
+    <p class="b">🟡 B: La aerolínea le pagará el hotel. Cuando salga por la puerta 3, verá el autobús del hotel.</p>
+    <p class="a">🔴 A: ¿Y la conexión a Guatemala?</p>
+    <p class="b">🟡 B: No se preocupe. Cuando llegue a Panamá, tendrá otra tarjeta de embarque para las doce.</p>
+    <p class="a">🔴 A: Vale. ¿Y mi mochila?</p>
+    <p class="b">🟡 B: Irá directamente a Guatemala. La recogerá cuando aterrice. ¡Buen viaje!</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles. Después, inventad otro problema: overbooking, maleta perdida, pasaporte olvidado…</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li>El lunes que viene <span class="hl">tomará</span> un vuelo a Guatemala.</li>
+    <li><span class="hl">Cuando llegue</span> a Ciudad de Guatemala, <span class="hl">cogeré</span> un autobús.</li>
+    <li><span class="hl">En cuanto aterrice</span>, te <span class="hl">mandaré</span> un mensaje.</li>
+    <li>Te <span class="hl">llamaré</span> todas las noches, <span class="hl">cuando tenga</span> wifi.</li>
+    <li><span class="hl">Cuando vuelva</span>, ya no <span class="hl">seré</span> la misma persona.</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br>Andrea habla de acciones que <b>todavía no han ocurrido</b>. La parte con <span class="es">cuando / en cuanto</span> indica el <b>momento</b> futuro → <b>subjuntivo</b> (<span class="es">llegue, aterrice, tenga, vuelva</span>). La otra parte, la <b>consecuencia</b>, va en <b>futuro</b> (<span class="es">cogeré, mandaré, seré</span>). Regla práctica: si en portugués dices "quando eu <b>-ar/-er/-ir</b>" (chegar, tiver, voltar), en español usas el subjuntivo.</div>
+  <span class="pno">8</span>
+</section>
+
+<!-- PÁGINA 9 -->
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo · reaproveitável</span></div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica la escena del aeropuerto con otra persona.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto describiendo el viaje de tus sueños.</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<!-- PÁGINAS 10–11 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 9</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm · reaproveitável</span></div>
+  <h3>Historia: <i>Minha primeira viagem sozinha</i></h3>
+  <p>Andrea tem trinta e quatro anos, mora em San Juan, Porto Rico, e nunca viajou sozinha. Mas na próxima segunda, finalmente, vai pegar um voo para a Guatemala. Reservou uma passagem barata com escala no Panamá e há semanas prepara o roteiro num caderno.</p>
+  <p>"Quando eu chegar à Cidade da Guatemala, vou pegar um ônibus direto para Antígua", ela explica à mãe. "Lá vou me hospedar num albergue perto da praça e vou subir o vulcão Pacaya. Depois vou ao lago Atitlán, onde vou fazer um curso de culinária maia".</p>
+  <p>A mãe não está tranquila. "E se você perder a mala? E se ficar doente?". Andrea sorri: "Mãe, eu não levo mala, levo mochila. E tenho seguro-viagem. Assim que eu pousar, te mando uma mensagem. E vou te ligar todas as noites, quando tiver wi-fi".</p>
+  <p>Esta noite, enquanto arruma a mochila pela terceira vez, Andrea imagina a viagem: as cores do mercado de Chichicastenango, o cheiro do café, o amanhecer sobre os vulcões. Sabe que haverá problemas, atrasos e momentos difíceis. "Mas quando eu voltar", pensa, "já não serei a mesma pessoa".</p>
+  <h3>Preguntas</h3>
+  <ol><li>Você gosta de viajar? Prefere praia, montanha ou cidade?</li><li>Qual foi a melhor viagem que você já fez?</li><li>Você viaja com muita bagagem ou com pouca?</li><li>Para onde você vai nas próximas férias?</li><li>O que você vai fazer quando tiver tempo e dinheiro para uma viagem longa?</li><li>Você acha que viajar sozinho muda as pessoas? Por quê? Dê exemplos.</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">Tengo una reserva a nombre de…</td><td>Tenho uma reserva em nome de…</td></tr>
+  <tr><td class="es">¿El desayuno está incluido?</td><td>O café da manhã está incluído?</td></tr>
+  <tr><td class="es">¿A qué hora sale el próximo…?</td><td>A que horas sai o próximo…?</td></tr>
+  <tr><td class="es">Quería facturar esta maleta.</td><td>Queria despachar esta mala.</td></tr>
+  <tr><td class="es">Mi vuelo se ha retrasado.</td><td>Meu voo atrasou.</td></tr>
+  <tr><td class="es">¿Me podría recomendar…?</td><td>Poderia me recomendar…?</td></tr>
+  <tr><td class="es">Cuando llegue, te aviso.</td><td>Quando eu chegar, te aviso.</td></tr>
+  <tr><td class="es">¡Buen viaje!</td><td>Boa viagem!</td></tr></table></div>
+  <h3>Reto oral</h3><p>Descreva a viagem dos seus sonhos: para onde vai e com quem, como vai viajar e onde vai se hospedar, três coisas que fará lá, duas frases com "quando + subjuntivo" e como vai se sentir quando voltar.</p>
+  <span class="pno">10–11</span>
+</section>
+
+<!-- PÁGINAS 12–13 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 9</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">viaje</span> — viagem<br>🇧🇷 <i>biáRRe</i></div>
+    <div class="card"><span class="es">equipaje</span> — bagagem<br>🇧🇷 <i>ekipáRRe</i></div>
+    <div class="card"><span class="es">vuelo</span> — voo<br>🇧🇷 <i>buêlo</i></div>
+    <div class="card"><span class="es">aeropuerto</span> — aeroporto<br>🇧🇷 <i>aeropuêrto</i></div>
+    <div class="card"><span class="es">billete</span> — passagem<br>🇧🇷 <i>bijête</i></div>
+    <div class="card"><span class="es">maleta</span> — mala<br>🇧🇷 <i>malêta</i></div>
+    <div class="card"><span class="es">aterrizar</span> — pousar<br>🇧🇷 <i>ateRRissár</i></div>
+    <div class="card"><span class="es">facturar</span> — despachar<br>🇧🇷 <i>facturár</i></div>
+    <div class="card"><span class="es">albergue</span> — albergue<br>🇧🇷 <i>albêrge</i></div>
+    <div class="card"><span class="es">llegue</span> — (eu) chegue/chegar<br>🇧🇷 <i>jêge</i></div>
+    <div class="card"><span class="es">vaya</span> — (eu) vá/for<br>🇧🇷 <i>bája</i></div>
+    <div class="card"><span class="es">senderismo</span> — trilha<br>🇧🇷 <i>senderísmo</i></div>
+  </div>
+  <h3>🔤 Sonidos de esta unidad</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Infográfico com as sílabas "GUE / GUI" e "GÜE / GÜI": uma seta mostrando que em "guerra" o U fica mudo (ícone de U apagado) e em "pingüino" o U soa (ícone de U com ondas sonoras). Estilo limpo, sem texto além das sílabas.</div>
+  <ul>
+    <li><b>GUE / GUI</b> → o "u" <b>não soa</b>: <span class="es">llegue</span> = <i>jê-ge</i>, <span class="es">albergue</span> = <i>al-bêr-ge</i>. Com trema (<span class="es">ü</span>), soa: <span class="es">bilingüe</span> = <i>bi-lín-guê</i>.</li>
+    <li><b>Subjuntivo e indicativo</b> → a diferença é uma vogal só: <span class="es">llega</span> (chega) × <span class="es">llegue</span> (chegue). Pronuncie bem claro o final!</li>
+    <li><b>RR em "aterrizar"</b> → vibrado múltiplo com a ponta da língua (Unidad 2), nunca de garganta.</li>
+    <li><b>Acento de Porto Rico e do Caribe</b> → o <b>s</b> final de sílaba quase desaparece ou vira "h": <span class="es">los vuelos</span> = <i>loh buêloh</i>. É normal, e você vai ouvir muito!</li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">Tengo una reserva a nombre de…</td><td>Têngo úna RResêrba a nômbre de…</td></tr>
+  <tr><td class="es">¿El desayuno está incluido?</td><td>El dessajúno está inkluído?</td></tr>
+  <tr><td class="es">Quería facturar esta maleta.</td><td>Kería facturár ésta malêta.</td></tr>
+  <tr><td class="es">Mi vuelo se ha retrasado.</td><td>Mi buêlo seá RRetrassádo.</td></tr>
+  <tr><td class="es">Cuando llegue, te aviso.</td><td>Cuándo jêge, te abíso.</td></tr>
+  <tr><td class="es">¡Buen viaje!</td><td>Buên biáRRe!</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Futuro · Subjuntivo</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">viajar</td><td>viajar</td><td>regular</td><td>viajaré · viaje</td><td>biaRRarê · biáRRe</td></tr>
+  <tr><td class="es">llegar</td><td>chegar</td><td>regular (g→gu)</td><td>llegaré · llegue</td><td>jegarê · jêge</td></tr>
+  <tr><td class="es">volver</td><td>voltar</td><td>irregular (o→ue)</td><td>volveré · vuelva</td><td>bolberê · buêlba</td></tr>
+  <tr><td class="es">ir</td><td>ir</td><td>irregular</td><td>iré · vaya</td><td>irê · bája</td></tr>
+  <tr><td class="es">tener</td><td>ter</td><td>irregular</td><td>tendré · tenga</td><td>tendrê · tênga</td></tr>
+  <tr><td class="es">alojarse</td><td>hospedar-se</td><td>regular</td><td>me alojaré · me aloje</td><td>me aloRRarê</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<!-- PÁGINA 14 -->
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">Cuando llegue, te mandaré un mensaje.</span><br><span class="p">🇧🇷 Cuándo jêge, te mandarê un menssáRRe.</span><br><span class="pt">Quando eu chegar, te mando uma mensagem.</span></div>
+    <div class="flash"><span class="es">Tengo una reserva a nombre de Silva.</span><br><span class="p">🇧🇷 Têngo úna RResêrba a nômbre de Sílba.</span><br><span class="pt">Tenho uma reserva em nome de Silva.</span></div>
+    <div class="flash"><span class="es">¿El desayuno está incluido?</span><br><span class="p">🇧🇷 El dessajúno está inkluído?</span><br><span class="pt">O café da manhã está incluído?</span></div>
+    <div class="flash"><span class="es">Quería un billete de ida y vuelta.</span><br><span class="p">🇧🇷 Kería un bijête de ída i buêlta.</span><br><span class="pt">Queria uma passagem de ida e volta.</span></div>
+    <div class="flash"><span class="es">Mi vuelo se ha retrasado dos horas.</span><br><span class="p">🇧🇷 Mi buêlo seá RRetrassádo dôs óras.</span><br><span class="pt">Meu voo atrasou duas horas.</span></div>
+    <div class="flash"><span class="es">Cuando tenga vacaciones, iré a México.</span><br><span class="p">🇧🇷 Cuándo tênga bacassiônes, irê a MéRRiko.</span><br><span class="pt">Quando eu tiver férias, vou ao México.</span></div>
+    <div class="flash"><span class="es">¡Buen viaje! ¡Disfruta mucho!</span><br><span class="p">🇧🇷 Buên biáRRe! Disfrúta mútcho!</span><br><span class="pt">Boa viagem! Aproveite muito!</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Andrea no topo do vulcão Pacaya ao amanhecer, braços abertos, mochila laranja nas costas, com um mar de nuvens e outros vulcões ao fundo. Estilo e paleta do livro, sem texto.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 9. 🇪🇸</b><br><i>Próxima unidad: <span class="es">Naturaleza y animales</span> (Presente)</i></p>
+  <span class="pno">14</span>
+</section>
