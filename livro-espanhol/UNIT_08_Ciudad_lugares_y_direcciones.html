@@ -1,0 +1,307 @@
+<title>Unidad 8 · Ciudad, lugares y direcciones</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+/* Nivel A2: faixa amarela */
+:root{--level:#d9a400}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5cc3a}}
+:root[data-theme="dark"]{--level:#f5cc3a}
+th{color:#2b2b2b}
+.clock{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.clock div{background:var(--sand);padding:8px 12px;border-radius:4px;font-size:14px}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 8 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<!-- PÁGINA 1 -->
+<section class="page opener">
+  <div class="eyebrow">🟡 Nivel A2 · Tiempo verbal: Pasado (pretérito imperfecto × indefinido)</div>
+  <h1>UNIDAD 8</h1>
+  <p class="t2">CIUDAD, LUGARES Y DIRECCIONES</p>
+  <p class="sub"><i>Cidade, lugares e direções</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial de uma rua de paralelepípedos no bairro de San Telmo, Buenos Aires, num domingo: casarões coloniais com sacadas de ferro, uma feira de antiguidades, um casal dançando tango na esquina, um ônibus antigo (colectivo) colorido passando ao fundo. Em primeiro plano, a avó Rosa (75 anos, cabelo branco em coque, casaco vermelho) caminha de braço dado com a neta Camila (20 anos, mochila, celular na mão). Paleta quente com vermelho e amarelo suaves, estilo flat com textura leve, sem texto, espaço livre no topo para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ nombrar lugares de la ciudad y medios de transporte<br>✔ pedir y dar direcciones (<span class="es">siga recto, gire a la derecha</span>)<br>✔ describir cómo <span class="es">era</span> un lugar en el pasado con el <b>imperfecto</b><br>✔ contar una anécdota combinando <b>imperfecto</b> e <b>indefinido</b></p>
+  <span class="pno">1</span>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">El pretérito imperfecto: describir el pasado</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm</span>Ícone flat de uma fotografia antiga com bordas recortadas e uma seta curva para trás, vermelho e amarelo, fundo transparente.</div>
+  <p>Ya conoces el <b>indefinido</b> (Unidad 2) para acciones terminadas. El <b>imperfecto</b> sirve para <b>describir</b> el pasado: cómo <b>eran</b> los lugares y las personas, qué <b>hacíamos</b> habitualmente, qué <b>estaba pasando</b> en un momento. Es el "decorado" de una historia; el indefinido son las "acciones" que ocurren sobre ese decorado.</p>
+  <div class="box"><b>📐 FÓRMULAS</b><br><code>-ar → -aba</code> · <code>-er / -ir → -ía</code> → <span class="es">Antes caminaba mucho. · Vivía cerca del puerto.</span><br><code>imperfecto (contexto) + indefinido (acción)</code> → <span class="es">Mientras <u>paseaba</u> por el centro, <u>vi</u> a un amigo.</span></div>
+  <div class="tw"><table>
+    <tr><th></th><th>CAMINAR</th><th>VIVIR</th><th>SER</th><th>IR</th><th>VER</th></tr>
+    <tr><td>yo</td><td>caminaba</td><td>vivía</td><td>era</td><td>iba</td><td>veía</td></tr>
+    <tr><td>tú</td><td>caminabas</td><td>vivías</td><td>eras</td><td>ibas</td><td>veías</td></tr>
+    <tr><td>él / ella / usted</td><td>caminaba</td><td>vivía</td><td>era</td><td>iba</td><td>veía</td></tr>
+    <tr><td>nosotros/as</td><td>caminábamos</td><td>vivíamos</td><td>éramos</td><td>íbamos</td><td>veíamos</td></tr>
+    <tr><td>vosotros/as</td><td>caminabais</td><td>vivíais</td><td>erais</td><td>ibais</td><td>veíais</td></tr>
+    <tr><td>ellos / ustedes</td><td>caminaban</td><td>vivían</td><td>eran</td><td>iban</td><td>veían</td></tr>
+  </table></div>
+  <p><b>Solo hay 3 verbos irregulares en imperfecto: ser, ir, ver.</b> Y <span class="es">hay</span> → <span class="es">había</span>.</p>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>Boa notícia:</b> o imperfeito espanhol funciona quase igual ao português (<span class="es">caminaba</span> = caminhava). O desafio é <b>não usar</b> o imperfeito para ações pontuais: <span class="es">Ayer <u>fui</u> al centro</span>, e não ~~iba~~.<br>
+  • <b>"Havia / tinha" (existência):</b> <span class="es">Había</span> un cine, e nunca ~~Tenía un cine~~.<br>
+  • <b>Falso cognato:</b> <span class="es">la calle</span> = rua; <span class="es">la cuadra</span> (América) / <span class="es">la manzana</span> (Espanha) = quarteirão.<br>
+  • <b>Falso cognato:</b> <span class="es">el semáforo</span> = sinal de trânsito; <span class="es">la señal</span> = placa.<br>
+  • <b>Falso cognato:</b> <span class="es">largo</span> = comprido, longo (não "largo"); "largo" em português é <span class="es">ancho</span>.</div>
+  <span class="pno">2</span>
+</section>
+
+<!-- PÁGINAS 3–4 -->
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">La abuela que conocía todas las calles</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Ilustração narrativa em dois planos: em cima, em tons sépia, a lembrança de Rosa jovem (20 anos, vestido dos anos 1970) andando de bicicleta numa rua de San Telmo com um cinema antigo de letreiro luminoso e um bonde. Embaixo, em cores atuais, a mesma esquina hoje com um café moderno no lugar do cinema, e a avó Rosa idosa mostrando a esquina para a neta Camila, que olha o celular com o mapa aberto. Estilo de livro didático moderno, traços limpos, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span>Cuando la abuela Rosa <strong>era</strong> joven, <strong>vivía</strong> en San Telmo, en Buenos Aires. Las <strong>calles</strong> <strong>eran</strong> de piedra, <strong>había</strong> un <strong>cine</strong> en la esquina y los vecinos <strong>se conocían</strong> todos. Ella <strong>iba</strong> al <strong>mercado</strong> en bicicleta y los domingos <strong>bailaba</strong> tango en la <strong>plaza</strong> Dorrego.</p>
+  <p><span class="ln">6</span>El sábado pasado, su nieta Camila la <strong>llevó</strong> a pasear por el <strong>barrio</strong>. Rosa <strong>estaba</strong> emocionada, pero todo <strong>parecía</strong> diferente: donde antes <strong>había</strong> una <strong>librería</strong>, ahora <strong>había</strong> una tienda de móviles, y el viejo cine <strong>era</strong> un café con wifi.</p>
+  <p><span class="ln">10</span>Mientras <strong>caminaban</strong>, Camila <strong>miraba</strong> el mapa del móvil. "Abuela, tenemos que <strong>girar</strong> a la izquierda". "No, querida", <strong>dijo</strong> Rosa, "<strong>sigue</strong> <strong>recto</strong> dos <strong>cuadras</strong> y después a la derecha. Hay un atajo por el <strong>pasaje</strong>". Camila no le <strong>hizo</strong> caso… y se <strong>perdieron</strong>.</p>
+  <p><span class="ln">14</span>Al final <strong>preguntaron</strong> a un señor en un <strong>quiosco</strong>. El hombre <strong>miró</strong> a Rosa y <strong>sonrió</strong>: "¿Rosa? ¿La chica que <strong>bailaba</strong> tango en la plaza?". <strong>Era</strong> Tito, su compañero de baile de hace cincuenta años. Esa tarde no <strong>llegaron</strong> al restaurante, pero <strong>bailaron</strong> en la plaza otra vez.</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Pequena ilustração de dois idosos dançando tango numa praça de paralelepípedos, a neta filmando com o celular e sorrindo, guirlandas de luz acima. Mesmo estilo e paleta, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<!-- PÁGINA 5 -->
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="ph"><b>🖼️ Mapa del barrio</b><span class="sz">Meia página (usado também no Role Play)</span>Mapa ilustrado e simplificado de um bairro visto de cima, com quarteirões em grade, uma praça central, e ícones de lugares: banco, farmácia, hospital, correios, estação de metrô, ponto de ônibus, supermercado, museu, igreja, escola, parque, restaurante e hotel. Cada lugar com uma etiqueta vazia; uma rosa dos ventos no canto e um ponto vermelho marcando "você está aqui". Estilo flat, paleta do livro, fundo branco.</div>
+  <div class="kw es">
+    <p><span>LUGARES</span> ciudad • barrio • centro • calle • avenida • plaza • esquina • cuadra/manzana • parque • mercado • museo • iglesia • banco • farmacia • hospital • correos • ayuntamiento • librería • quiosco</p>
+    <p><span>TRANSPORTE</span> metro • autobús/colectivo • tren • taxi • bicicleta • a pie • parada • estación • semáforo • paso de peatones</p>
+    <p><span>DIRECCIONES</span> a la derecha • a la izquierda • todo recto • al lado de • enfrente de • detrás de • cerca de • lejos de • entre • al final de la calle • en la esquina</p>
+    <p><span>VERBOS</span> girar • seguir • cruzar • tomar/coger • bajar • subir • perderse • llegar • estar situado</p>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<!-- PÁGINA 6 -->
+<section class="page">
+  <h2>💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Um turista com mapa de papel e uma moradora apontando a direção numa esquina, balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿En qué ciudad vives? ¿Y en qué barrio?</p>
+  <p class="q es">2. ¿Qué hay cerca de tu casa?</p>
+  <p class="q es">3. ¿Cómo vas al trabajo o a clase? ¿Cuánto tardas?</p>
+  <p class="q es">4. ¿Cómo era tu barrio cuando eras niño/a? ¿Qué había?</p>
+  <p class="q es">5. ¿Te perdiste alguna vez en una ciudad? ¿Qué pasó?</p>
+  <p class="q es">6. ¿Tu ciudad es mejor o peor que hace veinte años? Compara el pasado con el presente.</p>
+  </div>
+  <h2 style="margin-top:26px">⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 Perdone, ¿sabe dónde está…?</div><div class="card">📌 ¿Hay un/a … por aquí?</div>
+    <div class="card">📌 ¿Está lejos?</div><div class="card">📌 Siga todo recto.</div>
+    <div class="card">📌 Gire a la derecha / izquierda.</div><div class="card">📌 Está a cinco minutos a pie.</div>
+    <div class="card">📌 Me he perdido.</div><div class="card">📌 Antes había…, ahora hay…</div>
+  </div>
+  <span class="pno">6</span>
+</section>
+
+<!-- PÁGINA 7 -->
+<section class="page">
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm · reaproveitável</span></div>
+  <p class="es" style="font-size:17px">está‿a‿la‿derecha • siga‿hasta‿el‿final • cerca‿de‿aquí • había‿un‿cine • en‿la‿esquina • todo‿recto</p>
+  <p>Quando uma palavra termina em vogal e a próxima começa com vogal, elas se juntam numa só sílaba: <span class="es">está a la derecha</span> soa <b>"es-tá-la-de-rê-tcha"</b>, e <span class="es">había un cine</span> soa <b>"a-bíaun-sí-ne"</b>. Nas direções, os nativos falam rápido. Peça <span class="es">¿Puede repetirlo más despacio?</span> sem vergonha!</p>
+  <div class="cols" style="margin-top:20px">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">Mi barrio: antes y ahora (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <ul class="steps"><li>dónde vivías de niño/a</li><li>cómo era el barrio y qué había</li><li>qué hacías allí normalmente</li><li>cómo es ahora</li><li>algo que pasó un día concreto (indefinido)</li></ul>
+      <div class="box"><i class="es">Ejemplo: De niña vivía en un barrio pequeño de Salvador. Había una panadería en la esquina y todas las tardes jugaba en la calle con mis primos. Un día…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Cómo llegar a mi casa</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <p>Escribe <b>5–8 frases</b>: un mensaje a un amigo extranjero explicando cómo llegar a tu casa desde el metro o la parada de autobús.</p>
+      <ul class="steps"><li>transporte (<span class="es">toma / coge…</span>)</li><li>3 instrucciones (<span class="es">sigue, gira, cruza</span>)</li><li>2 referencias (<span class="es">al lado de, enfrente de</span>)</li><li>cuánto se tarda</li></ul>
+      <div class="box"><i class="es">Ejemplo: Toma la línea 2 del metro y bájate en la estación Central. Sal por la salida B y sigue recto hasta…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<!-- PÁGINA 8 -->
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">Pedir direcciones en la calle</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Esquina movimentada de uma cidade latino-americana: uma turista (A) de jaqueta vermelha com mochila e celular sem bateria pergunta o caminho a um morador (B) de camisa amarela que aponta para a direita. Placas de rua, semáforo e ponto de ônibus ao fundo. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="a">🔴 A: Perdone, ¿sabe dónde está el Museo de Arte?</p>
+    <p class="b">🟡 B: Sí, claro. No está lejos. ¿Va a pie?</p>
+    <p class="a">🔴 A: Sí. Es que se me acabó la batería del móvil y me he perdido.</p>
+    <p class="b">🟡 B: Mire, siga todo recto por esta calle hasta el semáforo. Allí, cruce y gire a la izquierda.</p>
+    <p class="a">🔴 A: Hasta el semáforo, cruzo y a la izquierda…</p>
+    <p class="b">🟡 B: Eso es. Después, la segunda calle a la derecha. El museo está enfrente de una iglesia grande.</p>
+    <p class="a">🔴 A: ¿Cuánto se tarda más o menos?</p>
+    <p class="b">🟡 B: Unos diez minutos. ¡Antes aquí había un tranvía, pero ya no!</p>
+    <p class="a">🔴 A: ¡Muchísimas gracias!</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles. Después, usad el mapa de la página 5: A elige un lugar y B explica el camino.</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li>Cuando Rosa <span class="hl">era</span> joven, <span class="hl">vivía</span> en San Telmo.</li>
+    <li><span class="hl">Había</span> un cine en la esquina.</li>
+    <li>Ella <span class="hl">iba</span> al mercado en bicicleta.</li>
+    <li>El sábado pasado, su nieta la <span class="hl">llevó</span> a pasear. (indefinido)</li>
+    <li>Mientras <span class="hl">caminaban</span>, Camila <span class="hl">miraba</span> el mapa.</li>
+    <li>Camila no le <span class="hl">hizo</span> caso… y se <span class="hl">perdieron</span>. (indefinido)</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br>Las frases 1–3 son el <b>decorado</b>: cómo <b>era</b> la vida antes, qué <b>había</b>, qué hacía Rosa <b>habitualmente</b> → <b>imperfecto</b>. Las frases 4 y 6 son <b>acciones concretas</b> que hacen avanzar la historia → <b>indefinido</b>. La frase 5 describe algo que <b>estaba pasando</b> (dos acciones simultáneas) → imperfecto. Truco: si puedes decir "costumava…" o "estava…", usa el imperfecto.</div>
+  <span class="pno">8</span>
+</section>
+
+<!-- PÁGINA 9 -->
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo · reaproveitável</span></div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica las direcciones con otra persona usando el mapa.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto describiendo tu barrio antes y ahora.</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<!-- PÁGINAS 10–11 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 8</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm · reaproveitável</span></div>
+  <h3>Historia: <i>A avó que conhecia todas as ruas</i></h3>
+  <p>Quando a avó Rosa era jovem, morava em San Telmo, em Buenos Aires. As ruas eram de pedra, havia um cinema na esquina e os vizinhos se conheciam todos. Ela ia ao mercado de bicicleta e aos domingos dançava tango na praça Dorrego.</p>
+  <p>No sábado passado, a neta Camila a levou para passear pelo bairro. Rosa estava emocionada, mas tudo parecia diferente: onde antes havia uma livraria, agora havia uma loja de celulares, e o velho cinema era um café com wi-fi.</p>
+  <p>Enquanto caminhavam, Camila olhava o mapa do celular. "Vó, temos que virar à esquerda". "Não, querida", disse Rosa, "siga reto dois quarteirões e depois à direita. Tem um atalho pela passagem". Camila não deu ouvidos… e elas se perderam.</p>
+  <p>No fim, perguntaram a um senhor numa banca de jornal. O homem olhou para Rosa e sorriu: "Rosa? A moça que dançava tango na praça?". Era Tito, seu parceiro de dança de cinquenta anos atrás. Naquela tarde elas não chegaram ao restaurante, mas Rosa dançou na praça outra vez.</p>
+  <h3>Preguntas</h3>
+  <ol><li>Em que cidade você mora? E em que bairro?</li><li>O que há perto da sua casa?</li><li>Como você vai para o trabalho ou para a aula? Quanto tempo leva?</li><li>Como era o seu bairro quando você era criança? O que havia lá?</li><li>Você já se perdeu numa cidade? O que aconteceu?</li><li>Sua cidade está melhor ou pior do que há vinte anos? Compare o passado com o presente.</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">Perdone, ¿sabe dónde está…?</td><td>Com licença, o senhor sabe onde fica…?</td></tr>
+  <tr><td class="es">¿Hay un/a … por aquí?</td><td>Tem um/uma … por aqui?</td></tr>
+  <tr><td class="es">¿Está lejos?</td><td>É longe?</td></tr>
+  <tr><td class="es">Siga todo recto.</td><td>Siga sempre reto.</td></tr>
+  <tr><td class="es">Gire a la derecha / izquierda.</td><td>Vire à direita / esquerda.</td></tr>
+  <tr><td class="es">Está a cinco minutos a pie.</td><td>Fica a cinco minutos a pé.</td></tr>
+  <tr><td class="es">Me he perdido.</td><td>Eu me perdi.</td></tr>
+  <tr><td class="es">Antes había…, ahora hay…</td><td>Antes havia…, agora há…</td></tr></table></div>
+  <h3>Reto oral</h3><p>Fale do seu bairro antes e agora: onde você morava quando criança, como era o bairro e o que havia, o que você costumava fazer lá, como ele é hoje e algo que aconteceu num dia específico.</p>
+  <span class="pno">10–11</span>
+</section>
+
+<!-- PÁGINAS 12–13 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 8</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">ciudad</span> — cidade<br>🇧🇷 <i>siudád / θiudád</i></div>
+    <div class="card"><span class="es">calle</span> — rua<br>🇧🇷 <i>cáje</i> (Argentina: <i>cáxe</i>)</div>
+    <div class="card"><span class="es">esquina</span> — esquina<br>🇧🇷 <i>eskína</i></div>
+    <div class="card"><span class="es">derecha</span> — direita<br>🇧🇷 <i>derêtcha</i></div>
+    <div class="card"><span class="es">izquierda</span> — esquerda<br>🇧🇷 <i>iskiêrda / iθkiêrda</i></div>
+    <div class="card"><span class="es">recto</span> — reto<br>🇧🇷 <i>RRêkto</i></div>
+    <div class="card"><span class="es">semáforo</span> — semáforo<br>🇧🇷 <i>semáforo</i></div>
+    <div class="card"><span class="es">cruzar</span> — atravessar<br>🇧🇷 <i>crussár / cruθár</i></div>
+    <div class="card"><span class="es">parada</span> — ponto (ônibus)<br>🇧🇷 <i>paráda</i></div>
+    <div class="card"><span class="es">ayuntamiento</span> — prefeitura<br>🇧🇷 <i>ajuntamiênto</i></div>
+    <div class="card"><span class="es">había</span> — havia<br>🇧🇷 <i>abía</i></div>
+    <div class="card"><span class="es">íbamos</span> — íamos<br>🇧🇷 <i>íbamos</i></div>
+  </div>
+  <h3>🔤 Sonidos de esta unidad</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Mapa-múndi simplificado da América Latina e Espanha com três balões mostrando como se pronuncia "calle" em cada região: "caje" (maior parte), "caxe" (Argentina e Uruguai, com ícone de som chiado) e "calhe" (algumas regiões andinas). Estilo infográfico limpo, sem texto além das palavras.</div>
+  <ul>
+    <li><b>LL / Y no Rio da Prata</b> → na Argentina e no Uruguai soam como <b>"x"</b> ou "j" chiado: <span class="es">calle</span> = <i>cáxe</i>, <span class="es">yo</span> = <i>xô</i>. No resto, "j" suave ou "i".</li>
+    <li><b>Acento no imperfecto</b> → <span class="es">-ía</span> sempre tem acento: <span class="es">vivía</span> = <i>bi-bí-a</i> (três sílabas). E <span class="es">caminábamos</span> leva acento na sílaba <i>-ná-</i>.</li>
+    <li><b>CT</b> → os dois sons aparecem: <span class="es">recto</span> = <i>RRêk-to</i>, sem vogal extra ("réquito").</li>
+    <li><b>QUI / QUIER</b> → o "u" não soa: <span class="es">izquierda</span> = <i>is-kiêr-da</i>.</li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">Perdone, ¿sabe dónde está…?</td><td>Perdône, sábe dônde está…?</td></tr>
+  <tr><td class="es">Siga todo recto.</td><td>Síga tôdo RRêkto.</td></tr>
+  <tr><td class="es">Gire a la izquierda.</td><td>RRíre a la iskiêrda.</td></tr>
+  <tr><td class="es">Está a cinco minutos a pie.</td><td>Está a sínko minútos a piê.</td></tr>
+  <tr><td class="es">Me he perdido.</td><td>Meê perdído.</td></tr>
+  <tr><td class="es">Antes había un cine.</td><td>Ántes abía un síne.</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Imperfecto / Indefinido</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">ser</td><td>ser</td><td>irregular</td><td>era, eras, éramos / fue</td><td>êra, êramos</td></tr>
+  <tr><td class="es">ir</td><td>ir</td><td>irregular</td><td>iba, ibas, íbamos / fue</td><td>íba, íbamos</td></tr>
+  <tr><td class="es">ver</td><td>ver</td><td>irregular</td><td>veía, veías / vi, vio</td><td>beía</td></tr>
+  <tr><td class="es">haber (hay)</td><td>haver</td><td>irregular</td><td>había / hubo</td><td>abía, úbo</td></tr>
+  <tr><td class="es">seguir</td><td>seguir</td><td>irregular (e→i)</td><td>seguía / siguió · ¡siga!</td><td>seguía, sigiô</td></tr>
+  <tr><td class="es">perderse</td><td>perder-se</td><td>irregular (e→ie)</td><td>me perdía / me perdí</td><td>me perdí</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<!-- PÁGINA 14 -->
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">Perdone, ¿sabe dónde está la estación?</span><br><span class="p">🇧🇷 Perdône, sábe dônde está la estassión?</span><br><span class="pt">Com licença, sabe onde fica a estação?</span></div>
+    <div class="flash"><span class="es">Siga recto y gire a la derecha.</span><br><span class="p">🇧🇷 Síga RRêkto i RRíre a la derêtcha.</span><br><span class="pt">Siga reto e vire à direita.</span></div>
+    <div class="flash"><span class="es">Está enfrente del banco.</span><br><span class="p">🇧🇷 Está enfrênte del bánco.</span><br><span class="pt">Fica em frente ao banco.</span></div>
+    <div class="flash"><span class="es">Cuando era niño, vivía cerca del mar.</span><br><span class="p">🇧🇷 Cuándo êra nínho, bibía sêrca del már.</span><br><span class="pt">Quando eu era criança, morava perto do mar.</span></div>
+    <div class="flash"><span class="es">Antes había un cine; ahora hay un café.</span><br><span class="p">🇧🇷 Ántes abía un síne; aóra ai un café.</span><br><span class="pt">Antes havia um cinema; agora há um café.</span></div>
+    <div class="flash"><span class="es">Mientras caminaba, vi a un amigo.</span><br><span class="p">🇧🇷 Miêntras caminába, bi a un amígo.</span><br><span class="pt">Enquanto caminhava, vi um amigo.</span></div>
+    <div class="flash"><span class="es">Me he perdido. ¿Me puede ayudar?</span><br><span class="p">🇧🇷 Meê perdído. Me puêde ajudár?</span><br><span class="pt">Eu me perdi. Pode me ajudar?</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Vista panorâmica ao entardecer da praça Dorrego, em San Telmo, com luzes acesas e casais dançando tango, e entre eles Rosa e Tito idosos dançando, enquanto Camila os observa sorrindo de um banco. Estilo e paleta do livro, sem texto.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 8. 🇪🇸</b><br><i>Próxima unidad: <span class="es">Viajes y vacaciones</span> (Futuro)</i></p>
+  <span class="pno">14</span>
+</section>
