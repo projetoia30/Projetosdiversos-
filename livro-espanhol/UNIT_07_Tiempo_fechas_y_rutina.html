@@ -1,0 +1,312 @@
+<title>Unidad 7 · Tiempo, fechas y rutina</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+/* Nivel A2: faixa amarela */
+:root{--level:#d9a400}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5cc3a}}
+:root[data-theme="dark"]{--level:#f5cc3a}
+th{color:#2b2b2b}
+.clock{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.clock div{background:var(--sand);padding:8px 12px;border-radius:4px;font-size:14px}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 7 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<!-- PÁGINA 1 -->
+<section class="page opener">
+  <div class="eyebrow">🟡 Nivel A2 · Tiempo verbal: Presente (verbos reflexivos · frecuencia · la hora)</div>
+  <h1>UNIDAD 7</h1>
+  <p class="t2">TIEMPO, FECHAS Y RUTINA</p>
+  <p class="sub"><i>Tempo, datas e rotina</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial dividida ao meio na diagonal, mostrando o mesmo apartamento em Montevidéu em dois horários: à esquerda, 7h da manhã, com sol nascendo sobre a Rambla e Clara (29 anos, cabelo ruivo curto, roupa de ginástica) tomando mate apressada; à direita, 7h da noite, com o céu escuro e Lucas (31 anos, enfermeiro, uniforme azul-claro) saindo para o plantão com uma marmita. Um grande relógio de parede no centro une as duas metades. Paleta quente com vermelho e amarelo suaves, estilo flat com textura leve, sem texto, espaço livre no topo para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ decir la hora, los días, los meses y las fechas<br>✔ describir tu rutina diaria con <b>verbos reflexivos</b> (<span class="es">me levanto, me ducho</span>)<br>✔ expresar con qué frecuencia haces las cosas<br>✔ quedar con alguien y proponer un horario</p>
+  <span class="pno">1</span>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">Verbos reflexivos y expresiones de frecuencia</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm · o mesmo da Unidad 1</span>Relógio marcando "agora".</div>
+  <p>Para contar la rutina usamos muchos <b>verbos reflexivos</b>: la acción "vuelve" a la misma persona (<span class="es">yo me ducho</span> = eu tomo banho / me lavo). El pronombre (<span class="es">me, te, se, nos, os, se</span>) va <b>antes del verbo conjugado</b> o <b>pegado al infinitivo</b>. Con los <b>adverbios de frecuencia</b> decimos cada cuánto hacemos algo.</p>
+  <div class="box"><b>📐 FÓRMULAS</b><br><code>pronombre + verbo conjugado</code> → <span class="es">Me levanto a las siete.</span><br><code>verbo + infinitivo con pronombre</code> → <span class="es">Tengo que levantar<u>me</u> temprano.</span><br><code>Son las + hora · Es la una</code> → <span class="es">Son las ocho y media. · Es la una y cuarto.</span></div>
+  <div class="tw"><table>
+    <tr><th></th><th>LEVANTARSE</th><th>DESPERTARSE (e→ie)</th><th>ACOSTARSE (o→ue)</th><th>VESTIRSE (e→i)</th></tr>
+    <tr><td>yo</td><td>me levanto</td><td>me despierto</td><td>me acuesto</td><td>me visto</td></tr>
+    <tr><td>tú</td><td>te levantas</td><td>te despiertas</td><td>te acuestas</td><td>te vistes</td></tr>
+    <tr><td>él / ella / usted</td><td>se levanta</td><td>se despierta</td><td>se acuesta</td><td>se viste</td></tr>
+    <tr><td>nosotros/as</td><td>nos levantamos</td><td>nos despertamos</td><td>nos acostamos</td><td>nos vestimos</td></tr>
+    <tr><td>vosotros/as</td><td>os levantáis</td><td>os despertáis</td><td>os acostáis</td><td>os vestís</td></tr>
+    <tr><td>ellos / ustedes</td><td>se levantan</td><td>se despiertan</td><td>se acuestan</td><td>se visten</td></tr>
+  </table></div>
+  <h3>Frecuencia: de 100% a 0%</h3>
+  <p class="es">siempre • casi siempre • normalmente • a menudo • a veces • de vez en cuando • casi nunca • nunca</p>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>O pronome vem antes:</b> <span class="es">Me levanto</span>, e não ~~Levanto-me~~ (essa ordem só existe com infinitivo, gerúndio e imperativo: <span class="es">levantarme, levantándome, ¡levántate!</span>).<br>
+  • <b>"Nunca" no começo, sem "no":</b> <span class="es">Nunca desayuno.</span> Depois do verbo, precisa de "no": <span class="es">No desayuno nunca.</span><br>
+  • <b>Dias da semana e meses em minúscula:</b> <span class="es">el lunes, en marzo</span>. "Na segunda" = <span class="es">el lunes</span> (sem "en").<br>
+  • <b>Falso cognato:</b> <span class="es">la tarde</span> vai até umas 20h; <span class="es">la noche</span> começa depois do jantar. "Boa tarde" às 19h ainda é <span class="es">¡Buenas tardes!</span><br>
+  • <b>Falso cognato:</b> <span class="es">luego</span> = depois, mais tarde (não "logo, já").</div>
+  <span class="pno">2</span>
+</section>
+
+<!-- PÁGINAS 3–4 -->
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">Compañeros de piso, horarios opuestos</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Ilustração narrativa às 7h da manhã numa cozinha pequena em Montevidéu: Clara, de roupa de ginástica, prepara mate e torradas enquanto Lucas, ainda de uniforme azul de enfermeiro e com olheiras, entra pela porta largando as chaves. Na geladeira, um quadro branco com recados e um calendário de turnos. Pela janela, o sol nasce sobre a Rambla. Estilo de livro didático moderno, traços limpos, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span><strong>Clara</strong> y <strong>Lucas</strong> comparten un piso pequeño en Montevideo, pero casi nunca se ven. Clara es entrenadora personal: <strong>se despierta</strong> a las seis menos cuarto, <strong>se ducha</strong>, <strong>se viste</strong> y <strong>desayuna</strong> mate con tostadas mirando el mar. A las siete ya está en el gimnasio.</p>
+  <p><span class="ln">6</span>Lucas es enfermero y trabaja en el <strong>turno de noche</strong> de un hospital. <strong>Vuelve</strong> a casa justo cuando Clara <strong>sale</strong>. Los dos se dicen "¡buen día!" en la puerta, y él <strong>se acuesta</strong> mientras la ciudad <strong>se despierta</strong>. <strong>Normalmente</strong> <strong>duerme</strong> hasta las dos o las tres de la <strong>tarde</strong>.</p>
+  <p><span class="ln">11</span>Para comunicarse, usan una pizarra en la nevera: "<strong>El jueves</strong> viene el técnico a las diez", "Hay que comprar yerba", "<strong>¿Cenamos juntos el sábado?</strong>". <strong>A veces</strong> Lucas deja galletas para Clara; <strong>de vez en cuando</strong> ella le deja la comida preparada.</p>
+  <p><span class="ln">15</span>Su momento favorito de la <strong>semana</strong> es el <strong>domingo</strong>, el único día que los dos tienen libre. No <strong>se levantan</strong> temprano, dan un paseo por la Rambla y toman mate al atardecer. "¿Sabes qué?", dice Lucas, "eres la mejor compañera de piso que nunca veo".</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Pequena ilustração de um quadro branco preso na geladeira com recados desenhados como rabiscos, um ímã em forma de cuia de mate e um pacote de biscoitos ao lado. Mesmo estilo e paleta, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<!-- PÁGINA 5 -->
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="ph"><b>🖼️ Relojes y calendario</b><span class="sz">Meia página</span>Infográfico com 6 relógios analógicos marcando horários diferentes (7:00, 7:15, 7:30, 7:45, 13:00, 21:20), cada um com uma linha vazia embaixo para o aluno escrever a hora em espanhol, e ao lado uma folha de calendário mensal com os dias da semana em branco. Estilo flat, paleta do livro, fundo branco.</div>
+  <div class="kw es">
+    <p><span>RUTINA</span> despertarse • levantarse • ducharse • lavarse los dientes • vestirse • peinarse • desayunar • comer • cenar • acostarse • dormir • salir de casa • volver</p>
+    <p><span>DÍAS</span> lunes • martes • miércoles • jueves • viernes • sábado • domingo • fin de semana • entre semana</p>
+    <p><span>MESES</span> enero • febrero • marzo • abril • mayo • junio • julio • agosto • septiembre • octubre • noviembre • diciembre</p>
+    <p><span>EL TIEMPO</span> la mañana • el mediodía • la tarde • la noche • la madrugada • temprano • tarde • hoy • mañana • pasado mañana • la semana que viene</p>
+    <p><span>LA HORA</span> en punto • y cuarto • y media • menos cuarto • ¿qué hora es? • ¿a qué hora…?</p>
+  </div>
+  <h3>¿Qué hora es?</h3>
+  <div class="clock es">
+    <div>7:00 → Son las siete en punto.</div><div>7:15 → Son las siete y cuarto.</div><div>7:30 → Son las siete y media.</div><div>7:45 → Son las ocho menos cuarto.</div><div>13:00 → Es la una.</div><div>21:20 → Son las nueve y veinte de la noche.</div>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<!-- PÁGINA 6 -->
+<section class="page">
+  <h2>💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Duas pessoas conversando num ponto de ônibus de manhã cedo, uma bocejando e a outra com café na mão, balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿A qué hora te levantas normalmente?</p>
+  <p class="q es">2. ¿Qué día de la semana prefieres? ¿Por qué?</p>
+  <p class="q es">3. ¿Cuándo es tu cumpleaños?</p>
+  <p class="q es">4. ¿Qué haces siempre por la mañana? ¿Y qué no haces nunca?</p>
+  <p class="q es">5. ¿Tu rutina entre semana es muy diferente de tu fin de semana? Explica.</p>
+  <p class="q es">6. Si pudieras cambiar algo de tu rutina, ¿qué cambiarías? ¿Eres más de mañana o de noche?</p>
+  </div>
+  <h2 style="margin-top:26px">⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 ¿Qué hora es?</div><div class="card">📌 ¿A qué hora quedamos?</div>
+    <div class="card">📌 ¿Te viene bien el lunes?</div><div class="card">📌 Llego tarde.</div>
+    <div class="card">📌 No me da tiempo.</div><div class="card">📌 Soy muy madrugador/a.</div>
+    <div class="card">📌 Hoy estoy liado/a.</div><div class="card">📌 ¡Hasta luego!</div>
+  </div>
+  <span class="pno">6</span>
+</section>
+
+<!-- PÁGINA 7 -->
+<section class="page">
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm · reaproveitável</span></div>
+  <p class="es" style="font-size:17px">me‿levanto • se‿acuesta • a‿las‿ocho • las‿ocho‿y‿media • son‿las‿once • de‿vez‿en‿cuando • hasta‿luego</p>
+  <p>Escucha cómo el <b>s</b> final de <span class="es">las</span> se une a la vocal siguiente: <span class="es">las ocho</span> suena <b>"la-só-tcho"</b> y <span class="es">son las once</span> como <b>"son-la-són-se"</b>. Y <span class="es">se acuesta</span> suele sonar <b>"sea-cuês-ta"</b>, casi en dos sílabas.</p>
+  <div class="cols" style="margin-top:20px">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">Un día normal en mi vida (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <ul class="steps"><li>a qué hora te despiertas y te levantas</li><li>4 verbos reflexivos</li><li>3 horas exactas</li><li>2 expresiones de frecuencia</li><li>tu momento favorito del día</li></ul>
+      <div class="box"><i class="es">Ejemplo: Entre semana me despierto a las seis y media, pero nunca me levanto enseguida. Primero miro el móvil y luego…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Notas en la nevera</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <p>Escribe <b>5–8 notas cortas</b> para tu compañero/a de piso o tu familia, como Clara y Lucas.</p>
+      <ul class="steps"><li>un día y una hora</li><li>una fecha (<span class="es">el 15 de marzo</span>)</li><li>una propuesta para quedar</li><li>una tarea de la casa</li></ul>
+      <div class="box"><i class="es">Ejemplo: El viernes llego tarde, a las once. · ¿Cenamos juntos el domingo a las nueve? · El 3 de mayo es el cumpleaños de…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<!-- PÁGINA 8 -->
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">Quedar con un amigo</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Tela dividida em duas: à esquerda uma pessoa (A) de moletom vermelho no sofá falando ao celular e olhando uma agenda; à direita uma pessoa (B) de jaqueta amarela no metrô falando ao celular. Entre os dois, um pequeno calendário com um dia circulado. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="a">🔴 A: ¡Hola! ¿Quedamos esta semana para tomar algo?</p>
+    <p class="b">🟡 B: ¡Vale! ¿Te viene bien el miércoles?</p>
+    <p class="a">🔴 A: El miércoles no puedo, los miércoles siempre tengo clase de yoga. ¿Y el jueves?</p>
+    <p class="b">🟡 B: El jueves salgo de trabajar a las siete. ¿A las ocho?</p>
+    <p class="a">🔴 A: A las ocho no me da tiempo… ¿a las ocho y media?</p>
+    <p class="b">🟡 B: Perfecto. ¿Dónde quedamos?</p>
+    <p class="a">🔴 A: En el café de la plaza, el de siempre.</p>
+    <p class="b">🟡 B: ¡Genial! Hasta el jueves, entonces.</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles. Después, usad vuestras agendas reales.</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li>Clara <span class="hl">se despierta</span> a las seis menos cuarto.</li>
+    <li><span class="hl">Se ducha</span>, <span class="hl">se viste</span> y desayuna mate.</li>
+    <li>Él <span class="hl">se acuesta</span> mientras la ciudad <span class="hl">se despierta</span>.</li>
+    <li><span class="hl">Normalmente</span> duerme hasta las dos o las tres.</li>
+    <li><span class="hl">Casi nunca</span> se ven.</li>
+    <li>Los domingos no <span class="hl">se levantan</span> temprano.</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br>Los verbos reflexivos describen acciones que la persona hace <b>sobre sí misma</b> (despertarse, ducharse, vestirse): por eso son el "esqueleto" de cualquier rutina. El <b>presente</b> expresa hábitos, y los <b>adverbios de frecuencia</b> dicen <b>cada cuánto</b> se repiten. En la frase 5, <span class="es">se ven</span> es recíproco: Clara ve a Lucas y Lucas ve a Clara.</div>
+  <span class="pno">8</span>
+</section>
+
+<!-- PÁGINA 9 -->
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo · reaproveitável</span></div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica la conversación para quedar con otra persona.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto describiendo un día normal en tu vida.</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<!-- PÁGINAS 10–11 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 7</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm · reaproveitável</span></div>
+  <h3>Historia: <i>Colegas de apartamento, horários opostos</i></h3>
+  <p>Clara e Lucas dividem um apartamento pequeno em Montevidéu, mas quase nunca se veem. Clara é personal trainer: acorda às quinze para as seis, toma banho, se veste e toma café da manhã com mate e torradas olhando o mar. Às sete já está na academia.</p>
+  <p>Lucas é enfermeiro e trabalha no turno da noite de um hospital. Ele volta para casa bem na hora em que Clara sai. Os dois se dizem "bom dia!" na porta, e ele vai deitar enquanto a cidade acorda. Normalmente dorme até as duas ou três da tarde.</p>
+  <p>Para se comunicar, eles usam um quadro na geladeira: "Na quinta o técnico vem às dez", "Precisa comprar erva-mate", "Jantamos juntos no sábado?". Às vezes Lucas deixa biscoitos para Clara; de vez em quando ela deixa a comida pronta para ele.</p>
+  <p>O momento favorito da semana deles é o domingo, o único dia em que os dois estão de folga. Não acordam cedo, passeiam pela Rambla e tomam mate ao entardecer. "Sabe de uma coisa?", diz Lucas, "você é a melhor colega de apartamento que eu nunca vejo".</p>
+  <h3>Preguntas</h3>
+  <ol><li>A que horas você costuma se levantar?</li><li>Que dia da semana você prefere? Por quê?</li><li>Quando é o seu aniversário?</li><li>O que você sempre faz de manhã? E o que nunca faz?</li><li>Sua rotina durante a semana é muito diferente do fim de semana? Explique.</li><li>Se pudesse mudar algo na sua rotina, o que mudaria? Você é mais matutino ou noturno?</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">¿Qué hora es?</td><td>Que horas são?</td></tr>
+  <tr><td class="es">¿A qué hora quedamos?</td><td>A que horas a gente se encontra?</td></tr>
+  <tr><td class="es">¿Te viene bien el lunes?</td><td>Segunda fica bom para você?</td></tr>
+  <tr><td class="es">Llego tarde.</td><td>Estou atrasado(a). / Vou chegar tarde.</td></tr>
+  <tr><td class="es">No me da tiempo.</td><td>Não dá tempo.</td></tr>
+  <tr><td class="es">Soy muy madrugador/a.</td><td>Sou muito madrugador(a).</td></tr>
+  <tr><td class="es">Hoy estoy liado/a.</td><td>Hoje estou enrolado(a) / ocupado(a).</td></tr>
+  <tr><td class="es">¡Hasta luego!</td><td>Até mais!</td></tr></table></div>
+  <h3>Reto oral</h3><p>Descreva um dia normal da sua vida: a que horas você acorda e se levanta, quatro verbos reflexivos, três horários exatos, duas expressões de frequência e seu momento favorito do dia.</p>
+  <span class="pno">10–11</span>
+</section>
+
+<!-- PÁGINAS 12–13 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 7</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">levantarse</span> — levantar-se<br>🇧🇷 <i>lebantárse</i></div>
+    <div class="card"><span class="es">ducharse</span> — tomar banho<br>🇧🇷 <i>dutchárse</i></div>
+    <div class="card"><span class="es">acostarse</span> — deitar-se<br>🇧🇷 <i>acostárse</i></div>
+    <div class="card"><span class="es">miércoles</span> — quarta-feira<br>🇧🇷 <i>miêrcoles</i></div>
+    <div class="card"><span class="es">jueves</span> — quinta-feira<br>🇧🇷 <i>RRuêbes</i></div>
+    <div class="card"><span class="es">sábado</span> — sábado<br>🇧🇷 <i>sábado</i> (sem "u" final)</div>
+    <div class="card"><span class="es">julio</span> — julho<br>🇧🇷 <i>RRúlio</i></div>
+    <div class="card"><span class="es">madrugada</span> — madrugada<br>🇧🇷 <i>madrugáda</i></div>
+    <div class="card"><span class="es">mediodía</span> — meio-dia<br>🇧🇷 <i>mediodía</i></div>
+    <div class="card"><span class="es">temprano</span> — cedo<br>🇧🇷 <i>tempráno</i></div>
+    <div class="card"><span class="es">cumpleaños</span> — aniversário<br>🇧🇷 <i>cumpleánhos</i></div>
+    <div class="card"><span class="es">luego</span> — depois<br>🇧🇷 <i>luêgo</i></div>
+  </div>
+  <h3>🔤 Sonidos de esta unidad</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Infográfico com duas bocas de perfil: uma pronunciando "B/V" no início da palavra (lábios fechados, explosão de ar) e outra entre vogais (lábios quase fechados, ar passando suavemente), com setas mostrando a diferença. Estilo limpo, sem texto.</div>
+  <ul>
+    <li><b>B e V entre vogais</b> → os lábios <b>quase se tocam</b>, e o som fica suave: <span class="es">jueves</span> = <i>RRuê-βes</i>, <span class="es">levanto</span> = <i>le-βán-to</i>. Não é o "v" do português, com os dentes no lábio.</li>
+    <li><b>D entre vogais</b> → fica suave, quase como o "th" de "the" em inglês: <span class="es">sábado</span>, <span class="es">madrugada</span>.</li>
+    <li><b>O / E finais átonos</b> → não viram "u" e "i": <span class="es">sábado</span> = <i>sá-ba-do</i>, <span class="es">jueves</span> = <i>RRuê-bes</i>.</li>
+    <li><b>Horas com "las"</b> → o s liga com a vogal: <span class="es">a las ocho</span> = <i>a-la-só-tcho</i>.</li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">¿Qué hora es?</td><td>Kê óra és?</td></tr>
+  <tr><td class="es">Son las siete y media.</td><td>Son las siête i média.</td></tr>
+  <tr><td class="es">¿A qué hora quedamos?</td><td>A kê óra kedámos?</td></tr>
+  <tr><td class="es">¿Te viene bien el lunes?</td><td>Te biêne biên el lúnes?</td></tr>
+  <tr><td class="es">No me da tiempo.</td><td>No me da tiêmpo.</td></tr>
+  <tr><td class="es">Hoy estoy liado.</td><td>Ôi estói liádo.</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Presente</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">levantarse</td><td>levantar-se</td><td>regular, reflexivo</td><td>me levanto, se levanta</td><td>me lebánto</td></tr>
+  <tr><td class="es">despertarse</td><td>acordar</td><td>irregular (e→ie)</td><td>me despierto, nos despertamos</td><td>me despiêrto</td></tr>
+  <tr><td class="es">acostarse</td><td>deitar-se</td><td>irregular (o→ue)</td><td>me acuesto, nos acostamos</td><td>me acuêsto</td></tr>
+  <tr><td class="es">vestirse</td><td>vestir-se</td><td>irregular (e→i)</td><td>me visto, nos vestimos</td><td>me bísto</td></tr>
+  <tr><td class="es">volver</td><td>voltar</td><td>irregular (o→ue)</td><td>vuelvo, vuelves, volvemos</td><td>buêlbo</td></tr>
+  <tr><td class="es">quedar</td><td>combinar / encontrar-se</td><td>regular</td><td>quedo, quedamos</td><td>kêdo, kedámos</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<!-- PÁGINA 14 -->
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">Me levanto a las siete y cuarto.</span><br><span class="p">🇧🇷 Me lebánto a las siête i cuárto.</span><br><span class="pt">Eu me levanto às sete e quinze.</span></div>
+    <div class="flash"><span class="es">Los domingos nunca me levanto temprano.</span><br><span class="p">🇧🇷 Los domíngos núnca me lebánto tempráno.</span><br><span class="pt">Aos domingos nunca acordo cedo.</span></div>
+    <div class="flash"><span class="es">¿Qué hora es? — Es la una y media.</span><br><span class="p">🇧🇷 Kê óra és? — És la úna i média.</span><br><span class="pt">Que horas são? — É uma e meia.</span></div>
+    <div class="flash"><span class="es">Mi cumpleaños es el 12 de octubre.</span><br><span class="p">🇧🇷 Mi cumpleánhos és el dôse de octúbre.</span><br><span class="pt">Meu aniversário é dia 12 de outubro.</span></div>
+    <div class="flash"><span class="es">¿Te viene bien el jueves a las ocho?</span><br><span class="p">🇧🇷 Te biêne biên el RRuêbes a la só-tcho?</span><br><span class="pt">Quinta às oito fica bom para você?</span></div>
+    <div class="flash"><span class="es">De vez en cuando voy al gimnasio.</span><br><span class="p">🇧🇷 De bês en cuándo bôi al RRimnásio.</span><br><span class="pt">De vez em quando vou à academia.</span></div>
+    <div class="flash"><span class="es">Lo siento, hoy no me da tiempo.</span><br><span class="p">🇧🇷 Lo siênto, ôi no me da tiêmpo.</span><br><span class="pt">Desculpe, hoje não vai dar tempo.</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Clara e Lucas sentados de costas num banco da Rambla de Montevidéu num domingo ao pôr do sol, dividindo um mate, com o rio enorme e dourado à frente. Estilo e paleta do livro, sem texto.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 7. 🇪🇸</b><br><i>Próxima unidad: <span class="es">Ciudad, lugares y direcciones</span> (Pasado)</i></p>
+  <span class="pno">14</span>
+</section>
