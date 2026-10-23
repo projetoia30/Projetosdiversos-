@@ -1,0 +1,309 @@
+<title>Unidad 10 · Naturaleza y animales</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+/* Nivel A2: faixa amarela */
+:root{--level:#d9a400}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5cc3a}}
+:root[data-theme="dark"]{--level:#f5cc3a}
+th{color:#2b2b2b}
+.clock{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.clock div{background:var(--sand);padding:8px 12px;border-radius:4px;font-size:14px}
+/* Nivel B1: faixa laranja */
+:root{--level:#e07a12}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5a04a}}
+:root[data-theme="dark"]{--level:#f5a04a}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 10 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<!-- PÁGINA 1 -->
+<section class="page opener">
+  <div class="eyebrow">🟠 Nivel B1 · Tiempo verbal: Presente (indicativo × subjuntivo para opinar y desear)</div>
+  <h1>UNIDAD 10</h1>
+  <p class="t2">NATURALEZA Y ANIMALES</p>
+  <p class="sub"><i>Natureza e animais</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial de uma praia selvagem em Tortuguero, na costa caribenha da Costa Rica, ao anoitecer: floresta tropical densa chegando até a areia escura, uma tartaruga-verde gigante saindo do mar, araras e um tucano nas árvores, uma preguiça pendurada num galho. Em primeiro plano, Mateo (38 anos, biólogo costarriquenho, pele morena, camiseta verde e lanterna vermelha na testa) e dois voluntários observam à distância. Paleta quente com toques de verde, vermelho e amarelo, estilo flat com textura leve, sem texto, espaço livre no topo para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ hablar de paisajes, clima y animales<br>✔ dar tu opinión sobre el medio ambiente<br>✔ expresar deseos, necesidades y consejos: <span class="es">Es importante que…, Quiero que…</span><br>✔ distinguir cuándo usar <b>indicativo</b> y cuándo <b>subjuntivo</b> en presente</p>
+  <span class="pno">1</span>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">El presente de subjuntivo: deseos, consejos y valoraciones</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm · o mesmo da Unidad 1</span>Relógio marcando "agora".</div>
+  <p>En la Unidad 9 usaste el subjuntivo con <span class="es">cuando</span>. Ahora lo usarás para <b>influir</b> en otros y <b>valorar</b> la realidad. La regla general: cuando hay <b>dos sujetos diferentes</b> y la primera parte expresa un <b>deseo, una necesidad, un consejo o una valoración</b>, la segunda parte va en subjuntivo.</p>
+  <div class="box"><b>📐 FÓRMULAS</b><br><code>Quiero / Espero / Necesito + que + subjuntivo</code> → <span class="es">Quiero que mis hijos <u>vean</u> ballenas.</span><br><code>Es importante / necesario / triste + que + subjuntivo</code> → <span class="es">Es necesario que <u>protejamos</u> los bosques.</span><br><code>No creo / No pienso + que + subjuntivo</code> → <span class="es">No creo que <u>sea</u> demasiado tarde.</span><br><b>Pero:</b> <span class="es">Creo que <u>es</u> importante.</span> (opinión afirmativa → indicativo)</div>
+  <div class="tw"><table>
+    <tr><th></th><th>PROTEGER</th><th>CUIDAR</th><th>SER</th><th>HACER</th><th>HABER</th><th>SABER</th></tr>
+    <tr><td>yo</td><td>proteja</td><td>cuide</td><td>sea</td><td>haga</td><td>—</td><td>sepa</td></tr>
+    <tr><td>tú</td><td>protejas</td><td>cuides</td><td>seas</td><td>hagas</td><td>—</td><td>sepas</td></tr>
+    <tr><td>él / ella / usted</td><td>proteja</td><td>cuide</td><td>sea</td><td>haga</td><td><b>haya</b></td><td>sepa</td></tr>
+    <tr><td>nosotros/as</td><td>protejamos</td><td>cuidemos</td><td>seamos</td><td>hagamos</td><td>—</td><td>sepamos</td></tr>
+    <tr><td>ellos / ustedes</td><td>protejan</td><td>cuiden</td><td>sean</td><td>hagan</td><td>—</td><td>sepan</td></tr>
+  </table></div>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>Boa notícia:</b> o português usa o subjuntivo nos mesmos casos: "Quero que você <u>veja</u>" = <span class="es">Quiero que <u>veas</u></span>. Confie no seu instinto!<br>
+  • <b>Mesmo sujeito → infinitivo:</b> <span class="es">Quiero <u>ver</u> ballenas</span> (eu quero, eu vejo), e não ~~Quiero que yo vea~~.<br>
+  • <b>Falso cognato:</b> <span class="es">el oso</span> = urso; "osso" é <span class="es">el hueso</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">el rato</span> (momento) × <span class="es">el ratón</span> (rato) × <span class="es">la rata</span> (ratazana).<br>
+  • <b>Falso cognato:</b> <span class="es">la cachorra / el cachorro</span> = filhote de qualquer mamífero (de leão, de urso…), e não só de cachorro. O cachorro adulto é <span class="es">el perro</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">el tiempo</span> = tempo <i>e</i> clima: <span class="es">¿Qué tiempo hace?</span> = Como está o tempo?</div>
+  <span class="pno">2</span>
+</section>
+
+<!-- PÁGINAS 3–4 -->
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">Las noches de las tortugas</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Ilustração narrativa noturna, iluminada só por luz vermelha suave e pela lua: na areia de Tortuguero, uma grande tartaruga-verde cava um ninho. Mateo, de joelhos a alguns metros, anota dados num caderno à prova d'água. Atrás dele, Lucía (22 anos, voluntária espanhola, cabelo loiro trançado) e Kenji (25 anos, voluntário japonês, boné) observam emocionados, sem celulares. Floresta escura ao fundo, vaga-lumes. Estilo de livro didático moderno, traços limpos, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span><strong>Mateo</strong> es biólogo y trabaja en el Parque Nacional Tortuguero, en la costa caribeña de Costa Rica. De julio a octubre, miles de <strong>tortugas</strong> verdes salen del <strong>mar</strong> por la noche para poner sus <strong>huevos</strong> en la <strong>playa</strong>. Su trabajo es contarlas, protegerlas y enseñar a los <strong>voluntarios</strong> que llegan de todo el mundo.</p>
+  <p><span class="ln">6</span>Cada noche, antes de salir, Mateo repite las mismas reglas: "<strong>Es importante que</strong> no <strong>hagan</strong> ruido. <strong>Necesito que</strong> <strong>apaguen</strong> los móviles y que solo <strong>usen</strong> luz roja. Y, por favor, no <strong>quiero que</strong> nadie <strong>toque</strong> a los animales". Los voluntarios asienten, nerviosos.</p>
+  <p><span class="ln">11</span>Esta noche hay luna llena y el <strong>cielo</strong> está despejado. Después de dos horas de espera, aparece una tortuga enorme. Lucía, una estudiante de Valencia, no puede creerlo: "¡Es como un dinosaurio!". Mateo sonríe. "Puede tener ochenta años. Y vuelve a la misma playa donde nació".</p>
+  <p><span class="ln">15</span>Mientras la tortuga cava el <strong>nido</strong>, Mateo habla en voz baja. "Cada año hay más <strong>plástico</strong> en el mar y la temperatura de la arena sube. <strong>No creo que sea</strong> demasiado tarde, pero <strong>es urgente que</strong> todos <strong>cambiemos</strong> algo". Kenji pregunta qué pueden hacer. "Para empezar", dice Mateo, "<strong>espero que</strong> <strong>cuenten</strong> esta noche a todo el mundo".</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Pequena ilustração de filhotes de tartaruga correndo pela areia em direção ao mar ao amanhecer, com pegadas pequenas atrás. Mesmo estilo e paleta, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<!-- PÁGINA 5 -->
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="ph"><b>🖼️ Paisajes y animales</b><span class="sz">Meia página</span>Ilustração em painel com seis mini-paisagens da América Latina e Espanha (selva amazônica, deserto do Atacama, Andes com condor, praia caribenha com tartaruga, Pampa com cavalos, bosque espanhol com urso-pardo), cada uma com etiquetas vazias para o nome do paisagem e de um animal. Estilo flat, paleta do livro, fundo branco.</div>
+  <div class="kw es">
+    <p><span>PAISAJES</span> naturaleza • paisaje • montaña • volcán • río • lago • mar • playa • isla • bosque • selva • desierto • valle • cascada • costa</p>
+    <p><span>ANIMALES</span> perro • gato • caballo • vaca • pájaro • águila • loro • tortuga • ballena • delfín • tiburón • mono • oso • lobo • serpiente • mariposa • abeja • insecto</p>
+    <p><span>EL TIEMPO</span> hace sol / calor / frío / viento • llueve • nieva • está nublado • despejado • tormenta • húmedo • seco • temperatura</p>
+    <p><span>MEDIO AMBIENTE</span> proteger • cuidar • reciclar • contaminar • desperdiciar • basura • plástico • especie en peligro de extinción • cambio climático • energía renovable</p>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<!-- PÁGINA 6 -->
+<section class="page">
+  <h2>💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Duas pessoas conversando numa trilha de floresta, uma apontando para um pássaro numa árvore, balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿Tienes mascota? ¿Cómo es?</p>
+  <p class="q es">2. ¿Prefieres la montaña o la playa? ¿Por qué?</p>
+  <p class="q es">3. ¿Qué tiempo hace hoy en tu ciudad?</p>
+  <p class="q es">4. ¿Cuál es el paisaje más bonito de tu país?</p>
+  <p class="q es">5. ¿Qué haces tú para proteger el medio ambiente? ¿Qué quieres que haga el gobierno?</p>
+  <p class="q es">6. ¿Crees que es justo que haya zoológicos? ¿Es necesario que cambiemos nuestra relación con los animales? Argumenta.</p>
+  </div>
+  <h2 style="margin-top:26px">⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 Creo que… / No creo que…</div><div class="card">📌 Es importante que…</div>
+    <div class="card">📌 Ojalá que…</div><div class="card">📌 Me preocupa que…</div>
+    <div class="card">📌 Hace un tiempo estupendo.</div><div class="card">📌 Hace un frío que pela.</div>
+    <div class="card">📌 Está lloviendo a cántaros.</div><div class="card">📌 Estoy totalmente de acuerdo.</div>
+  </div>
+  <span class="pno">6</span>
+</section>
+
+<!-- PÁGINA 7 -->
+<section class="page">
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm · reaproveitável</span></div>
+  <p class="es" style="font-size:17px">es‿importante‿que • no‿creo‿que‿sea • ojalá‿haya • hace‿un‿frío • está‿en‿peligro • medio‿ambiente</p>
+  <p>Repare como <span class="es">es importante que</span> vira <b>"e-sim-por-tán-te-ke"</b>: o <b>s</b> passa para a sílaba seguinte. E em <span class="es">medio ambiente</span>, as vogais se juntam: <b>"mê-dioam-biên-te"</b>. Na conversa, os nativos usam muito <span class="es">ojalá</span>, que vem do árabe e significa "tomara".</p>
+  <div class="cols" style="margin-top:20px">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">Un lugar natural que me encanta (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <ul class="steps"><li>dónde está y cómo es</li><li>qué animales y plantas hay</li><li>qué tiempo hace allí</li><li>qué problema tiene</li><li>2 frases con <span class="es">es importante que / espero que</span></li></ul>
+      <div class="box"><i class="es">Ejemplo: Me encanta la Chapada Diamantina, en Bahía. Hay cascadas enormes, ríos y muchas aves. Pero cada año hay más turistas y basura. Es importante que…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Normas para un parque natural</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <p>Escribe <b>5–8 normas</b> para los visitantes de un parque natural, como Mateo con sus voluntarios.</p>
+      <ul class="steps"><li>3 frases con <span class="es">Es importante / necesario que…</span></li><li>2 con <span class="es">No queremos que…</span></li><li>1 con <span class="es">Esperamos que…</span></li><li>vocabulario de animales y paisaje</li></ul>
+      <div class="box"><i class="es">Ejemplo: Bienvenidos al parque. Es necesario que caminen solo por los senderos. No queremos que den comida a los monos…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<!-- PÁGINA 8 -->
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">¿Adoptamos un perro?</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Sala de um apartamento pequeno: uma pessoa (A) de camiseta vermelha mostra no tablet fotos de um cachorro de abrigo, entusiasmada; a parceira (B) de suéter amarelo, sentada no sofá, faz uma careta pensativa, com braços cruzados. Um gato dorme no tapete, indiferente. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="a">🔴 A: Mira este perro del refugio. ¡Se llama Coco! ¿Lo adoptamos?</p>
+    <p class="b">🟡 B: Es precioso, pero no creo que sea buena idea. El piso es muy pequeño.</p>
+    <p class="a">🔴 A: Es un perro pequeño. Y es importante que adoptemos en vez de comprar.</p>
+    <p class="b">🟡 B: Estoy de acuerdo con eso. Pero un perro necesita que alguien lo saque tres veces al día.</p>
+    <p class="a">🔴 A: Yo lo saco por la mañana y por la noche. ¿Tú podrías al mediodía?</p>
+    <p class="b">🟡 B: Mmm… Me preocupa que el gato no lo acepte.</p>
+    <p class="a">🔴 A: El refugio dice que Coco se lleva bien con gatos. ¡Ojalá digas que sí!</p>
+    <p class="b">🟡 B: Vale, vamos a conocerlo el sábado. Pero no te prometo nada.</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles. Después, discutid otro tema: ¿vivir en el campo o en la ciudad?</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li><span class="hl">Es importante que</span> no <span class="hl">hagan</span> ruido.</li>
+    <li><span class="hl">Necesito que</span> <span class="hl">apaguen</span> los móviles.</li>
+    <li>No <span class="hl">quiero que</span> nadie <span class="hl">toque</span> a los animales.</li>
+    <li><span class="hl">No creo que sea</span> demasiado tarde.</li>
+    <li><span class="hl">Es urgente que</span> todos <span class="hl">cambiemos</span> algo.</li>
+    <li>Y <span class="hl">vuelve</span> a la misma playa donde <span class="hl">nació</span>. (indicativo: un hecho)</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br>En las frases 1–3 Mateo quiere <b>influir</b> en lo que hacen otras personas → subjuntivo. En la 4 <b>duda</b> (opinión negativa) → subjuntivo. En la 5 hace una <b>valoración</b> (<span class="es">es urgente</span>) → subjuntivo. En la 6 describe un <b>hecho real</b> que conoce → indicativo. Resumen: <b>hechos → indicativo</b>; <b>deseos, consejos, dudas y valoraciones sobre otros → subjuntivo</b>.</div>
+  <span class="pno">8</span>
+</section>
+
+<!-- PÁGINA 9 -->
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo · reaproveitável</span></div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica la discusión sobre el perro con otra persona.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto describiendo un lugar natural que te encanta.</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<!-- PÁGINAS 10–11 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 10</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm · reaproveitável</span></div>
+  <h3>Historia: <i>As noites das tartarugas</i></h3>
+  <p>Mateo é biólogo e trabalha no Parque Nacional Tortuguero, na costa caribenha da Costa Rica. De julho a outubro, milhares de tartarugas-verdes saem do mar à noite para pôr seus ovos na praia. O trabalho dele é contá-las, protegê-las e ensinar os voluntários que chegam do mundo todo.</p>
+  <p>Toda noite, antes de sair, Mateo repete as mesmas regras: "É importante que vocês não façam barulho. Preciso que desliguem os celulares e que usem só luz vermelha. E, por favor, não quero que ninguém toque nos animais". Os voluntários concordam, nervosos.</p>
+  <p>Esta noite tem lua cheia e o céu está limpo. Depois de duas horas de espera, aparece uma tartaruga enorme. Lucía, uma estudante de Valência, não consegue acreditar: "Parece um dinossauro!". Mateo sorri. "Ela pode ter oitenta anos. E volta à mesma praia onde nasceu".</p>
+  <p>Enquanto a tartaruga cava o ninho, Mateo fala baixinho. "A cada ano há mais plástico no mar, e a temperatura da areia sobe. Não acho que seja tarde demais, mas é urgente que todos mudemos alguma coisa". Kenji pergunta o que eles podem fazer. "Para começar", diz Mateo, "espero que vocês contem esta noite para todo mundo".</p>
+  <h3>Preguntas</h3>
+  <ol><li>Você tem animal de estimação? Como ele é?</li><li>Você prefere montanha ou praia? Por quê?</li><li>Como está o tempo hoje na sua cidade?</li><li>Qual é a paisagem mais bonita do seu país?</li><li>O que você faz para proteger o meio ambiente? O que você quer que o governo faça?</li><li>Você acha justo que existam zoológicos? É necessário que mudemos nossa relação com os animais? Argumente.</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">Creo que… / No creo que…</td><td>Acho que… / Não acho que…</td></tr>
+  <tr><td class="es">Es importante que…</td><td>É importante que…</td></tr>
+  <tr><td class="es">Ojalá que…</td><td>Tomara que…</td></tr>
+  <tr><td class="es">Me preocupa que…</td><td>Me preocupa que…</td></tr>
+  <tr><td class="es">Hace un tiempo estupendo.</td><td>O tempo está ótimo.</td></tr>
+  <tr><td class="es">Hace un frío que pela.</td><td>Está um frio de rachar.</td></tr>
+  <tr><td class="es">Está lloviendo a cántaros.</td><td>Está chovendo canivete.</td></tr>
+  <tr><td class="es">Estoy totalmente de acuerdo.</td><td>Concordo totalmente.</td></tr></table></div>
+  <h3>Reto oral</h3><p>Descreva um lugar natural que você adora: onde fica e como é, que animais e plantas há, como é o clima, que problema ele enfrenta e duas frases com "é importante que / espero que".</p>
+  <span class="pno">10–11</span>
+</section>
+
+<!-- PÁGINAS 12–13 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 10</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">naturaleza</span> — natureza<br>🇧🇷 <i>naturalêssa / naturalêθa</i></div>
+    <div class="card"><span class="es">paisaje</span> — paisagem<br>🇧🇷 <i>paissáRRe</i></div>
+    <div class="card"><span class="es">selva</span> — selva<br>🇧🇷 <i>sêlba</i> (l não vira "u")</div>
+    <div class="card"><span class="es">bosque</span> — bosque, floresta<br>🇧🇷 <i>bôske</i></div>
+    <div class="card"><span class="es">tortuga</span> — tartaruga<br>🇧🇷 <i>tortúga</i></div>
+    <div class="card"><span class="es">ballena</span> — baleia<br>🇧🇷 <i>bajêna</i></div>
+    <div class="card"><span class="es">pájaro</span> — pássaro<br>🇧🇷 <i>páRRaro</i></div>
+    <div class="card"><span class="es">oso</span> — urso<br>🇧🇷 <i>ôsso</i></div>
+    <div class="card"><span class="es">abeja</span> — abelha<br>🇧🇷 <i>abêRRa</i></div>
+    <div class="card"><span class="es">lluvia</span> — chuva<br>🇧🇷 <i>júbia</i></div>
+    <div class="card"><span class="es">proteger</span> — proteger<br>🇧🇷 <i>proteRRér</i></div>
+    <div class="card"><span class="es">ojalá</span> — tomara<br>🇧🇷 <i>oRRalá</i></div>
+  </div>
+  <h3>🔤 Sonidos de esta unidad</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Infográfico com três palavras parecidas e seus significados ilustrados: "oso" (urso), "hueso" (osso) e "ojo" (olho), cada uma com uma boca de perfil mostrando a diferença entre o "s" surdo, o ditongo "ue" e o "j" de garganta. Estilo limpo, sem texto além das palavras.</div>
+  <ul>
+    <li><b>S entre vogais é sempre surdo</b> → <span class="es">oso</span> = <i>ô-sso</i> (urso). Se você disser "ôzo", ninguém entende!</li>
+    <li><b>Ditongo UE</b> → <span class="es">hueso</span> = <i>uê-sso</i> (osso), <span class="es">huevo</span> = <i>uê-bo</i> (ovo).</li>
+    <li><b>Subjuntivo com G → J</b> → <span class="es">proteger</span> → <span class="es">proteja</span> (<i>protê-RRa</i>): a letra muda para manter o som.</li>
+    <li><b>Subjuntivo com G → GU</b> → <span class="es">apagar</span> → <span class="es">apaguen</span> (<i>apá-guen</i>), e <span class="es">llegar</span> → <span class="es">llegue</span>.</li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">Es importante que…</td><td>Esimportánte ke…</td></tr>
+  <tr><td class="es">No creo que sea así.</td><td>No crêo ke sêa assí.</td></tr>
+  <tr><td class="es">Ojalá que no llueva.</td><td>ORRalá ke no juêba.</td></tr>
+  <tr><td class="es">Me preocupa que…</td><td>Me preocúpa ke…</td></tr>
+  <tr><td class="es">Hace un frío que pela.</td><td>Ásse un frío ke pêla.</td></tr>
+  <tr><td class="es">Está lloviendo a cántaros.</td><td>Está jobiêndo a cántaros.</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Presente · Subjuntivo</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">proteger</td><td>proteger</td><td>regular (g→j)</td><td>protejo · proteja</td><td>protêRRo · protêRRa</td></tr>
+  <tr><td class="es">llover</td><td>chover</td><td>irregular (o→ue)</td><td>llueve · llueva</td><td>juêbe · juêba</td></tr>
+  <tr><td class="es">nevar</td><td>nevar</td><td>irregular (e→ie)</td><td>nieva · nieve</td><td>niêba · niêbe</td></tr>
+  <tr><td class="es">ser</td><td>ser</td><td>irregular</td><td>es · sea</td><td>és · sêa</td></tr>
+  <tr><td class="es">haber</td><td>haver</td><td>irregular</td><td>hay · haya</td><td>ái · ája</td></tr>
+  <tr><td class="es">cuidar</td><td>cuidar</td><td>regular</td><td>cuido · cuide</td><td>cuído · cuíde</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<!-- PÁGINA 14 -->
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">Es importante que cuidemos la naturaleza.</span><br><span class="p">🇧🇷 Esimportánte ke cuidêmos la naturalêssa.</span><br><span class="pt">É importante que cuidemos da natureza.</span></div>
+    <div class="flash"><span class="es">No creo que sea demasiado tarde.</span><br><span class="p">🇧🇷 No crêo ke sêa demassiádo tárde.</span><br><span class="pt">Não acho que seja tarde demais.</span></div>
+    <div class="flash"><span class="es">Quiero que mis hijos vean ballenas.</span><br><span class="p">🇧🇷 Kiêro ke mis íRRos bêan bajênas.</span><br><span class="pt">Quero que meus filhos vejam baleias.</span></div>
+    <div class="flash"><span class="es">¡Ojalá que mañana haga sol!</span><br><span class="p">🇧🇷 ORRalá ke manhána ága sól!</span><br><span class="pt">Tomara que amanhã faça sol!</span></div>
+    <div class="flash"><span class="es">Me preocupa que haya tanto plástico.</span><br><span class="p">🇧🇷 Me preocúpa ke ája tánto plástico.</span><br><span class="pt">Me preocupa que haja tanto plástico.</span></div>
+    <div class="flash"><span class="es">Hoy hace un frío que pela.</span><br><span class="p">🇧🇷 Ôi ásse un frío ke pêla.</span><br><span class="pt">Hoje está um frio de rachar.</span></div>
+    <div class="flash"><span class="es">Este animal está en peligro de extinción.</span><br><span class="p">🇧🇷 Ésste animál está en pelígro de estinssión.</span><br><span class="pt">Este animal está ameaçado de extinção.</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Amanhecer em Tortuguero: Mateo e os voluntários de pé na beira do mar observando dezenas de filhotes de tartaruga entrando nas ondas, o sol nascendo dourado no horizonte. Estilo e paleta do livro, sem texto.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 10. 🇪🇸</b><br><i>Próxima unidad: <span class="es">Compras y dinero</span> (Pasado)</i></p>
+  <span class="pno">14</span>
+</section>
