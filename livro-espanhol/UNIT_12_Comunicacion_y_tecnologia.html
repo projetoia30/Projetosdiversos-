@@ -1,0 +1,313 @@
+<title>Unidad 12 · Comunicación y tecnología</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+/* Nivel A2: faixa amarela */
+:root{--level:#d9a400}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5cc3a}}
+:root[data-theme="dark"]{--level:#f5cc3a}
+th{color:#2b2b2b}
+.clock{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.clock div{background:var(--sand);padding:8px 12px;border-radius:4px;font-size:14px}
+/* Nivel B1: faixa laranja */
+:root{--level:#e07a12}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5a04a}}
+:root[data-theme="dark"]{--level:#f5a04a}
+/* Nivel B2: faixa vermelha */
+:root{--level:#a50d26}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#ff5a6e}}
+:root[data-theme="dark"]{--level:#ff5a6e}
+th{color:#fff}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 12 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<!-- PÁGINA 1 -->
+<section class="page opener">
+  <div class="eyebrow">🔴 Nivel B2 · Tiempo verbal: Futuro (futuro compuesto · futuro de probabilidad)</div>
+  <h1>UNIDAD 12</h1>
+  <p class="t2">COMUNICACIÓN Y TECNOLOGÍA</p>
+  <p class="sub"><i>Comunicação e tecnologia</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial de uma rua de Bilbao, no País Basco, que se transforma da esquerda para a direita ao longo do tempo: à esquerda, anos 1980, uma cabine telefônica e uma senhora escrevendo carta; no meio, hoje, pessoas olhando celulares diante do museu Guggenheim; à direita, um futuro imaginado com hologramas, óculos de realidade aumentada e um pequeno robô entregador. Em primeiro plano, Íñigo (40 anos, barba ruiva, jornalista, caderno e caneta na mão) observa tudo. Paleta quente com vermelho, amarelo e toques de azul-petróleo, estilo flat com textura leve, sem texto, espaço livre no topo para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ hablar de medios de comunicación, redes sociales y tecnología<br>✔ hacer predicciones y argumentar sobre el futuro<br>✔ usar el <b>futuro compuesto</b>: <span class="es">En 2050 habremos dejado de usar el móvil.</span><br>✔ expresar <b>suposiciones</b> sobre el presente con el futuro: <span class="es">¿Dónde estará mi cargador?</span></p>
+  <span class="pno">1</span>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">Futuro compuesto y futuro de probabilidad</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm</span>Ícone flat de uma seta para frente que termina num "check" ✓, sobre um calendário, vermelho e amarelo, fundo transparente.</div>
+  <p>En el nivel B2 el futuro tiene dos usos nuevos. El <b>futuro compuesto</b> expresa una acción que <b>ya estará terminada</b> en un momento del futuro: <span class="es">Para el viernes <u>habré terminado</u> el informe.</span> Y, curiosamente, el futuro también sirve para hablar del <b>presente</b> cuando <b>no estamos seguros</b>: es el <b>futuro de probabilidad</b>, muy común en la conversación.</p>
+  <div class="box"><b>📐 FÓRMULAS</b><br><code>haber (futuro) + participio</code> → <span class="es">habré · habrás · habrá · habremos · habréis · habrán + enviado</span><br><code>futuro simple = suposición sobre el presente</code> → <span class="es">—¿Quién llama? —<u>Será</u> mi madre.</span> (= probablemente es)<br><code>futuro compuesto = suposición sobre el pasado reciente</code> → <span class="es">No contesta. <u>Se habrá quedado</u> sin batería.</span> (= probablemente se ha quedado)</div>
+  <div class="tw"><table>
+    <tr><th>Lo que sé</th><th>Lo que supongo</th><th>Português</th></tr>
+    <tr><td class="es">Está en casa.</td><td class="es">Estará en casa.</td><td>Deve estar em casa.</td></tr>
+    <tr><td class="es">Son las diez.</td><td class="es">Serán las diez.</td><td>Devem ser umas dez.</td></tr>
+    <tr><td class="es">Ha perdido el móvil.</td><td class="es">Habrá perdido el móvil.</td><td>Deve ter perdido o celular.</td></tr>
+    <tr><td class="es">No ha visto el mensaje.</td><td class="es">No habrá visto el mensaje.</td><td>Não deve ter visto a mensagem.</td></tr>
+  </table></div>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>"Deve estar / deve ter + particípio"</b> = futuro de probabilidade em espanhol. <span class="es">Debe de estar</span> também existe, mas o futuro (<span class="es">estará</span>) é mais natural e frequente.<br>
+  • <b>Não confunda</b> <span class="es">deber</span> (obrigação: <span class="es">Debes estudiar</span>) com <span class="es">deber de</span> (probabilidade: <span class="es">Debe de tener 40 años</span>).<br>
+  • <b>Falso cognato:</b> <span class="es">el ordenador</span> (Espanha) / <span class="es">la computadora</span> (América) = computador.<br>
+  • <b>Falso cognato:</b> <span class="es">la red</span> = rede (internet, redes sociais); <span class="es">la rede</span> de dormir é <span class="es">la hamaca</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">la pantalla</span> = tela; <span class="es">la tela</span> = tecido! E <span class="es">el ratón</span> = mouse (na Espanha).<br>
+  • <b>Falso cognato:</b> <span class="es">enchufar</span> = ligar na tomada; <span class="es">el enchufe</span> = tomada (e também "pistolão", contato influente!).</div>
+  <span class="pno">2</span>
+</section>
+
+<!-- PÁGINAS 3–4 -->
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">El artículo de Íñigo</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Ilustração narrativa: a cozinha da avó Begoña (85 anos, cabelo branco curto, óculos na ponta do nariz, cardigã vermelho) em Bilbao. Ela está sentada à mesa com um tablet enorme, fazendo videochamada com um bisneto que aparece na tela, rindo. Íñigo, o neto jornalista, de barba ruiva, observa da porta com um notebook debaixo do braço, surpreso. Na parede, um telefone fixo antigo com fio enrolado e uma foto de casamento em preto e branco. Estilo de livro didático moderno, traços limpos, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span><strong>Íñigo</strong> es periodista en Bilbao y tiene que entregar un <strong>artículo</strong> el lunes: "¿Cómo nos comunicaremos en 2050?". Lleva toda la semana entrevistando a expertos. Una ingeniera le ha dicho que para entonces <strong>habremos dejado</strong> de usar el <strong>móvil</strong>: todo estará en unas gafas o en un pequeño chip. Un sociólogo cree que las <strong>redes sociales</strong> tal como las conocemos <strong>habrán desaparecido</strong>.</p>
+  <p><span class="ln">7</span>El domingo, cansado, va a comer a casa de su abuela Begoña, que tiene ochenta y cinco años. Llama al <strong>timbre</strong>, pero nadie abre. "<strong>Estará</strong> en la siesta", piensa. La <strong>llama</strong> al <strong>fijo</strong>: tampoco contesta. "<strong>Se habrá olvidado</strong> de que venía". Al final entra con su llave… y la encuentra en la cocina, en una <strong>videollamada</strong> con su bisnieto de Australia.</p>
+  <p><span class="ln">13</span>"¡Íñigo! Perdona, no te he oído. Estaba enseñándole a Jon a hacer bacalao al pilpil por la <strong>tableta</strong>". Íñigo no sale de su asombro. Su abuela, que hace cinco años no sabía mandar un <strong>mensaje</strong>, ahora tiene un grupo de <strong>WhatsApp</strong> con sus amigas, <strong>sube</strong> fotos de recetas y hasta ha aprendido a usar un <strong>asistente de voz</strong>.</p>
+  <p><span class="ln">18</span>Durante la comida, ella le da la idea para terminar el artículo: "Mira, hijo, en 2050 la tecnología <strong>habrá cambiado</strong> mil veces. Pero la gente seguirá queriendo lo mismo: que alguien la escuche". El lunes, Íñigo entregó el texto con un título nuevo: "La abuela que entendió internet".</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Pequena ilustração de uma tela de celular mostrando um grupo de mensagens chamado "Las chicas del barrio" com fotos de pratos, emojis de coração e uma figurinha de uma senhora fazendo "joinha". Mesmo estilo e paleta, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<!-- PÁGINA 5 -->
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="ph"><b>🖼️ Línea del tiempo de la comunicación</b><span class="sz">Meia página</span>Linha do tempo horizontal ilustrada com objetos de comunicação em ordem: carta e selo, telégrafo, telefone fixo, rádio, televisão, computador de mesa, celular antigo, smartphone, óculos de realidade aumentada. Cada um com uma etiqueta vazia para o nome em espanhol e outra para a década. Estilo flat, paleta do livro, fundo branco.</div>
+  <div class="kw es">
+    <p><span>APARATOS</span> móvil/celular • fijo • ordenador/computadora • portátil • tableta • pantalla • teclado • ratón • cargador • batería • auriculares • altavoz inteligente</p>
+    <p><span>INTERNET</span> red • wifi • conexión • aplicación (app) • contraseña • usuario • nube • enlace • archivo • descargar • subir • actualizar</p>
+    <p><span>COMUNICACIÓN</span> llamada • videollamada • mensaje • correo electrónico • redes sociales • seguidor • publicación • comentario • noticias falsas (bulos) • privacidad</p>
+    <p><span>VERBOS</span> llamar • colgar • contestar • enviar • reenviar • compartir • conectarse • desconectarse • bloquear • enchufar • cargar</p>
+    <p><span>ARGUMENTAR</span> a favor • en contra • por un lado… por otro… • sin embargo • en cambio • además • por lo tanto</p>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<!-- PÁGINA 6 -->
+<section class="page">
+  <h2>💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Uma jovem e um senhor conversando numa mesa de café, os dois com o celular virado para baixo sobre a mesa, balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿Cuántas horas al día usas el móvil?</p>
+  <p class="q es">2. ¿Qué aplicación no podrías dejar de usar?</p>
+  <p class="q es">3. ¿Prefieres llamar o mandar mensajes? ¿Por qué?</p>
+  <p class="q es">4. Tu amigo no contesta desde hace horas. ¿Qué le habrá pasado? Haz tres suposiciones.</p>
+  <p class="q es">5. ¿Qué habrá cambiado en la comunicación dentro de veinte años?</p>
+  <p class="q es">6. Por un lado, la tecnología nos conecta; por otro, nos aísla. ¿Qué opinas? Defiende tu postura con ejemplos.</p>
+  </div>
+  <h2 style="margin-top:26px">⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 Te paso el enlace.</div><div class="card">📌 Se me ha cortado la llamada.</div>
+    <div class="card">📌 No tengo cobertura.</div><div class="card">📌 Me he quedado sin batería.</div>
+    <div class="card">📌 Estará / Habrá…</div><div class="card">📌 Por un lado…, por otro…</div>
+    <div class="card">📌 Desde mi punto de vista…</div><div class="card">📌 No estoy del todo de acuerdo.</div>
+  </div>
+  <span class="pno">6</span>
+</section>
+
+<!-- PÁGINA 7 -->
+<section class="page">
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm · reaproveitável</span></div>
+  <p class="es" style="font-size:17px">habrá‿olvidado • estará‿en‿casa • me‿he‿quedado‿sin • te‿paso‿el‿enlace • no‿estoy‿del‿todo • por‿otro‿lado</p>
+  <p>O futuro de probabilidade tem uma <b>entonação própria</b>: a voz desce no final, num tom de dúvida tranquila. <span class="es">Estará en casa…</span> soa <b>"es-tá-raen-cá-sa↘"</b>. E <span class="es">se habrá olvidado</span> vira quase <b>"sea-bráol-bi-dá-do"</b>: o <span class="es">h</span> não existe, e as vogais se juntam.</p>
+  <div class="cols" style="margin-top:20px">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">Debate: ¿la tecnología nos une o nos separa? (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <ul class="steps"><li>tu opinión clara al principio</li><li>2 argumentos con ejemplos personales</li><li>un contraargumento (<span class="es">Sin embargo…</span>)</li><li>2 predicciones con futuro compuesto</li><li>una conclusión</li></ul>
+      <div class="box"><i class="es">Ejemplo: Desde mi punto de vista, la tecnología nos une más de lo que nos separa. Por ejemplo, hablo con mi hermana en Lisboa todos los días. Sin embargo…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Mi artículo: «La comunicación en 2050»</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <p>Escribe un <b>párrafo de opinión de 6–8 frases</b>, como el artículo de Íñigo.</p>
+      <ul class="steps"><li>título atractivo</li><li>3 predicciones (<span class="es">habremos…, habrán…</span>)</li><li>conectores: <span class="es">además, sin embargo, por lo tanto</span></li><li>una frase final que haga pensar</li></ul>
+      <div class="box"><i class="es">Ejemplo: «Adiós a las contraseñas». En 2050 habremos olvidado lo que era una contraseña. Además, los traductores automáticos habrán…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<!-- PÁGINA 8 -->
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">¿Dónde se habrá metido?</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Dois colegas de trabalho numa sala de reuniões vazia com um projetor ligado: um (A) de suéter vermelho olha o relógio, impaciente; o outro (B) de camisa amarela segura o celular com a tela mostrando "sem resposta". Uma cadeira vazia no centro. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="a">🔴 A: Son las diez y cuarto y Marta no ha llegado. ¿Dónde se habrá metido?</p>
+    <p class="b">🟡 B: Estará en un atasco. Hoy hay obras en la autopista.</p>
+    <p class="a">🔴 A: Pero ella siempre avisa. ¿La has llamado?</p>
+    <p class="b">🟡 B: Dos veces. No contesta. Se habrá quedado sin batería.</p>
+    <p class="a">🔴 A: ¿Y si se ha confundido de día? La reunión se cambió ayer.</p>
+    <p class="b">🟡 B: Puede ser… No habrá visto el correo. Le mando un mensaje por el grupo.</p>
+    <p class="a">🔴 A: Vale. Si para las diez y media no ha contestado, empezamos sin ella.</p>
+    <p class="b">🟡 B: ¡Mira! Ya escribe: "Lo siento, ¡estoy en la otra oficina!".</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles. Después, inventad otra situación: un paquete que no llega, un amigo que no responde…</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li>Para entonces <span class="hl">habremos dejado</span> de usar el móvil.</li>
+    <li>Las redes sociales <span class="hl">habrán desaparecido</span>.</li>
+    <li>"<span class="hl">Estará</span> en la siesta", piensa.</li>
+    <li>"<span class="hl">Se habrá olvidado</span> de que venía".</li>
+    <li>En 2050 la tecnología <span class="hl">habrá cambiado</span> mil veces.</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br>Las frases 1, 2 y 5 son <b>predicciones</b>: acciones que <b>ya estarán terminadas</b> en un momento futuro (2050) → futuro compuesto. Las frases 3 y 4 no hablan del futuro, sino de <b>suposiciones</b>: Íñigo <b>no sabe</b> dónde está su abuela y <b>imagina</b> explicaciones. <span class="es">Estará</span> = probablemente está (presente); <span class="es">se habrá olvidado</span> = probablemente se ha olvidado (pasado reciente).</div>
+  <span class="pno">8</span>
+</section>
+
+<!-- PÁGINA 9 -->
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo · reaproveitável</span></div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica las suposiciones del role play con otra persona.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto defendiendo tu opinión en el debate.</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<!-- PÁGINAS 10–11 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 12</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm · reaproveitável</span></div>
+  <h3>Historia: <i>O artigo de Íñigo</i></h3>
+  <p>Íñigo é jornalista em Bilbao e precisa entregar um artigo na segunda-feira: "Como vamos nos comunicar em 2050?". Passou a semana inteira entrevistando especialistas. Uma engenheira disse que até lá já teremos deixado de usar o celular: tudo estará em óculos ou num pequeno chip. Um sociólogo acha que as redes sociais como as conhecemos terão desaparecido.</p>
+  <p>No domingo, cansado, ele vai almoçar na casa da avó Begoña, que tem oitenta e cinco anos. Toca a campainha, mas ninguém abre. "Ela deve estar tirando a sesta", pensa. Liga para o telefone fixo: ninguém atende também. "Deve ter esquecido que eu vinha". Por fim, entra com a chave… e a encontra na cozinha, numa videochamada com o bisneto que mora na Austrália.</p>
+  <p>"Íñigo! Desculpe, não te ouvi. Estava ensinando o Jon a fazer bacalhau ao pil-pil pelo tablet". Íñigo não consegue acreditar. A avó, que cinco anos atrás não sabia mandar uma mensagem, agora tem um grupo de WhatsApp com as amigas, posta fotos de receitas e até aprendeu a usar um assistente de voz.</p>
+  <p>Durante o almoço, ela lhe dá a ideia para terminar o artigo: "Olha, filho, em 2050 a tecnologia terá mudado mil vezes. Mas as pessoas vão continuar querendo a mesma coisa: alguém que as escute". Na segunda, Íñigo entregou o texto com um título novo: "A avó que entendeu a internet".</p>
+  <h3>Preguntas</h3>
+  <ol><li>Quantas horas por dia você usa o celular?</li><li>Que aplicativo você não conseguiria deixar de usar?</li><li>Você prefere ligar ou mandar mensagens? Por quê?</li><li>Seu amigo não responde há horas. O que deve ter acontecido? Faça três suposições.</li><li>O que terá mudado na comunicação daqui a vinte anos?</li><li>Por um lado, a tecnologia nos conecta; por outro, nos isola. O que você acha? Defenda sua posição com exemplos.</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">Te paso el enlace.</td><td>Te mando o link.</td></tr>
+  <tr><td class="es">Se me ha cortado la llamada.</td><td>A ligação caiu.</td></tr>
+  <tr><td class="es">No tengo cobertura.</td><td>Estou sem sinal.</td></tr>
+  <tr><td class="es">Me he quedado sin batería.</td><td>Fiquei sem bateria.</td></tr>
+  <tr><td class="es">Estará / Habrá…</td><td>Deve estar / Deve ter…</td></tr>
+  <tr><td class="es">Por un lado…, por otro…</td><td>Por um lado…, por outro…</td></tr>
+  <tr><td class="es">Desde mi punto de vista…</td><td>Do meu ponto de vista…</td></tr>
+  <tr><td class="es">No estoy del todo de acuerdo.</td><td>Não concordo totalmente.</td></tr></table></div>
+  <h3>Reto oral</h3><p>Debate: a tecnologia nos une ou nos separa? Diga sua opinião logo no começo, dê dois argumentos com exemplos pessoais, um contra-argumento, duas previsões com o futuro composto e uma conclusão.</p>
+  <span class="pno">10–11</span>
+</section>
+
+<!-- PÁGINAS 12–13 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 12</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">ordenador</span> — computador<br>🇧🇷 <i>ordenadór</i></div>
+    <div class="card"><span class="es">pantalla</span> — tela<br>🇧🇷 <i>pantája</i></div>
+    <div class="card"><span class="es">teclado</span> — teclado<br>🇧🇷 <i>tekládo</i></div>
+    <div class="card"><span class="es">contraseña</span> — senha<br>🇧🇷 <i>contrassênha</i></div>
+    <div class="card"><span class="es">enlace</span> — link<br>🇧🇷 <i>enlásse</i></div>
+    <div class="card"><span class="es">descargar</span> — baixar<br>🇧🇷 <i>descargár</i></div>
+    <div class="card"><span class="es">auriculares</span> — fones de ouvido<br>🇧🇷 <i>aurikuláres</i></div>
+    <div class="card"><span class="es">wifi</span> — wi-fi<br>🇧🇷 <i>uífi</i> (Espanha: <i>güífi</i>)</div>
+    <div class="card"><span class="es">videollamada</span> — videochamada<br>🇧🇷 <i>bideojamáda</i></div>
+    <div class="card"><span class="es">cobertura</span> — sinal<br>🇧🇷 <i>cobertúra</i></div>
+    <div class="card"><span class="es">habremos</span> — teremos (aux.)<br>🇧🇷 <i>abrêmos</i></div>
+    <div class="card"><span class="es">bulo</span> — fake news<br>🇧🇷 <i>búlo</i></div>
+  </div>
+  <h3>🔤 Sonidos de esta unidad</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Infográfico de entonação: duas frases com linhas de melodia desenhadas acima — "Está en casa." (linha reta descendo no fim, afirmação) e "Estará en casa…" (linha ondulada, mais longa, descendo devagar, dúvida). Estilo limpo, sem texto além das frases.</div>
+  <ul>
+    <li><b>Entonação de suposição</b> → <span class="es">Estará en casa…</span> com voz mais lenta e final descendente, às vezes com <span class="es">supongo</span> ou <span class="es">digo yo</span>: <span class="es">Estará en casa, digo yo.</span></li>
+    <li><b>Anglicismos adaptados</b> → os espanhóis pronunciam palavras inglesas "à espanhola": <span class="es">wifi</span> = <i>uífi</i>, <span class="es">email</span> = <i>imêil</i>, <span class="es">router</span> = <i>RRúter</i>.</li>
+    <li><b>Futuro com BR / DR</b> → <span class="es">habrá</span> = <i>a-brá</i>, <span class="es">podrá</span> = <i>po-drá</i>, sem vogal entre as consoantes.</li>
+    <li><b>Sotaque basco</b> → em Bilbao, o <b>s</b> é mais "chiado" (quase entre "s" e "x"), e a entonação sobe e desce mais: você vai reconhecer no áudio!</li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">Te paso el enlace.</td><td>Te páso el enlásse.</td></tr>
+  <tr><td class="es">Se me ha cortado la llamada.</td><td>Se meá cortádo la jamáda.</td></tr>
+  <tr><td class="es">Me he quedado sin batería.</td><td>Meê kedádo sin batería.</td></tr>
+  <tr><td class="es">¿Dónde se habrá metido?</td><td>Dônde seabrá metído?</td></tr>
+  <tr><td class="es">Desde mi punto de vista…</td><td>Dêsde mi púnto de bísta…</td></tr>
+  <tr><td class="es">No estoy del todo de acuerdo.</td><td>No estói del tôdo de acuêrdo.</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Futuro · Futuro compuesto</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">haber</td><td>haver (aux.)</td><td>irregular</td><td>habré, habrás, habrá, habremos, habrán</td><td>abrê, abrás</td></tr>
+  <tr><td class="es">estar</td><td>estar</td><td>irregular</td><td>estará · habrá estado</td><td>estará</td></tr>
+  <tr><td class="es">desaparecer</td><td>desaparecer</td><td>irregular (c→zc)</td><td>desaparecerá · habrá desaparecido</td><td>dessaparessêrá</td></tr>
+  <tr><td class="es">colgar</td><td>desligar (telefone)</td><td>irregular (o→ue)</td><td>colgará · habrá colgado</td><td>colgará</td></tr>
+  <tr><td class="es">compartir</td><td>compartilhar</td><td>regular</td><td>compartirá · habrá compartido</td><td>compartirá</td></tr>
+  <tr><td class="es">meterse</td><td>meter-se / sumir</td><td>regular</td><td>¿dónde se habrá metido?</td><td>seabrá metído</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<!-- PÁGINA 14 -->
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">No contesta. Estará ocupado.</span><br><span class="p">🇧🇷 No contésta. Estará okupádo.</span><br><span class="pt">Não atende. Deve estar ocupado.</span></div>
+    <div class="flash"><span class="es">Se habrá quedado sin batería.</span><br><span class="p">🇧🇷 Seabrá kedádo sin batería.</span><br><span class="pt">Deve ter ficado sem bateria.</span></div>
+    <div class="flash"><span class="es">Para el viernes habré terminado el informe.</span><br><span class="p">🇧🇷 Pára el biêrnes abrê terminádo el infórme.</span><br><span class="pt">Até sexta terei terminado o relatório.</span></div>
+    <div class="flash"><span class="es">En 2050 habremos dejado de usar el móvil.</span><br><span class="p">🇧🇷 En dôs mil θinkuênta abrêmos deRRádo de ussár el móbil.</span><br><span class="pt">Em 2050 teremos deixado de usar o celular.</span></div>
+    <div class="flash"><span class="es">Te paso el enlace por WhatsApp.</span><br><span class="p">🇧🇷 Te páso el enlásse por uátsap.</span><br><span class="pt">Te mando o link pelo WhatsApp.</span></div>
+    <div class="flash"><span class="es">Por un lado nos conecta; por otro, nos aísla.</span><br><span class="p">🇧🇷 Por un ládo nos conécta; por ôtro, nos aísla.</span><br><span class="pt">Por um lado nos conecta; por outro, nos isola.</span></div>
+    <div class="flash"><span class="es">No estoy del todo de acuerdo contigo.</span><br><span class="p">🇧🇷 No estói del tôdo de acuêrdo contígo.</span><br><span class="pt">Não concordo totalmente com você.</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Íñigo e a avó Begoña sentados lado a lado no sofá, rindo enquanto tiram uma selfie com o tablet; na tela aparece o bisneto Jon acenando da Austrália. Estilo e paleta do livro, sem texto.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 12. 🇪🇸</b><br><i>Próxima unidad: <span class="es">Entretenimiento y deportes</span> (Presente)</i></p>
+  <span class="pno">14</span>
+</section>
