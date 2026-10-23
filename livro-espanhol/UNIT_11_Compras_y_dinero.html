@@ -1,0 +1,307 @@
+<title>Unidad 11 · Compras y dinero</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+/* Nivel A2: faixa amarela */
+:root{--level:#d9a400}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5cc3a}}
+:root[data-theme="dark"]{--level:#f5cc3a}
+th{color:#2b2b2b}
+.clock{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.clock div{background:var(--sand);padding:8px 12px;border-radius:4px;font-size:14px}
+/* Nivel B1: faixa laranja */
+:root{--level:#e07a12}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5a04a}}
+:root[data-theme="dark"]{--level:#f5a04a}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 11 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<!-- PÁGINA 1 -->
+<section class="page opener">
+  <div class="eyebrow">🟠 Nivel B1 · Tiempo verbal: Pasado (pretérito pluscuamperfecto + narración)</div>
+  <h1>UNIDAD 11</h1>
+  <p class="t2">COMPRAS Y DINERO</p>
+  <p class="sub"><i>Compras e dinheiro</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial dividida em dois mundos de compras em Quito, Equador: à esquerda, a feira indígena de Otavalo com tecidos coloridos, ponchos, chapéus de palha e vendedoras com trajes tradicionais; à direita, a tela gigante de um celular com uma loja online, carrinho de compras e botão "pagar". No centro, Gabriel (27 anos, cabelo raspado nas laterais, jaqueta jeans) segura uma sacola de feira numa mão e o celular na outra, indeciso. Paleta quente com vermelho, amarelo e laranja, estilo flat com textura leve, sem texto, espaço livre no topo para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ comprar en tiendas, mercados e internet<br>✔ hablar de precios, formas de pago, ofertas y devoluciones<br>✔ reclamar cuando algo sale mal<br>✔ usar el <b>pluscuamperfecto</b> (<span class="es">había comprado</span>) para contar lo que pasó <b>antes</b> de otro momento del pasado</p>
+  <span class="pno">1</span>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">El pretérito pluscuamperfecto: el pasado del pasado</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm</span>Ícone flat de duas setas curvas para trás, uma maior e uma menor, sobre um calendário, vermelho e amarelo, fundo transparente.</div>
+  <p>Cuando contamos una historia en pasado, a veces necesitamos "retroceder" todavía más: hablar de algo que ocurrió <b>antes</b> de otro momento pasado. Para eso usamos el <b>pluscuamperfecto</b>. Es muy útil para explicar <b>causas</b> y <b>sorpresas</b>: <span class="es">Cuando llegué a la tienda, ya <u>habían cerrado</u>.</span></p>
+  <div class="box"><b>📐 FÓRMULA</b><br><code>haber (imperfecto) + participio</code><br><span class="es">había · habías · había · habíamos · habíais · habían + comprado / vendido / pedido</span><br><span class="es">Cuando abrí la caja, me di cuenta de que me <u>habían enviado</u> otro modelo.</span></div>
+  <div class="tw"><table>
+    <tr><th>Línea del tiempo</th><th>Tiempo verbal</th><th>Ejemplo</th></tr>
+    <tr><td>① lo más antiguo</td><td>pluscuamperfecto</td><td class="es">Gabriel había ahorrado durante meses…</td></tr>
+    <tr><td>② la acción principal</td><td>indefinido</td><td class="es">…y por fin compró el móvil.</td></tr>
+    <tr><td>③ la descripción</td><td>imperfecto</td><td class="es">Estaba muy contento.</td></tr>
+    <tr><td>④ hoy, el resultado</td><td>presente / perfecto</td><td class="es">Ahora ya ha aprendido la lección.</td></tr>
+  </table></div>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>O português falado usa "tinha + particípio":</b> "eu <u>tinha comprado</u>". Em espanhol, o auxiliar é sempre <span class="es">haber</span>: <span class="es">yo <u>había</u> comprado</span>, e nunca ~~tenía comprado~~.<br>
+  • <b>Não existe "comprara" na fala:</b> o mais-que-perfeito simples do português ("comprara") não se usa assim em espanhol. Use sempre <span class="es">había comprado</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">la tienda</span> = loja (e também barraca de camping); <span class="es">la loja</span> não existe!<br>
+  • <b>Falso cognato:</b> <span class="es">barato</span> = barato, mas <span class="es">la cuenta</span> = conta (a pagar) e <span class="es">la cuenta bancaria</span> = conta no banco; "conta" de somar é <span class="es">la suma</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">el talón</span> = calcanhar (e cheque, na Espanha); "talão" de notas é <span class="es">el recibo</span> / <span class="es">el tique</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">cobrar</span> = cobrar <i>e</i> receber (salário): <span class="es">Cobro a fin de mes</span> = Recebo no fim do mês.</div>
+  <span class="pno">2</span>
+</section>
+
+<!-- PÁGINAS 3–4 -->
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">El móvil que nunca llegó</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Ilustração narrativa: Gabriel, 27 anos, sentado na cama do seu quarto em Quito, olha incrédulo para uma caixa de papelão aberta; dentro, em vez de um celular, há um tijolo embrulhado em plástico-bolha. No notebook aberto ao lado, uma página de loja online com a palavra "agotado" desenhada como rabisco. Pela janela, o vulcão Pichincha ao fundo. Expressão entre raiva e riso. Estilo de livro didático moderno, traços limpos, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span><strong>Gabriel</strong> vive en Quito y trabaja como repartidor en bicicleta. Durante ocho meses <strong>había ahorrado</strong> casi todo su <strong>sueldo</strong> para comprarse un <strong>móvil</strong> nuevo. Su madre le <strong>había aconsejado</strong> ir a una <strong>tienda</strong> oficial, pero un día vio una <strong>oferta</strong> increíble en internet: el mismo modelo con un cuarenta por ciento de <strong>descuento</strong>.</p>
+  <p><span class="ln">6</span>No lo pensó mucho. <strong>Pagó</strong> con <strong>tarjeta</strong>, recibió un correo de confirmación y esperó. Dos semanas después, llegó el <strong>paquete</strong>. Cuando lo abrió, no podía creerlo: dentro había un ladrillo envuelto en plástico. Los vendedores <strong>habían desaparecido</strong> y la página web ya no existía.</p>
+  <p><span class="ln">11</span>Gabriel estaba furioso, pero sobre todo avergonzado. Al día siguiente, fue al <strong>banco</strong>. La empleada le preguntó si <strong>había guardado</strong> el <strong>recibo</strong> y los correos. Por suerte, lo <strong>había guardado</strong> todo. "Vamos a pedir una <strong>devolución</strong>", le dijo. "Usted no es el primero este mes".</p>
+  <p><span class="ln">15</span>Un mes después, el banco le <strong>devolvió</strong> el dinero. Ese sábado, Gabriel fue con su madre al mercado de Otavalo. Ella <strong>regateó</strong> con una vendedora por un poncho y consiguió un buen <strong>precio</strong>. "¿Ves?", le dijo, riéndose. "Aquí, por lo menos, ves lo que compras". Y Gabriel, esta vez, compró su móvil en una tienda oficial… y <strong>pagó</strong> en <strong>efectivo</strong>.</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Pequena ilustração de uma mão de vendedora indígena e uma mão de senhora apertando-se sobre um poncho colorido dobrado, com algumas notas de dólar (moeda do Equador) entre elas. Mesmo estilo e paleta, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<!-- PÁGINA 5 -->
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="ph"><b>🖼️ Calle comercial con etiquetas</b><span class="sz">Meia página</span>Ilustração de uma rua comercial com fachadas de lojas lado a lado: padaria, açougue, peixaria, frutaria, livraria, sapataria, loja de roupas, farmácia, quiosque de jornais e um supermercado. Cada fachada com uma placa vazia para o aluno escrever o nome em espanhol (panadería, carnicería, etc.). Estilo flat, paleta do livro, fundo branco.</div>
+  <div class="kw es">
+    <p><span>TIENDAS</span> tienda • supermercado • mercado • centro comercial • panadería • carnicería • frutería • zapatería • librería • farmacia • tienda online</p>
+    <p><span>DINERO</span> dinero • efectivo • billete • moneda • tarjeta de crédito/débito • cajero automático • cuenta • sueldo • ahorrar • gastar • prestar • deber • pedir prestado</p>
+    <p><span>COMPRAR</span> precio • oferta • descuento • rebajas • ganga • caro • barato • gratis • regatear • probarse • talla • probador • caja • recibo/tique</p>
+    <p><span>PROBLEMAS</span> devolver • devolución • cambiar • reclamar • reclamación • defectuoso • roto • estafa • garantía • reembolso</p>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<!-- PÁGINA 6 -->
+<section class="page">
+  <h2>💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Duas amigas saindo de um shopping com sacolas, uma mostrando uma blusa à outra, balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿Te gusta ir de compras? ¿Con quién vas?</p>
+  <p class="q es">2. ¿Prefieres pagar en efectivo o con tarjeta?</p>
+  <p class="q es">3. ¿Compras mucho por internet? ¿Qué compras?</p>
+  <p class="q es">4. ¿Cuál es la mejor ganga que has encontrado?</p>
+  <p class="q es">5. ¿Alguna vez compraste algo y te diste cuenta de que te habían engañado? ¿Qué pasó?</p>
+  <p class="q es">6. ¿Crees que hoy consumimos demasiado? ¿Qué cambiarías en tu forma de comprar? Argumenta.</p>
+  </div>
+  <h2 style="margin-top:26px">⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 ¿Cuánto cuesta / vale?</div><div class="card">📌 ¿Me lo puedo probar?</div>
+    <div class="card">📌 ¿Tiene una talla más grande?</div><div class="card">📌 ¿Se puede pagar con tarjeta?</div>
+    <div class="card">📌 Solo estoy mirando, gracias.</div><div class="card">📌 Quería devolver esto.</div>
+    <div class="card">📌 ¡Es una ganga! / ¡Es un robo!</div><div class="card">📌 Me costó un ojo de la cara.</div>
+  </div>
+  <span class="pno">6</span>
+</section>
+
+<!-- PÁGINA 7 -->
+<section class="page">
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm · reaproveitável</span></div>
+  <p class="es" style="font-size:17px">había‿ahorrado • lo‿había‿guardado • ¿cuánto‿es? • me‿lo‿envuelve • en‿efectivo • un‿ojo‿de‿la‿cara</p>
+  <p>Com o pluscuamperfecto, juntam-se muitas vogais: <span class="es">había ahorrado</span> soa <b>"a-bí-aorrá-do"</b>, e <span class="es">lo había hecho</span> fica <b>"loa-bía-ê-tcho"</b>. Nas lojas, a pergunta <span class="es">¿Cuánto es?</span> soa <b>"cuán-toés"</b>, rápido e curto.</p>
+  <div class="cols" style="margin-top:20px">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">Una compra que salió mal (o muy bien) (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <ul class="steps"><li>qué compraste, dónde y cuándo</li><li>qué había pasado antes (pluscuamperfecto)</li><li>cuánto costó y cómo pagaste</li><li>qué problema o sorpresa hubo</li><li>qué aprendiste</li></ul>
+      <div class="box"><i class="es">Ejemplo: El año pasado compré un sofá por internet. Había medido el salón dos veces, pero cuando llegó, no cabía por la puerta…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Una reclamación</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <p>Escribe <b>5–8 frases</b>: un correo formal a una tienda para reclamar por un producto.</p>
+      <ul class="steps"><li>qué compraste y cuándo</li><li>2 verbos en pluscuamperfecto</li><li>el problema</li><li>qué solución quieres (<span class="es">devolución, cambio…</span>)</li><li>despedida formal</li></ul>
+      <div class="box"><i class="es">Ejemplo: Estimados señores: El 5 de mayo compré unas zapatillas en su web. Había elegido la talla 40, pero me enviaron la 38…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<!-- PÁGINA 8 -->
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">Devolver un producto en la tienda</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Caixa de uma loja de roupas: um cliente (A) de casaco vermelho coloca sobre o balcão uma jaqueta com a costura rasgada e o recibo; a atendente (B) de colete amarelo examina a peça. Araras de roupa e provadores ao fundo. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="a">🔴 A: Buenas tardes. Quería devolver esta chaqueta.</p>
+    <p class="b">🟡 B: Buenas tardes. ¿Qué le pasa?</p>
+    <p class="a">🔴 A: La compré el sábado. Solo me la había puesto una vez y ya se ha roto la costura.</p>
+    <p class="b">🟡 B: Vaya, lo siento. ¿Tiene el tique de compra?</p>
+    <p class="a">🔴 A: Sí, aquí está. Lo había guardado en la cartera.</p>
+    <p class="b">🟡 B: Perfecto. ¿Prefiere que se la cambiemos o que le devolvamos el dinero?</p>
+    <p class="a">🔴 A: Prefiero el reembolso, por favor. Pagué con tarjeta.</p>
+    <p class="b">🟡 B: De acuerdo. En tres o cuatro días tendrá el dinero en su cuenta.</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles. Después, practicad regateando en un mercado: ¡el vendedor pide demasiado!</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li>Durante ocho meses <span class="hl">había ahorrado</span> casi todo su sueldo.</li>
+    <li>Su madre le <span class="hl">había aconsejado</span> ir a una tienda oficial.</li>
+    <li>Los vendedores <span class="hl">habían desaparecido</span>.</li>
+    <li>Le preguntó si <span class="hl">había guardado</span> el recibo.</li>
+    <li>Pagó con tarjeta… Dos semanas después, <span class="hl">llegó</span> el paquete. (indefinido)</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br>La historia se cuenta en <b>indefinido</b> (pagó, llegó, abrió). Cada vez que el narrador "mira hacia atrás", a algo <b>anterior</b> a esos hechos, usa el <b>pluscuamperfecto</b>: Gabriel ahorró <b>antes</b> de comprar; la madre aconsejó <b>antes</b> de la compra; los vendedores desaparecieron <b>antes</b> de que él abriera la caja. Truco: si en portugués dices "<b>tinha</b> + particípio", en español usa <span class="es">había + participio</span>.</div>
+  <span class="pno">8</span>
+</section>
+
+<!-- PÁGINA 9 -->
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo · reaproveitável</span></div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica la devolución y el regateo con otra persona.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto contando una compra que salió mal (o muy bien).</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<!-- PÁGINAS 10–11 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 11</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm · reaproveitável</span></div>
+  <h3>Historia: <i>O celular que nunca chegou</i></h3>
+  <p>Gabriel mora em Quito e trabalha como entregador de bicicleta. Durante oito meses tinha economizado quase todo o salário para comprar um celular novo. A mãe tinha aconselhado ir a uma loja oficial, mas um dia ele viu uma oferta incrível na internet: o mesmo modelo com quarenta por cento de desconto.</p>
+  <p>Ele não pensou muito. Pagou com cartão, recebeu um e-mail de confirmação e esperou. Duas semanas depois, o pacote chegou. Quando abriu, não conseguia acreditar: dentro havia um tijolo embrulhado em plástico. Os vendedores tinham desaparecido e o site já não existia.</p>
+  <p>Gabriel estava furioso, mas sobretudo envergonhado. No dia seguinte, foi ao banco. A funcionária perguntou se ele tinha guardado o recibo e os e-mails. Por sorte, ele tinha guardado tudo. "Vamos pedir um estorno", ela disse. "O senhor não é o primeiro este mês".</p>
+  <p>Um mês depois, o banco devolveu o dinheiro. Naquele sábado, Gabriel foi com a mãe à feira de Otavalo. Ela pechinchou com uma vendedora por um poncho e conseguiu um bom preço. "Viu?", disse ela, rindo. "Aqui, pelo menos, você vê o que compra". E Gabriel, desta vez, comprou o celular numa loja oficial… e pagou em dinheiro.</p>
+  <h3>Preguntas</h3>
+  <ol><li>Você gosta de fazer compras? Com quem você vai?</li><li>Você prefere pagar em dinheiro ou com cartão?</li><li>Você compra muito pela internet? O quê?</li><li>Qual foi a melhor pechincha que você já encontrou?</li><li>Você já comprou algo e percebeu que tinham te enganado? O que aconteceu?</li><li>Você acha que hoje consumimos demais? O que mudaria na sua forma de comprar? Argumente.</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">¿Cuánto cuesta / vale?</td><td>Quanto custa?</td></tr>
+  <tr><td class="es">¿Me lo puedo probar?</td><td>Posso provar?</td></tr>
+  <tr><td class="es">¿Tiene una talla más grande?</td><td>Tem um tamanho maior?</td></tr>
+  <tr><td class="es">¿Se puede pagar con tarjeta?</td><td>Dá para pagar com cartão?</td></tr>
+  <tr><td class="es">Solo estoy mirando, gracias.</td><td>Só estou olhando, obrigado(a).</td></tr>
+  <tr><td class="es">Quería devolver esto.</td><td>Queria devolver isto.</td></tr>
+  <tr><td class="es">¡Es una ganga! / ¡Es un robo!</td><td>É uma pechincha! / É um roubo!</td></tr>
+  <tr><td class="es">Me costó un ojo de la cara.</td><td>Custou os olhos da cara.</td></tr></table></div>
+  <h3>Reto oral</h3><p>Conte uma compra que deu errado (ou muito certo): o que comprou, onde e quando, o que tinha acontecido antes, quanto custou e como pagou, que problema ou surpresa houve e o que aprendeu.</p>
+  <span class="pno">10–11</span>
+</section>
+
+<!-- PÁGINAS 12–13 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 11</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">dinero</span> — dinheiro<br>🇧🇷 <i>dinêro</i> (sem "nh")</div>
+    <div class="card"><span class="es">efectivo</span> — dinheiro vivo<br>🇧🇷 <i>efektíbo</i></div>
+    <div class="card"><span class="es">tarjeta</span> — cartão<br>🇧🇷 <i>tarRRêta</i></div>
+    <div class="card"><span class="es">cajero</span> — caixa eletrônico<br>🇧🇷 <i>caRRêro</i></div>
+    <div class="card"><span class="es">descuento</span> — desconto<br>🇧🇷 <i>descuênto</i></div>
+    <div class="card"><span class="es">rebajas</span> — liquidação<br>🇧🇷 <i>RRebáRRas</i></div>
+    <div class="card"><span class="es">ganga</span> — pechincha<br>🇧🇷 <i>gánga</i></div>
+    <div class="card"><span class="es">talla</span> — tamanho (roupa)<br>🇧🇷 <i>tája</i></div>
+    <div class="card"><span class="es">regatear</span> — pechinchar<br>🇧🇷 <i>RRegateár</i></div>
+    <div class="card"><span class="es">recibo</span> — recibo<br>🇧🇷 <i>RResíbo</i></div>
+    <div class="card"><span class="es">devolución</span> — devolução<br>🇧🇷 <i>debolussión</i></div>
+    <div class="card"><span class="es">había ahorrado</span> — tinha economizado<br>🇧🇷 <i>abía aoRRádo</i></div>
+  </div>
+  <h3>🔤 Sonidos de esta unidad</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Infográfico com uma etiqueta de preço "1.250 €" e balões mostrando como se lê o número em espanhol ("mil doscientos cincuenta euros"), com destaque visual para o "eu" de "euros" pronunciado como ditongo "êu". Estilo limpo.</div>
+  <ul>
+    <li><b>Números e preços</b> → <span class="es">quinientos</span> (500, não "cincocientos"), <span class="es">setecientos</span> (700), <span class="es">novecientos</span> (900). <span class="es">Cien</span> sozinho, <span class="es">ciento</span> + número: <span class="es">ciento veinte</span>.</li>
+    <li><b>EU em "euro"</b> → as duas vogais soam: <i>êu-ro</i>, e não "ôro".</li>
+    <li><b>CT em "efectivo"</b> → pronuncie o "k": <i>e-fek-tí-bo</i>, sem "i" extra ("efequitivo").</li>
+    <li><b>DI / NI</b> → <span class="es">dinero</span> = <i>di-nê-ro</i>: nem "dji", nem "nh".</li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">¿Cuánto cuesta?</td><td>Cuánto cuêsta?</td></tr>
+  <tr><td class="es">¿Me lo puedo probar?</td><td>Me lo puêdo probár?</td></tr>
+  <tr><td class="es">¿Se puede pagar con tarjeta?</td><td>Se puêde pagár con tarRRêta?</td></tr>
+  <tr><td class="es">Solo estoy mirando.</td><td>Sôlo estói mirándo.</td></tr>
+  <tr><td class="es">Quería devolver esto.</td><td>Kería debolbêr ésto.</td></tr>
+  <tr><td class="es">Me costó un ojo de la cara.</td><td>Me costó un ôRRo de la cára.</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Indefinido · Pluscuamperfecto</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">costar</td><td>custar</td><td>irregular (o→ue)</td><td>costó · había costado</td><td>costó</td></tr>
+  <tr><td class="es">pagar</td><td>pagar</td><td>regular (g→gu)</td><td>pagué, pagó · había pagado</td><td>paguê</td></tr>
+  <tr><td class="es">devolver</td><td>devolver</td><td>irregular</td><td>devolvió · había devuelto</td><td>debuêlto</td></tr>
+  <tr><td class="es">ahorrar</td><td>economizar</td><td>regular</td><td>ahorré · había ahorrado</td><td>aoRRê</td></tr>
+  <tr><td class="es">gastar</td><td>gastar</td><td>regular</td><td>gasté · había gastado</td><td>gastê</td></tr>
+  <tr><td class="es">probarse</td><td>provar (roupa)</td><td>irregular (o→ue)</td><td>me probé · me lo había probado</td><td>me probê</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<!-- PÁGINA 14 -->
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">¿Cuánto cuesta esta camiseta?</span><br><span class="p">🇧🇷 Cuánto cuêsta ésta camisêta?</span><br><span class="pt">Quanto custa esta camiseta?</span></div>
+    <div class="flash"><span class="es">¿Se puede pagar con tarjeta?</span><br><span class="p">🇧🇷 Se puêde pagár con tarRRêta?</span><br><span class="pt">Dá para pagar com cartão?</span></div>
+    <div class="flash"><span class="es">Quería devolver esto. Aquí tiene el tique.</span><br><span class="p">🇧🇷 Kería debolbêr ésto. Akí tiêne el tíke.</span><br><span class="pt">Queria devolver isto. Aqui está a notinha.</span></div>
+    <div class="flash"><span class="es">Cuando llegué, ya habían cerrado.</span><br><span class="p">🇧🇷 Cuándo jeguê, já abían seRRádo.</span><br><span class="pt">Quando cheguei, já tinham fechado.</span></div>
+    <div class="flash"><span class="es">Nunca había visto un precio tan bajo.</span><br><span class="p">🇧🇷 Núnca abía bísto un prêssio tan báRRo.</span><br><span class="pt">Eu nunca tinha visto um preço tão baixo.</span></div>
+    <div class="flash"><span class="es">¡Es una ganga!</span><br><span class="p">🇧🇷 És úna gánga!</span><br><span class="pt">É uma pechincha!</span></div>
+    <div class="flash"><span class="es">Este sofá me costó un ojo de la cara.</span><br><span class="p">🇧🇷 Éste sofá me costó un ôRRo de la cára.</span><br><span class="pt">Este sofá custou os olhos da cara.</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Gabriel e a mãe caminhando felizes pela feira de Otavalo, ela vestindo o poncho novo e ele mostrando o celular novo com orgulho, com bancas coloridas e montanhas verdes ao fundo. Estilo e paleta do livro, sem texto.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 11. 🇪🇸</b><br><i>Próxima unidad: <span class="es">Comunicación y tecnología</span> (Futuro)</i></p>
+  <span class="pno">14</span>
+</section>
