@@ -1,0 +1,307 @@
+<title>Unidad 6 · Escuela y educación</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+/* Nivel A2: faixa amarela */
+:root{--level:#d9a400}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5cc3a}}
+:root[data-theme="dark"]{--level:#f5cc3a}
+th{color:#2b2b2b}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 6 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<!-- PÁGINA 1 -->
+<section class="page opener">
+  <div class="eyebrow">🟡 Nivel A2 · Tiempo verbal: Futuro (futuro simple irregular · si + presente, futuro)</div>
+  <h1>UNIDAD 6</h1>
+  <p class="t2">ESCUELA Y EDUCACIÓN</p>
+  <p class="sub"><i>Escola e educação</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial do campus de uma universidade pública em Bogotá à noite, prédios de tijolo aparente iluminados, estudantes de várias idades caminhando com mochilas. Em primeiro plano, Ernesto (52 anos, bigode grisalho, jaqueta de couro marrom) segura uma pasta nova e olha para a entrada com uma mistura de medo e orgulho. Ao fundo, um táxi amarelo estacionado. Paleta quente com vermelho e amarelo suaves, estilo flat com textura leve, sem texto, espaço livre no canto superior para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ hablar de la escuela, la universidad y las asignaturas<br>✔ contar tus planes de estudio y tus metas<br>✔ usar el <b>futuro simple</b> con verbos irregulares: <span class="es">podré, tendré, sabré, saldré</span><br>✔ hacer condiciones reales: <span class="es">Si estudio, aprobaré.</span></p>
+  <span class="pno">1</span>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">El futuro irregular y las condiciones con «si»</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm · o mesmo da Unidad 3</span>Seta para frente sobre calendário.</div>
+  <p>En la Unidad 3 viste el futuro regular (<span class="es">caminaré, comeré</span>). Ahora vas a usar los verbos <b>irregulares</b> más frecuentes. La buena noticia: las terminaciones son <b>siempre las mismas</b>; solo cambia la raíz. Además, aprenderás a expresar <b>condiciones reales</b>: lo que pasará si se cumple algo.</p>
+  <div class="box"><b>📐 FÓRMULAS</b><br><code>raíz irregular + é / ás / á / emos / éis / án</code> → <span class="es">tener → tendr- → tendré</span><br><code>Si + presente, + futuro</code> → <span class="es">Si estudias cada día, aprobarás el examen.</span></div>
+  <div class="tw"><table>
+    <tr><th>Infinitivo</th><th>Raíz</th><th>yo</th><th>tú</th><th>él / ella</th><th>nosotros</th><th>ellos</th></tr>
+    <tr><td>tener</td><td>tendr-</td><td>tendré</td><td>tendrás</td><td>tendrá</td><td>tendremos</td><td>tendrán</td></tr>
+    <tr><td>poder</td><td>podr-</td><td>podré</td><td>podrás</td><td>podrá</td><td>podremos</td><td>podrán</td></tr>
+    <tr><td>saber</td><td>sabr-</td><td>sabré</td><td>sabrás</td><td>sabrá</td><td>sabremos</td><td>sabrán</td></tr>
+    <tr><td>salir</td><td>saldr-</td><td>saldré</td><td>saldrás</td><td>saldrá</td><td>saldremos</td><td>saldrán</td></tr>
+    <tr><td>hacer</td><td>har-</td><td>haré</td><td>harás</td><td>hará</td><td>haremos</td><td>harán</td></tr>
+    <tr><td>decir</td><td>dir-</td><td>diré</td><td>dirás</td><td>dirá</td><td>diremos</td><td>dirán</td></tr>
+    <tr><td>venir</td><td>vendr-</td><td>vendré</td><td>vendrás</td><td>vendrá</td><td>vendremos</td><td>vendrán</td></tr>
+    <tr><td>querer</td><td>querr-</td><td>querré</td><td>querrás</td><td>querrá</td><td>querremos</td><td>querrán</td></tr>
+  </table></div>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>Depois de "si", nunca futuro:</b> <span class="es">Si <u>tengo</u> tiempo, estudiaré</span>, e nunca ~~Si tendré tiempo~~. O português usa o futuro do subjuntivo ("se eu tiver"); o espanhol usa o <b>presente</b>.<br>
+  • <b>Falso cognato:</b> <span class="es">la carrera</span> = curso universitário (também corrida); "carreira profissional" também é <span class="es">carrera</span>, mas "curso de Direito" é <span class="es">la carrera de Derecho</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">la asignatura</span> = matéria/disciplina; "assinatura" é <span class="es">la firma</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">suspender</span> = reprovar (Espanha); em vários países latinos se diz <span class="es">reprobar</span>. "Passar de ano / ser aprovado" é <span class="es">aprobar</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">el colegio</span> = escola (geralmente ensino fundamental e médio), e não "faculdade".</div>
+  <span class="pno">2</span>
+</section>
+
+<!-- PÁGINAS 3–4 -->
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">El primer día de Ernesto</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Ilustração narrativa: Ernesto, 52 anos, bigode grisalho, sentado ao volante do seu táxi amarelo parado num sinal em Bogotá ao entardecer, com um livro de contabilidade aberto apoiado no volante e um marca-texto na boca. No banco de trás, a neta Mariana (16 anos, uniforme escolar) se inclina para frente explicando algo no livro. Chuva fina, luzes da cidade refletidas no para-brisa. Estilo de livro didático moderno, traços limpos, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span><strong>Ernesto</strong> tiene cincuenta y dos años y lleva treinta conduciendo un taxi en Bogotá. Nunca <strong>terminó el colegio</strong>: a los quince años empezó a trabajar para ayudar a su familia. Pero mañana, por fin, <strong>empezará</strong> la <strong>carrera</strong> de Contabilidad en un <strong>curso nocturno</strong> de la universidad pública.</p>
+  <p><span class="ln">6</span>Esta noche no puede dormir y repasa su plan. Por la mañana <strong>trabajará</strong> en el taxi, y a las seis <strong>saldrá</strong> corriendo hacia la <strong>facultad</strong>. <strong>Tendrá</strong> <strong>clases</strong> de lunes a jueves y los viernes <strong>hará</strong> los <strong>deberes</strong> con su nieta Mariana, que está en el último año del colegio y <strong>sabe</strong> mucho de <strong>matemáticas</strong>.</p>
+  <p><span class="ln">11</span>"¿Y si no entiendo nada? ¿Y si los otros <strong>estudiantes</strong> se ríen de mí?", piensa. Mariana le escribe un mensaje: "Abuelo, si tienes dudas, yo te <strong>ayudaré</strong>. Y si alguien se ríe, le <strong>diré</strong> que mi abuelo conoce la ciudad mejor que Google Maps".</p>
+  <p><span class="ln">15</span>Ernesto sonríe. Sabe que no <strong>será</strong> fácil: <strong>tendrá</strong> <strong>exámenes</strong>, <strong>trabajos</strong> y noches sin dormir. Pero dentro de cuatro años <strong>podrá</strong> abrir su propia oficina. Y el día de la <strong>graduación</strong>, toda la familia <strong>vendrá</strong> a aplaudirle… en taxi, por supuesto.</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Pequena ilustração de um caderno novo com etiqueta em branco, uma calculadora, uma carteirinha de estudante com foto de um senhor de bigode sorrindo e um chaveiro de táxi. Mesmo estilo e paleta, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<!-- PÁGINA 5 -->
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="ph"><b>🖼️ Sala de aula con etiquetas</b><span class="sz">Meia página</span>Ilustração de uma sala de aula universitária vista de lado: quadro, professor, projetor, carteiras, estudantes com cadernos, mochila, estojo, calculadora, livros e notebook, cada objeto com uma linha-guia vazia para o aluno escrever o nome. Estilo flat, paleta do livro, fundo branco.</div>
+  <div class="kw es">
+    <p><span>LUGARES</span> escuela • colegio • instituto • universidad • facultad • aula • biblioteca • laboratorio • patio • comedor</p>
+    <p><span>PERSONAS</span> estudiante • alumno/a • profesor/a • maestro/a • compañero/a de clase • director/a • tutor/a</p>
+    <p><span>ASIGNATURAS</span> matemáticas • lengua • historia • geografía • ciencias • física • química • inglés • educación física • arte</p>
+    <p><span>VERBOS</span> estudiar • aprender • enseñar • aprobar • suspender/reprobar • repasar • matricularse • graduarse • sacar buena nota</p>
+    <p><span>OTRAS</span> carrera • curso • clase • asignatura • examen • nota • deberes/tareas • beca • título • horario</p>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<!-- PÁGINA 6 -->
+<section class="page">
+  <h2>💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Um estudante jovem e uma senhora conversando sentados na escadaria de uma biblioteca, livros no colo, balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿Estudias ahora? ¿Qué estudias?</p>
+  <p class="q es">2. ¿Cuál era tu asignatura favorita en el colegio?</p>
+  <p class="q es">3. ¿Prefieres estudiar solo o en grupo? ¿Por qué?</p>
+  <p class="q es">4. ¿Qué harás el próximo año para mejorar tu español?</p>
+  <p class="q es">5. Si tienes tiempo y dinero, ¿qué curso harás en el futuro?</p>
+  <p class="q es">6. ¿Cómo crees que será la educación dentro de veinte años? ¿Habrá profesores o solo inteligencia artificial?</p>
+  </div>
+  <h2 style="margin-top:26px">⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 Estoy estudiando…</div><div class="card">📌 Me gustaría estudiar…</div>
+    <div class="card">📌 Se me da bien / mal…</div><div class="card">📌 Tengo examen de…</div>
+    <div class="card">📌 ¿Me lo puedes explicar otra vez?</div><div class="card">📌 ¿Cómo se dice … en español?</div>
+    <div class="card">📌 Si todo sale bien, …</div><div class="card">📌 ¡Mucha suerte!</div>
+  </div>
+  <span class="pno">6</span>
+</section>
+
+<!-- PÁGINA 7 -->
+<section class="page">
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm · reaproveitável</span></div>
+  <p class="es" style="font-size:17px">si‿estudio • te‿ayudaré • saldré‿a‿las‿seis • se‿me‿da‿bien • tengo‿examen • mucha‿suerte</p>
+  <p>No futuro, a <b>sílaba forte é sempre a última</b>, e a frase "sobe" até ela: <span class="es">te ayudaRÉ</span>, <span class="es">saldRÉ a las seis</span>. Repare também que <span class="es">si estudio</span> vira <b>"siestúdio"</b>: duas vogais iguais se fundem numa só.</p>
+  <div class="cols" style="margin-top:20px">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">Mis planes de estudio (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <ul class="steps"><li>qué estudias o estudiaste</li><li>qué se te da bien y qué se te da mal</li><li>qué harás el próximo año</li><li>2 condiciones con <span class="es">si…</span></li><li>dónde estarás dentro de cinco años</li></ul>
+      <div class="box"><i class="es">Ejemplo: Estudié Administración, pero se me dan mal los números. El próximo año haré un curso de fotografía. Si consigo una beca…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Carta a mi «yo» del futuro</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <p>Escribe <b>5–8 frases</b> a ti mismo/a dentro de un año: qué habrás aprendido y qué harás.</p>
+      <ul class="steps"><li>3 verbos irregulares en futuro</li><li>2 frases con <span class="es">si + presente</span></li><li>una asignatura o curso</li><li>un deseo</li></ul>
+      <div class="box"><i class="es">Ejemplo: Querido yo: dentro de un año hablarás español con confianza. Podrás ver series sin subtítulos y, si practicas cada día…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<!-- PÁGINA 8 -->
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">En la secretaría de la escuela de idiomas</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Balcão de secretaria de uma escola de idiomas com cartazes de bandeiras na parede: um estudante (A) de suéter vermelho segurando um folheto e uma secretária (B) de cardigã amarelo atrás do computador, sorrindo. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="a">🔴 A: Hola, buenos días. Quiero matricularme en un curso de español.</p>
+    <p class="b">🟡 B: ¡Muy bien! ¿Qué nivel tienes?</p>
+    <p class="a">🔴 A: Creo que A2. Entiendo bastante, pero hablar se me da mal.</p>
+    <p class="b">🟡 B: Entonces harás una prueba de nivel. Si sacas más de setenta, empezarás en el B1.</p>
+    <p class="a">🔴 A: ¿Y cuándo empiezan las clases?</p>
+    <p class="b">🟡 B: El lunes que viene. Tendrás clase martes y jueves, de siete a nueve.</p>
+    <p class="a">🔴 A: Perfecto. ¿Podré cambiar de horario si lo necesito?</p>
+    <p class="b">🟡 B: Sí, claro. Si nos avisas antes, no habrá problema.</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles. Después, inventad otro curso: guitarra, cocina, programación…</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li>A las seis <span class="hl">saldrá</span> corriendo hacia la facultad.</li>
+    <li><span class="hl">Tendrá</span> clases de lunes a jueves.</li>
+    <li>Los viernes <span class="hl">hará</span> los deberes con su nieta.</li>
+    <li><span class="hl">Si tienes</span> dudas, yo te <span class="hl">ayudaré</span>.</li>
+    <li>Dentro de cuatro años <span class="hl">podrá</span> abrir su propia oficina.</li>
+    <li>Toda la familia <span class="hl">vendrá</span> a aplaudirle.</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br>Ernesto está <b>imaginando y organizando</b> su futuro: el futuro simple le da a sus planes un tono de <b>decisión firme</b> y de <b>predicción</b>. En la frase 4, Mariana pone una <b>condición real y posible</b>: después de <span class="es">si</span> va el <b>presente</b> (<span class="es">tienes</span>), y la consecuencia va en <b>futuro</b> (<span class="es">ayudaré</span>).</div>
+  <span class="pno">8</span>
+</section>
+
+<!-- PÁGINA 9 -->
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo · reaproveitável</span></div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica la escena de la matrícula con otra persona.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto hablando de tus planes de estudio.</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<!-- PÁGINAS 10–11 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 6</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm · reaproveitável</span></div>
+  <h3>Historia: <i>O primeiro dia de Ernesto</i></h3>
+  <p>Ernesto tem cinquenta e dois anos e há trinta dirige um táxi em Bogotá. Nunca terminou a escola: aos quinze anos começou a trabalhar para ajudar a família. Mas amanhã, finalmente, vai começar o curso de Contabilidade numa turma noturna da universidade pública.</p>
+  <p>Esta noite ele não consegue dormir e revisa seu plano. De manhã vai trabalhar no táxi, e às seis vai sair correndo para a faculdade. Terá aulas de segunda a quinta, e às sextas fará as tarefas com a neta, Mariana, que está no último ano da escola e sabe muito de matemática.</p>
+  <p>"E se eu não entender nada? E se os outros estudantes rirem de mim?", pensa. Mariana manda uma mensagem: "Vô, se você tiver dúvidas, eu te ajudo. E se alguém rir, vou dizer que meu avô conhece a cidade melhor que o Google Maps".</p>
+  <p>Ernesto sorri. Sabe que não vai ser fácil: terá provas, trabalhos e noites sem dormir. Mas daqui a quatro anos poderá abrir seu próprio escritório. E no dia da formatura, a família inteira virá aplaudi-lo… de táxi, é claro.</p>
+  <h3>Preguntas</h3>
+  <ol><li>Você estuda atualmente? O que estuda?</li><li>Qual era sua matéria favorita na escola?</li><li>Você prefere estudar sozinho ou em grupo? Por quê?</li><li>O que você vai fazer no próximo ano para melhorar seu espanhol?</li><li>Se você tiver tempo e dinheiro, que curso vai fazer no futuro?</li><li>Como você acha que será a educação daqui a vinte anos? Haverá professores ou só inteligência artificial?</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">Estoy estudiando…</td><td>Estou estudando…</td></tr>
+  <tr><td class="es">Me gustaría estudiar…</td><td>Eu gostaria de estudar…</td></tr>
+  <tr><td class="es">Se me da bien / mal…</td><td>Sou bom / ruim em…</td></tr>
+  <tr><td class="es">Tengo examen de…</td><td>Tenho prova de…</td></tr>
+  <tr><td class="es">¿Me lo puedes explicar otra vez?</td><td>Pode me explicar de novo?</td></tr>
+  <tr><td class="es">¿Cómo se dice … en español?</td><td>Como se diz … em espanhol?</td></tr>
+  <tr><td class="es">Si todo sale bien, …</td><td>Se tudo der certo, …</td></tr>
+  <tr><td class="es">¡Mucha suerte!</td><td>Boa sorte!</td></tr></table></div>
+  <h3>Reto oral</h3><p>Fale sobre seus planos de estudo: o que você estuda ou estudou, em que é bom e em que é ruim, o que vai fazer no próximo ano, duas condições com "se…" e onde estará daqui a cinco anos.</p>
+  <span class="pno">10–11</span>
+</section>
+
+<!-- PÁGINAS 12–13 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 6</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">escuela</span> — escola<br>🇧🇷 <i>escuêla</i></div>
+    <div class="card"><span class="es">colegio</span> — escola<br>🇧🇷 <i>colêRRio</i></div>
+    <div class="card"><span class="es">asignatura</span> — matéria<br>🇧🇷 <i>assignatúra</i></div>
+    <div class="card"><span class="es">aprobar</span> — ser aprovado<br>🇧🇷 <i>aprobár</i></div>
+    <div class="card"><span class="es">examen</span> — prova<br>🇧🇷 <i>eksámen</i> (sem nasal)</div>
+    <div class="card"><span class="es">deberes</span> — tarefa de casa<br>🇧🇷 <i>debêres</i></div>
+    <div class="card"><span class="es">biblioteca</span> — biblioteca<br>🇧🇷 <i>bibliotêca</i></div>
+    <div class="card"><span class="es">enseñar</span> — ensinar<br>🇧🇷 <i>ensenhár</i></div>
+    <div class="card"><span class="es">matricularse</span> — matricular-se<br>🇧🇷 <i>matrikulárse</i></div>
+    <div class="card"><span class="es">beca</span> — bolsa de estudos<br>🇧🇷 <i>bêca</i></div>
+    <div class="card"><span class="es">graduación</span> — formatura<br>🇧🇷 <i>graduassión</i></div>
+    <div class="card"><span class="es">saldré</span> — sairei<br>🇧🇷 <i>saldrê</i></div>
+  </div>
+  <h3>🔤 Sonidos de esta unidad</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Infográfico mostrando a palavra "examen" dividida em sílabas com o "x" destacado como "ks" e um ícone de nariz riscado indicando que o "en" final não é nasal. Estilo limpo, sem texto além das sílabas.</div>
+  <ul>
+    <li><b>X entre vogais</b> → <b>"ks"</b>: <span class="es">examen</span> = <i>ek-sá-men</i>, <span class="es">éxito</span> = <i>ék-si-to</i> (e <span class="es">éxito</span> significa "sucesso", não "saída"!).</li>
+    <li><b>Grupos DR / BR / TR no futuro</b> → pronuncie a consoante e o r juntos, sem vogal no meio: <span class="es">tendré</span> = <i>ten-drê</i>, e não "tende-rê".</li>
+    <li><b>-EN / -AN finais</b> → sem nasalizar: <span class="es">examen</span>, <span class="es">tendrán</span>. A língua toca o céu da boca no final.</li>
+    <li><b>Sílaba tônica no futuro</b> → sempre a última (com acento), menos em <span class="es">nosotros</span>: <span class="es">tendrÉ, tendrÁS</span> × <span class="es">tendrEmos</span>.</li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">Se me dan bien las matemáticas.</td><td>Se me dan biên las matemáticas.</td></tr>
+  <tr><td class="es">Tengo examen de historia.</td><td>Têngo eksámen de istória.</td></tr>
+  <tr><td class="es">¿Me lo puedes explicar otra vez?</td><td>Me lo puêdes esplicár ôtra bês?</td></tr>
+  <tr><td class="es">Si todo sale bien, …</td><td>Si tôdo sále biên, …</td></tr>
+  <tr><td class="es">¡Mucha suerte!</td><td>Mútcha suêrte!</td></tr>
+  <tr><td class="es">Aprobaré el examen.</td><td>Aprobarê el eksámen.</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Futuro</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">poder</td><td>poder</td><td>irregular</td><td>podré, podrás, podrá</td><td>podrê</td></tr>
+  <tr><td class="es">salir</td><td>sair</td><td>irregular</td><td>saldré, saldrás, saldrá</td><td>saldrê</td></tr>
+  <tr><td class="es">saber</td><td>saber</td><td>irregular</td><td>sabré, sabrás, sabrá</td><td>sabrê</td></tr>
+  <tr><td class="es">decir</td><td>dizer</td><td>irregular</td><td>diré, dirás, dirá</td><td>dirê</td></tr>
+  <tr><td class="es">venir</td><td>vir</td><td>irregular</td><td>vendré, vendrás, vendrá</td><td>bendrê</td></tr>
+  <tr><td class="es">aprobar</td><td>ser aprovado</td><td>irregular (o→ue no presente)</td><td>aprobaré, aprobarás</td><td>aprobarê</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<!-- PÁGINA 14 -->
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">El año que viene estudiaré inglés.</span><br><span class="p">🇧🇷 El ánho ke biêne estudiarê inglés.</span><br><span class="pt">No ano que vem vou estudar inglês.</span></div>
+    <div class="flash"><span class="es">Si estudio cada día, aprobaré.</span><br><span class="p">🇧🇷 Siestúdio cáda día, aprobarê.</span><br><span class="pt">Se eu estudar todo dia, vou passar.</span></div>
+    <div class="flash"><span class="es">Se me dan mal los números.</span><br><span class="p">🇧🇷 Se me dan mal los númeross.</span><br><span class="pt">Sou ruim com números.</span></div>
+    <div class="flash"><span class="es">Mañana tendré examen de química.</span><br><span class="p">🇧🇷 Manhána tendrê eksámen de kímika.</span><br><span class="pt">Amanhã vou ter prova de química.</span></div>
+    <div class="flash"><span class="es">¿Me lo puedes explicar otra vez?</span><br><span class="p">🇧🇷 Me lo puêdes esplicár ôtra bês?</span><br><span class="pt">Pode me explicar de novo?</span></div>
+    <div class="flash"><span class="es">Dentro de cinco años podré trabajar en España.</span><br><span class="p">🇧🇷 Dêntro de sínko ánhos podrê trabaRRár en Espánha.</span><br><span class="pt">Daqui a cinco anos poderei trabalhar na Espanha.</span></div>
+    <div class="flash"><span class="es">¡Mucha suerte en el examen!</span><br><span class="p">🇧🇷 Mútcha suêrte en el eksámen!</span><br><span class="pt">Boa sorte na prova!</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Cena imaginada do futuro: Ernesto de beca e capelo de formatura, sorrindo, cercado pela família, com a neta Mariana abraçando-o; ao fundo, o táxi amarelo decorado com balões. Estilo e paleta do livro, sem texto.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 6. 🇪🇸</b><br><i>Próxima unidad: <span class="es">Tiempo, fechas y rutina</span> (Presente)</i></p>
+  <span class="pno">14</span>
+</section>
