@@ -1,0 +1,298 @@
+<title>Unidad 3 · Salud y cuerpo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 3 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<!-- PÁGINA 1 -->
+<section class="page opener">
+  <div class="eyebrow">🟢 Nivel A1 · Tiempo verbal: Futuro (ir a + infinitivo · futuro simple)</div>
+  <h1>UNIDAD 3</h1>
+  <p class="t2">SALUD Y CUERPO</p>
+  <p class="sub"><i>Saúde e corpo</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial de um consultório médico luminoso na Cidade do México: uma médica de cerca de 50 anos, cabelo grisalho preso e jaleco branco, mostra um esqueleto didático a Marcos (45 anos, um pouco acima do peso, camisa xadrez), que segura uma folha com exames. Na janela aparecem jacarandás floridos. Paleta quente com vermelho e amarelo suaves, estilo flat com textura leve, sem texto, espaço livre no canto superior para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ nombrar las partes del cuerpo<br>✔ decir qué te duele y cómo te sientes<br>✔ hablar con un médico o un farmacéutico<br>✔ hacer planes con <span class="es">voy a…</span> y hablar del futuro con <span class="es">empezaré, comeré, dormiré</span></p>
+  <span class="pno">1</span>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">Dos formas de hablar del futuro</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm</span>Ícone flat de uma seta reta apontando para frente sobre um calendário, vermelho e amarelo, fundo transparente.</div>
+  <p>En español hay dos formas muy comunes de hablar del futuro. <b>Ir a + infinitivo</b> sirve para <b>planes e intenciones</b> ya decididos, y es la más usada en la conversación. El <b>futuro simple</b> sirve para <b>promesas, predicciones</b> y planes más lejanos o formales: es lo que dice un médico o lo que escribes en tu lista de propósitos.</p>
+  <div class="box"><b>📐 FÓRMULAS</b><br><code>ir (presente) + a + infinitivo</code> → <span class="es">Voy a hacer ejercicio.</span><br><code>infinitivo + é / ás / á / emos / éis / án</code> → <span class="es">Mañana te sentirás mejor.</span></div>
+  <div class="tw"><table>
+    <tr><th></th><th>IR A + infinitivo</th><th>CAMINAR</th><th>COMER</th><th>DORMIR</th><th>TENER</th><th>HACER</th></tr>
+    <tr><td>yo</td><td>voy a caminar</td><td>caminaré</td><td>comeré</td><td>dormiré</td><td>tendré</td><td>haré</td></tr>
+    <tr><td>tú</td><td>vas a caminar</td><td>caminarás</td><td>comerás</td><td>dormirás</td><td>tendrás</td><td>harás</td></tr>
+    <tr><td>él / ella / usted</td><td>va a caminar</td><td>caminará</td><td>comerá</td><td>dormirá</td><td>tendrá</td><td>hará</td></tr>
+    <tr><td>nosotros/as</td><td>vamos a caminar</td><td>caminaremos</td><td>comeremos</td><td>dormiremos</td><td>tendremos</td><td>haremos</td></tr>
+    <tr><td>vosotros/as</td><td>vais a caminar</td><td>caminaréis</td><td>comeréis</td><td>dormiréis</td><td>tendréis</td><td>haréis</td></tr>
+    <tr><td>ellos / ustedes</td><td>van a caminar</td><td>caminarán</td><td>comerán</td><td>dormirán</td><td>tendrán</td><td>harán</td></tr>
+  </table></div>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>Não esqueça o "a":</b> <span class="es">Voy <u>a</u> comer</span>, e nunca ~~Voy comer~~ como em português.<br>
+  • <b>"Doer" funciona como "gustar":</b> <span class="es">Me duele la cabeza.</span> · <span class="es">Me duelen los pies.</span><br>
+  • <b>Falso cognato:</b> <span class="es">constipado</span> = resfriado (Espanha), e não "com prisão de ventre", que é <span class="es">estreñido</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">el rato</span> = um momento ("un rato"), e não o animal, que é <span class="es">el ratón</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">la receta</span> = receita médica <i>e</i> de culinária; mas <span class="es">la cuenta</span> não é "a conta do médico", e sim a do restaurante.</div>
+  <span class="pno">2</span>
+</section>
+
+<!-- PÁGINAS 3–4 -->
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">El nuevo plan de Marcos</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Ilustração narrativa: Marcos, 45 anos, sentado na cozinha do seu apartamento na Cidade do México à noite, escrevendo uma lista num caderno. Sobre a mesa há uma tigela de frutas, um par de tênis novos ainda na caixa e o celular mostrando um aplicativo de corrida. A filha adolescente, Valeria, espia por cima do ombro dele, rindo. Estilo de livro didático moderno, traços limpos, cores quentes, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span>Hoy Marcos <strong>fue al médico</strong> porque últimamente le <strong>duele la espalda</strong> y siempre está <strong>cansado</strong>. La doctora Ruiz le dijo: "No es grave, pero <strong>tendrá que</strong> cambiar algunos hábitos. Si no, en unos años <strong>tendrá</strong> problemas de <strong>corazón</strong>". Marcos volvió a casa preocupado, pero también con una idea clara.</p>
+  <p><span class="ln">6</span>Esta noche escribió su nuevo plan. "Mañana <strong>voy a empezar</strong>", dijo en voz alta. Todas las mañanas <strong>va a caminar</strong> treinta minutos por el parque antes del trabajo. Ya no <strong>va a comer</strong> tacos a medianoche, y <strong>beberá</strong> más agua y menos refresco. Los fines de semana <strong>irá</strong> en bici con su hija Valeria.</p>
+  <p><span class="ln">11</span>También <strong>dormirá</strong> más: nada de series hasta las dos de la mañana. "Y en el trabajo <strong>voy a levantarme</strong> cada hora para estirar las <strong>piernas</strong> y el <strong>cuello</strong>", pensó.</p>
+  <p><span class="ln">14</span>Valeria leyó la lista y se rió: "Papá, ¿de verdad <strong>vas a hacer</strong> todo eso?". Marcos sonrió. "Ya verás. En tres meses <strong>me sentiré</strong> como nuevo… y tú <strong>tendrás</strong> que correr para alcanzarme".</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Pequena ilustração de uma folha de caderno com uma lista manuscrita e ícones desenhados ao lado (tênis, garrafa de água, lua, bicicleta). Mesmo estilo e paleta, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<!-- PÁGINA 5 -->
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="ph"><b>🖼️ Cuerpo humano con etiquetas</b><span class="sz">Meia página, à esquerda das palavras</span>Ilustração frontal simples de uma pessoa em pé, de corpo inteiro, em estilo flat neutro, com linhas-guia vazias apontando para cabeça, olhos, nariz, boca, orelha, pescoço, ombro, braço, mão, dedo, peito, barriga, perna, joelho e pé, para o aluno escrever os nomes. Paleta do livro, fundo branco.</div>
+  <div class="kw es">
+    <p><span>EL CUERPO</span> cabeza • cara • ojo • nariz • boca • diente • oreja • cuello • hombro • espalda • brazo • mano • dedo • pecho • corazón • estómago • barriga • pierna • rodilla • pie</p>
+    <p><span>SÍNTOMAS</span> dolor • fiebre • tos • gripe • resfriado • alergia • cansado • mareado • enfermo • sano</p>
+    <p><span>VERBOS</span> doler • sentirse • cuidarse • descansar • tomar (una pastilla) • caminar • correr • estirar • dormir</p>
+    <p><span>LUGARES</span> médico • doctora • farmacia • hospital • centro de salud • cita • receta • pastilla • jarabe</p>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<!-- PÁGINA 6 -->
+<section class="page">
+  <h2>💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Duas amigas de meia-idade conversando durante uma caminhada no parque, com garrafas de água e balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿Cómo te sientes hoy?</p>
+  <p class="q es">2. ¿Te duele algo ahora?</p>
+  <p class="q es">3. ¿Qué haces cuando tienes gripe?</p>
+  <p class="q es">4. ¿Cuántas horas duermes normalmente?</p>
+  <p class="q es">5. ¿Qué vas a hacer esta semana para cuidarte?</p>
+  <p class="q es">6. ¿Cómo crees que será tu salud dentro de diez años? ¿Qué cambiarás?</p>
+  </div>
+  <h2 style="margin-top:26px">⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 Me duele…</div><div class="card">📌 No me encuentro bien.</div>
+    <div class="card">📌 Tengo fiebre / tos.</div><div class="card">📌 Quería pedir cita.</div>
+    <div class="card">📌 ¿Tiene algo para…?</div><div class="card">📌 ¡Que te mejores!</div>
+    <div class="card">📌 Tienes que cuidarte.</div><div class="card">📌 Voy a intentarlo.</div>
+  </div>
+  <span class="pno">6</span>
+</section>
+
+<!-- PÁGINA 7 -->
+<section class="page">
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm · reaproveitável</span></div>
+  <p class="es" style="font-size:17px">voy‿a • vas‿a‿hacer • me‿duele‿el • tengo‿un‿dolor • va‿a‿estar • que‿te‿mejores</p>
+  <p>Con <b>ir a</b> las vocales se juntan mucho: <span class="es">voy a ir</span> suena casi como <b>"bo-ia-ír"</b> y <span class="es">va a estar</span> como <b>"baes-tár"</b>. Si escuchas a un nativo y no oyes la "a", ¡está ahí, pero unida!</p>
+  <div class="cols" style="margin-top:20px">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">Mi plan para estar sano (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <ul class="steps"><li>cómo está tu salud ahora</li><li>qué te duele o te molesta a veces</li><li>3 cosas que vas a hacer (<span class="es">voy a…</span>)</li><li>algo que nunca más harás</li><li>cómo te sentirás después</li></ul>
+      <div class="box"><i class="es">Ejemplo: En general estoy bien, pero a veces me duelen las rodillas. Este mes voy a nadar dos veces por semana y…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Mis propósitos</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <p>Escribe <b>5–8 frases</b>: tu lista de propósitos de salud para el próximo mes.</p>
+      <ul class="steps"><li>3 frases con <span class="es">voy a</span></li><li>2 frases en futuro simple</li><li>2 partes del cuerpo</li><li>una predicción</li></ul>
+      <div class="box"><i class="es">Ejemplo: El próximo mes voy a dormir ocho horas. Beberé dos litros de agua al día y…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<!-- PÁGINA 8 -->
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">En la farmacia</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Interior de uma farmácia de bairro com cruz verde luminosa: um cliente jovem (A) de moletom vermelho, com cachecol e nariz vermelho, fala com uma farmacêutica (B) de jaleco e lenço amarelo atrás do balcão. Prateleiras com caixinhas coloridas. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="a">🔴 A: Buenas tardes. No me encuentro bien.</p>
+    <p class="b">🟡 B: ¿Qué le pasa?</p>
+    <p class="a">🔴 A: Me duele mucho la garganta y tengo un poco de fiebre.</p>
+    <p class="b">🟡 B: ¿Desde cuándo?</p>
+    <p class="a">🔴 A: Desde ayer. Mañana tengo un examen y voy a estar fatal.</p>
+    <p class="b">🟡 B: Tome estas pastillas cada ocho horas. Si mañana sigue con fiebre, tendrá que ir al médico.</p>
+    <p class="a">🔴 A: Vale, voy a descansar esta noche. ¿Cuánto es?</p>
+    <p class="b">🟡 B: Seis euros. ¡Que se mejore!</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles. Después, cambiad el síntoma: dolor de estómago, alergia, tos…</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li>Mañana <span class="hl">voy a empezar</span>.</li>
+    <li>Todas las mañanas <span class="hl">va a caminar</span> treinta minutos.</li>
+    <li><span class="hl">Beberá</span> más agua y menos refresco.</li>
+    <li>Si no, en unos años <span class="hl">tendrá</span> problemas de corazón.</li>
+    <li>En tres meses <span class="hl">me sentiré</span> como nuevo.</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br><b>Voy a / va a</b> expresa una <b>decisión ya tomada</b>: Marcos ya decidió empezar. El <b>futuro simple</b> suena a <b>promesa o predicción</b>: la doctora predice (<span class="es">tendrá problemas</span>) y Marcos promete (<span class="es">me sentiré como nuevo</span>). En la conversación diaria, <span class="es">voy a</span> es lo más natural; el futuro simple da un tono más firme o más lejano.</div>
+  <span class="pno">8</span>
+</section>
+
+<!-- PÁGINA 9 -->
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo · reaproveitável</span></div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica la escena de la farmacia con otra persona.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto contando tu plan para estar sano.</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<!-- PÁGINAS 10–11 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 3</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm · reaproveitável</span></div>
+  <h3>Historia: <i>O novo plano de Marcos</i></h3>
+  <p>Hoje Marcos foi ao médico porque ultimamente as costas doem e ele está sempre cansado. A doutora Ruiz disse: "Não é grave, mas o senhor vai ter que mudar alguns hábitos. Se não, em alguns anos terá problemas de coração". Marcos voltou para casa preocupado, mas também com uma ideia clara.</p>
+  <p>Esta noite ele escreveu seu novo plano. "Amanhã eu vou começar", disse em voz alta. Todas as manhãs ele vai caminhar trinta minutos pelo parque antes do trabalho. Não vai mais comer tacos à meia-noite, e vai beber mais água e menos refrigerante. Nos fins de semana vai andar de bicicleta com a filha, Valeria.</p>
+  <p>Também vai dormir mais: nada de séries até as duas da manhã. "E no trabalho vou me levantar a cada hora para alongar as pernas e o pescoço", pensou.</p>
+  <p>Valeria leu a lista e riu: "Pai, você vai mesmo fazer tudo isso?". Marcos sorriu. "Você vai ver. Em três meses vou me sentir novo… e você vai ter que correr para me alcançar".</p>
+  <h3>Preguntas</h3>
+  <ol><li>Como você se sente hoje?</li><li>Está doendo alguma coisa agora?</li><li>O que você faz quando está gripado?</li><li>Quantas horas você costuma dormir?</li><li>O que você vai fazer esta semana para se cuidar?</li><li>Como você acha que estará sua saúde daqui a dez anos? O que vai mudar?</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">Me duele…</td><td>Está doendo… / Dói…</td></tr>
+  <tr><td class="es">No me encuentro bien.</td><td>Não estou me sentindo bem.</td></tr>
+  <tr><td class="es">Tengo fiebre / tos.</td><td>Estou com febre / tosse.</td></tr>
+  <tr><td class="es">Quería pedir cita.</td><td>Queria marcar uma consulta.</td></tr>
+  <tr><td class="es">¿Tiene algo para…?</td><td>Tem alguma coisa para…?</td></tr>
+  <tr><td class="es">¡Que te mejores!</td><td>Melhoras!</td></tr>
+  <tr><td class="es">Tienes que cuidarte.</td><td>Você precisa se cuidar.</td></tr>
+  <tr><td class="es">Voy a intentarlo.</td><td>Vou tentar.</td></tr></table></div>
+  <h3>Reto oral</h3><p>Fale sobre seu plano para ficar saudável: como está sua saúde agora, o que às vezes dói ou incomoda, três coisas que você vai fazer, algo que nunca mais fará e como vai se sentir depois.</p>
+  <span class="pno">10–11</span>
+</section>
+
+<!-- PÁGINAS 12–13 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 3</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">cabeza</span> — cabeça<br>🇧🇷 <i>cabêssa / cabêθa</i></div>
+    <div class="card"><span class="es">ojo</span> — olho<br>🇧🇷 <i>ôRRo</i></div>
+    <div class="card"><span class="es">oreja</span> — orelha<br>🇧🇷 <i>orêRRa</i></div>
+    <div class="card"><span class="es">cuello</span> — pescoço<br>🇧🇷 <i>cuêjo</i></div>
+    <div class="card"><span class="es">espalda</span> — costas<br>🇧🇷 <i>espálda</i> (l bem pronunciado)</div>
+    <div class="card"><span class="es">rodilla</span> — joelho<br>🇧🇷 <i>RRodíja</i></div>
+    <div class="card"><span class="es">corazón</span> — coração<br>🇧🇷 <i>coraθón / corassón</i></div>
+    <div class="card"><span class="es">fiebre</span> — febre<br>🇧🇷 <i>fiêbre</i></div>
+    <div class="card"><span class="es">tos</span> — tosse<br>🇧🇷 <i>tôs</i></div>
+    <div class="card"><span class="es">doler</span> — doer<br>🇧🇷 <i>dolér</i></div>
+    <div class="card"><span class="es">mareado</span> — tonto, enjoado<br>🇧🇷 <i>mareádo</i></div>
+    <div class="card"><span class="es">jarabe</span> — xarope<br>🇧🇷 <i>RRarábe</i></div>
+  </div>
+  <h3>🔤 Sonidos de esta unidad</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Diagrama de perfil da boca mostrando a ponta da língua entre os dentes (o som "θ" da Espanha em "cabeza") lado a lado com a língua atrás dos dentes (o "s" da América Latina). Estilo infográfico limpo, sem texto.</div>
+  <ul>
+    <li><b>Futuro com acento no final</b> → a força cai na última sílaba: <span class="es">caminaRÉ</span>, <span class="es">comeRÁ</span>, <span class="es">tendreMOS</span>. Sem o acento, <span class="es">caminara</span> é outro tempo verbal.</li>
+    <li><b>L final de sílaba</b> → não vira "u": <span class="es">espalda</span> = <i>es-pal-da</i>, e não "espauda".</li>
+    <li><b>Z e CE/CI</b> → "θ" na Espanha e "s" na América Latina. Os dois estão corretos, então escolha um e seja consistente.</li>
+    <li><b>Ditongo UE / IE</b> → as duas vogais soam: <span class="es">duele</span> = <i>duê-le</i>, <span class="es">fiebre</span> = <i>fiê-bre</i>.</li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">Me duele la cabeza.</td><td>Me duêle la cabêssa.</td></tr>
+  <tr><td class="es">No me encuentro bien.</td><td>No me encuêntro biên.</td></tr>
+  <tr><td class="es">Quería pedir cita.</td><td>Kería pedír síta.</td></tr>
+  <tr><td class="es">¡Que te mejores!</td><td>Ke te meRRóres!</td></tr>
+  <tr><td class="es">Voy a intentarlo.</td><td>Bôia intentárlo.</td></tr>
+  <tr><td class="es">Tienes que cuidarte.</td><td>Tiênes ke cuidárte.</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Futuro</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">ir (a)</td><td>ir</td><td>irregular</td><td>voy, vas, va, vamos, van</td><td>bôi, bás, bá</td></tr>
+  <tr><td class="es">doler</td><td>doer</td><td>irregular (o→ue)</td><td>me duele / me duelen</td><td>duêle, duêlen</td></tr>
+  <tr><td class="es">tener</td><td>ter</td><td>irregular</td><td>tendré, tendrás, tendrá</td><td>tendrê, tendrás</td></tr>
+  <tr><td class="es">hacer</td><td>fazer</td><td>irregular</td><td>haré, harás, hará</td><td>arê, arás</td></tr>
+  <tr><td class="es">sentirse</td><td>sentir-se</td><td>irregular (e→ie)</td><td>me sentiré, te sentirás</td><td>me sentirê</td></tr>
+  <tr><td class="es">dormir</td><td>dormir</td><td>irregular (o→ue)</td><td>dormiré, dormirá</td><td>dormirê</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<!-- PÁGINA 14 -->
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">Me duele la espalda.</span><br><span class="p">🇧🇷 Me duêle la espálda.</span><br><span class="pt">Minhas costas estão doendo.</span></div>
+    <div class="flash"><span class="es">No me encuentro bien.</span><br><span class="p">🇧🇷 No me encuêntro biên.</span><br><span class="pt">Não estou me sentindo bem.</span></div>
+    <div class="flash"><span class="es">Tengo fiebre desde ayer.</span><br><span class="p">🇧🇷 Têngo fiêbre dêsde ajêr.</span><br><span class="pt">Estou com febre desde ontem.</span></div>
+    <div class="flash"><span class="es">Quería pedir cita con el médico.</span><br><span class="p">🇧🇷 Kería pedír síta con el médico.</span><br><span class="pt">Queria marcar uma consulta com o médico.</span></div>
+    <div class="flash"><span class="es">Mañana voy a empezar.</span><br><span class="p">🇧🇷 Manhána bôia empessár.</span><br><span class="pt">Amanhã eu vou começar.</span></div>
+    <div class="flash"><span class="es">Dormiré más y comeré mejor.</span><br><span class="p">🇧🇷 Dormirê más i comerê meRRór.</span><br><span class="pt">Vou dormir mais e comer melhor.</span></div>
+    <div class="flash"><span class="es">¡Que te mejores!</span><br><span class="p">🇧🇷 Ke te meRRóres!</span><br><span class="pt">Melhoras!</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Marcos e Valeria pedalando lado a lado numa ciclovia arborizada da Cidade do México num domingo de manhã, os dois sorrindo, ele um pouco ofegante. Estilo e paleta do livro, sem texto.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 3. 🇪🇸</b><br><i>Próxima unidad: <span class="es">Alimentación y bebidas</span> (Presente)</i></p>
+  <span class="pno">14</span>
+</section>
