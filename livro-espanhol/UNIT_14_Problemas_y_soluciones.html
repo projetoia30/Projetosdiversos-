@@ -1,0 +1,329 @@
+<title>Unidad 14 · Problemas y soluciones cotidianas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Layout: páginas de livro empilhadas, faixa de nível na borda externa */
+:root{
+  --bg:#ece7dd; --page:#fffdf8; --sand:#faf3e3; --fg:#2b2b2b; --muted:#6b645a;
+  --red:#c8102e; --yellow:#f1bf00; --level:#3ba55c; --line:#e3d9c6; --ph:#f4efe4;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Merriweather",Georgia,serif; --es:"Nunito",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--page:#22201b;--sand:#2c2820;--fg:#ece6da;--muted:#a59c8c;--red:#ff5a6e;--yellow:#f5cc3a;--level:#5fc47e;--line:#3d382e;--ph:#2a261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.page{max-width:780px;margin:0 auto 28px;background:var(--page);border-right:10px solid var(--level);padding:36px clamp(18px,5vw,56px);box-shadow:0 2px 14px rgb(0 0 0/.08);position:relative}
+.pno{position:absolute;bottom:12px;right:20px;font:600 11px var(--display);color:var(--muted);letter-spacing:.08em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2}
+h2{font-size:1.35rem;margin:0 0 4px;color:var(--red)} h2+.sub{margin:0 0 18px;font-style:italic;color:var(--muted)}
+h3{font-size:1rem;margin:22px 0 8px}
+.es{font-family:var(--es);font-weight:700}
+.eyebrow{font:600 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--level)}
+.opener h1{font-size:clamp(2.4rem,8vw,4rem);margin:4px 0 0;font-weight:800}
+.opener .t2{font-size:clamp(1.4rem,4.5vw,2.2rem);color:var(--red);margin:0}
+.ph{border:2px dashed var(--muted);background:var(--ph);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:13px;line-height:1.5}
+.ph b{font-family:var(--display);color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ph .sz{display:block;color:var(--muted);font-size:12px;margin:4px 0}
+.ph.big{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.box{background:var(--sand);border-left:4px solid var(--red);padding:12px 16px;margin:16px 0}
+.box.warn{border-left-color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto;margin:12px 0}
+th{background:var(--level);color:#fff;font:600 13px var(--display);text-align:left;padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--sand)}
+.story p{font-size:16px;line-height:1.85;position:relative}
+.story .ln{position:absolute;left:-30px;font:600 11px var(--display);color:var(--muted)}
+.story strong{font-family:var(--es);text-decoration:underline 2px var(--level);text-underline-offset:3px}
+.kw{background:var(--sand);padding:14px 16px;border-radius:4px}
+.kw p{margin:6px 0}.kw span{font:600 11px var(--display);letter-spacing:.1em;color:var(--muted);margin-right:8px}
+.q{background:var(--sand);border-radius:16px;padding:10px 16px;margin:10px 0;max-width:88%}
+.q:nth-child(even){margin-left:auto;background:color-mix(in srgb,var(--yellow) 18%,var(--page))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--sand);padding:10px 14px;border-radius:4px;min-width:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.lines div{border-bottom:1px solid var(--line);height:30px}
+.chat p{max-width:85%;padding:8px 14px;border-radius:14px;margin:8px 0}
+.chat .a{background:color-mix(in srgb,var(--red) 14%,var(--page))}
+.chat .b{background:color-mix(in srgb,var(--yellow) 22%,var(--page));margin-left:auto}
+.hl{color:var(--red);font-family:var(--es)}
+.steps li{margin:8px 0;list-style:"☐  "}
+.appx{background:var(--sand)}
+.flash{border:1.5px dashed var(--muted);padding:10px 14px;border-radius:4px}
+.flash .p{color:var(--red)} .flash .pt{font-style:italic;color:var(--muted)}
+.banner{max-width:780px;margin:0 auto 20px;font:600 13px var(--display);color:var(--muted)}
+/* Nivel A2: faixa amarela */
+:root{--level:#d9a400}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5cc3a}}
+:root[data-theme="dark"]{--level:#f5cc3a}
+th{color:#2b2b2b}
+.clock{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.clock div{background:var(--sand);padding:8px 12px;border-radius:4px;font-size:14px}
+/* Nivel B1: faixa laranja */
+:root{--level:#e07a12}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#f5a04a}}
+:root[data-theme="dark"]{--level:#f5a04a}
+/* Nivel B2: faixa vermelha */
+:root{--level:#a50d26}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--level:#ff5a6e}}
+:root[data-theme="dark"]{--level:#ff5a6e}
+th{color:#fff}
+</style>
+
+<p class="banner">PRÉVIA DE DIAGRAMAÇÃO · Unidad 14 · As caixas tracejadas são espaços para imagens geradas no Canva</p>
+
+<!-- PÁGINA 1 -->
+<section class="page opener">
+  <div class="eyebrow">🔴 Nivel B2 · Tiempo verbal: Pasado (condicional compuesto · si + pluscuamperfecto de subjuntivo)</div>
+  <h1>UNIDAD 14</h1>
+  <p class="t2">PROBLEMAS Y SOLUCIONES COTIDIANAS</p>
+  <p class="sub"><i>Problemas e soluções do dia a dia</i></p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Apertura</b><span class="sz">Largura total, ~60% da altura, sangrada no topo</span>Ilustração editorial em estilo de "dia caótico" na Cidade do Panamá: no centro, Rubén (33 anos, terno azul-marinho com uma mancha de café na camisa, gravata torta, celular quebrado na mão) corre sob uma chuva tropical repentina; ao redor, como em quadrinhos, pequenas cenas: um carro com pneu furado, chaves caindo num bueiro, um relógio marcando 16h55, um ônibus indo embora. Ao fundo, os arranha-céus da cidade e o Casco Antiguo. Tom bem-humorado, paleta quente com vermelho, amarelo e azul, estilo flat com textura leve, sem texto, espaço livre no topo para o título.</div>
+  <h3>EN ESTA UNIDAD VAS A…</h3>
+  <p>✔ describir problemas cotidianos: averías, pérdidas, accidentes, malentendidos<br>✔ pedir ayuda, quejarte y proponer soluciones<br>✔ imaginar cómo habría sido el pasado: <span class="es">Si hubiera salido antes, habría llegado a tiempo.</span><br>✔ expresar arrepentimiento y sacar conclusiones</p>
+  <span class="pno">1</span>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="page">
+  <h2>🎯 1. ENFOQUE GRAMATICAL</h2>
+  <p class="sub">Hipótesis sobre el pasado: lo que pudo ser y no fue</p>
+  <div class="ph" style="float:right;width:150px;margin:0 0 10px 14px"><b>🖼️ Icono</b><span class="sz">4 × 4 cm · o mesmo da Unidad 11</span>Duas setas curvas para trás.</div>
+  <p>Cuando algo sale mal, es natural pensar: "¿Y si lo hubiera hecho de otra manera?". Para imaginar un <b>pasado diferente</b> (que ya no se puede cambiar) usamos la <b>condicional irreal del pasado</b>: <span class="es">si</span> + <b>pluscuamperfecto de subjuntivo</b> + <b>condicional compuesto</b>. Es la estructura del arrepentimiento, de las excusas y de las lecciones aprendidas.</p>
+  <div class="box"><b>📐 FÓRMULAS</b><br><code>Si + hubiera + participio, + habría + participio</code><br><span class="es">Si <u>hubiera mirado</u> el pronóstico, <u>habría llevado</u> paraguas.</span><br><code>Ojalá + hubiera + participio</code> (arrepentimiento) → <span class="es">¡Ojalá <u>hubiera salido</u> antes!</span><br><code>Debería haber + participio</code> (autocrítica) → <span class="es"><u>Debería haber cargado</u> el móvil.</span></div>
+  <div class="tw"><table>
+    <tr><th></th><th>HABER (pluscuamperfecto de subjuntivo)</th><th>HABER (condicional)</th><th>+ participio</th></tr>
+    <tr><td>yo</td><td>hubiera</td><td>habría</td><td rowspan="6">salido · llegado · perdido · hecho · visto · dicho · puesto</td></tr>
+    <tr><td>tú</td><td>hubieras</td><td>habrías</td></tr>
+    <tr><td>él / ella / usted</td><td>hubiera</td><td>habría</td></tr>
+    <tr><td>nosotros/as</td><td>hubiéramos</td><td>habríamos</td></tr>
+    <tr><td>vosotros/as</td><td>hubierais</td><td>habríais</td></tr>
+    <tr><td>ellos / ustedes</td><td>hubieran</td><td>habrían</td></tr>
+  </table></div>
+  <p><i>También existe la forma <span class="es">hubiese, hubieses…</span>: significa lo mismo y es más frecuente en España y en la lengua escrita.</i></p>
+  <div class="box warn"><b>⚠️ ¡OJO, BRASILEÑO!</b><br>
+  • <b>O paralelo é perfeito:</b> "Se eu <u>tivesse saído</u> antes, <u>teria chegado</u>" = <span class="es">Si <u>hubiera salido</u> antes, <u>habría llegado</u></span>. Só troque "ter" por <span class="es">haber</span>!<br>
+  • <b>Nunca condicional depois de "si":</b> ~~Si habría sabido~~ é um erro comum até entre nativos, mas evite-o.<br>
+  • <b>Na fala</b>, muitos nativos usam <span class="es">hubiera</span> nas duas partes: <span class="es">Si lo hubiera sabido, no hubiera venido.</span> É correto e natural.<br>
+  • <b>Falso cognato:</b> <span class="es">la avería</span> = defeito, pane (de carro, máquina); <span class="es">averiado</span> = quebrado, com defeito.<br>
+  • <b>Falso cognato:</b> <span class="es">el pinchazo</span> = pneu furado (<span class="es">pinchar una rueda</span>); <span class="es">la goma</span> em alguns países = pneu.<br>
+  • <b>Falso cognato:</b> <span class="es">exquisito</span> (Unidad 1!) e agora <span class="es">el éxito</span> = sucesso; "êxito" no sentido de saída é <span class="es">la salida</span>.<br>
+  • <b>Falso cognato:</b> <span class="es">la oficina de objetos perdidos</span> = achados e perdidos.</div>
+  <span class="pno">2</span>
+</section>
+
+<!-- PÁGINAS 3–4 -->
+<section class="page">
+  <h2>📖 2. HISTORIA</h2>
+  <p class="sub">El peor día para que todo saliera mal</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Escena principal (página izquierda, entera)</b><span class="sz">Página inteira, sangrada, vertical</span>Ilustração narrativa: o interior de um táxi antigo e colorido na Cidade do Panamá sob chuva forte. No banco de trás, Rubén (33 anos, terno azul-marinho com mancha de café, cabelo molhado) segura com cuidado uma caixinha de alianças e olha o relógio, desesperado. O taxista, um senhor sorridente de chapéu panamá, dirige com uma mão e oferece uma toalha com a outra. Pelas janelas embaçadas, luzes da cidade e uma igreja colonial ao longe. Estilo de livro didático moderno, traços limpos, tom bem-humorado, sem texto.</div>
+  <div class="story">
+  <p><span class="ln">1</span>El sábado pasado se casaba Mariela, la hermana de <strong>Rubén</strong>, en una iglesia del Casco Antiguo de Panamá. Él era el <strong>padrino</strong> y tenía una única misión: llevar los <strong>anillos</strong>. La ceremonia empezaba a las cinco. A las tres, Rubén estaba tranquilo en casa, planchando la camisa. "Me sobra tiempo", pensó. <strong>Fue</strong> su primer error.</p>
+  <p><span class="ln">7</span>Primero se le <strong>derramó</strong> el café sobre la camisa blanca. Luego, al salir, se le <strong>cayeron</strong> las <strong>llaves</strong> del coche por una alcantarilla. Llamó a un taxi, pero con la <strong>prisa</strong> se le <strong>rompió</strong> la <strong>pantalla</strong> del móvil. Y cuando por fin subió al taxi, empezó a <strong>llover</strong> como solo llueve en el trópico. A los diez minutos, el taxi tuvo un <strong>pinchazo</strong>.</p>
+  <p><span class="ln">13</span>Mientras el taxista cambiaba la rueda bajo la lluvia, Rubén se lamentaba: "<strong>Si hubiera salido</strong> antes, <strong>no habría pasado</strong> nada de esto. <strong>Si hubiera cargado</strong> el móvil anoche, <strong>habría podido</strong> avisar a alguien. <strong>¡Ojalá hubiera escuchado</strong> a mi madre!". El taxista, un señor mayor muy tranquilo, le dijo: "Joven, lamentarse no arregla ruedas. Ayúdeme con el gato".</p>
+  <p><span class="ln">19</span>Llegaron a la iglesia a las cinco y veinte, empapados. Rubén entró corriendo… y se encontró con que la ceremonia <strong>todavía no había empezado</strong>: la novia también llegaba tarde, por culpa de un <strong>atasco</strong>. Mariela lo vio con la camisa manchada y se echó a reír. "<strong>Si no hubieras llegado</strong> así, <strong>no habría sido</strong> nuestra boda". Desde entonces, en la familia, cuando algo sale mal, siempre alguien dice: "Tranquilos, es un día Rubén".</p>
+  </div>
+  <div class="ph" style="width:110px;text-align:center"><b>🎧 QR</b><span class="sz">3 × 3 cm · áudio</span></div>
+  <div class="ph"><b>🖼️ Viñeta secundaria</b><span class="sz">6 × 4 cm, rodapé</span>Pequena ilustração de uma foto de casamento divertida: a noiva rindo e Rubén ao lado, encharcado, com a mancha de café na camisa, segurando as alianças no alto como um troféu. Mesmo estilo e paleta, fundo branco.</div>
+  <span class="pno">3–4</span>
+</section>
+
+<!-- PÁGINA 5 -->
+<section class="page">
+  <h2>🔑 3. PALABRAS CLAVE</h2>
+  <div class="ph"><b>🖼️ Problemas cotidianos</b><span class="sz">Meia página</span>Grade de 12 pequenas ilustrações bem-humoradas de problemas do dia a dia: pneu furado, celular com tela quebrada, chaves perdidas, vazamento no teto, apagão, mala perdida no aeroporto, ônibus perdido, conta errada no restaurante, computador travado, porta trancada com a chave dentro, café derramado, engarrafamento. Cada uma com etiqueta vazia. Estilo flat, paleta do livro, fundo branco.</div>
+  <div class="kw es">
+    <p><span>PROBLEMAS</span> problema • avería • pinchazo • apagón • atasco • retraso • gotera • fuga de agua • malentendido • despiste • imprevisto • accidente • robo</p>
+    <p><span>OBJETOS</span> llaves • cartera • móvil • pantalla • cargador • paraguas • rueda • gato (del coche) • enchufe • fusible</p>
+    <p><span>VERBOS «SE ME…»</span> se me ha roto • se me ha caído • se me ha olvidado • se me ha perdido • se me ha estropeado • se me ha acabado</p>
+    <p><span>SOLUCIONES</span> arreglar • reparar • solucionar • llamar al técnico • pedir ayuda • poner una reclamación • tener un plan B • mantener la calma • sacar una lección</p>
+    <p><span>REACCIONES</span> ¡Qué mala suerte! • ¡Qué desastre! • ¡No me lo puedo creer! • ¡Menos mal! • ¡Lo que faltaba! • No pasa nada</p>
+  </div>
+  <span class="pno">5</span>
+</section>
+
+<!-- PÁGINA 6 -->
+<section class="page">
+  <h2>💬 4. PREGUNTAS PARA CONVERSAR</h2>
+  <div class="ph" style="float:right;width:190px;margin-left:14px"><b>🖼️ Personas conversando</b><span class="sz">7 × 7 cm</span>Duas pessoas num ponto de ônibus sob a chuva, uma com guarda-chuva quebrado e a outra rindo e oferecendo abrigo debaixo do seu, balões de fala vazios. Estilo flat, fundo transparente.</div>
+  <div>
+  <p class="q es">1. ¿Eres una persona despistada u organizada?</p>
+  <p class="q es">2. ¿Qué se te olvida con más frecuencia?</p>
+  <p class="q es">3. Cuenta un día en que todo te salió mal. ¿Qué pasó?</p>
+  <p class="q es">4. ¿Qué habrías hecho tú en el lugar de Rubén?</p>
+  <p class="q es">5. ¿Hay algo en tu vida que habrías hecho de otra manera? ¿Por qué?</p>
+  <p class="q es">6. ¿Crees que los problemas nos hacen más fuertes, o es solo algo que decimos para consolarnos? Argumenta con ejemplos.</p>
+  </div>
+  <h2 style="margin-top:26px">⭐ 5. EXPRESIONES ÚTILES</h2>
+  <div class="grid es">
+    <div class="card">📌 ¡Lo que faltaba!</div><div class="card">📌 Se me ha olvidado…</div>
+    <div class="card">📌 ¿Me podría echar una mano?</div><div class="card">📌 No funciona / Está estropeado.</div>
+    <div class="card">📌 Si lo hubiera sabido…</div><div class="card">📌 Debería haber…</div>
+    <div class="card">📌 ¡Menos mal que…!</div><div class="card">📌 No hay mal que por bien no venga.</div>
+  </div>
+  <span class="pno">6</span>
+</section>
+
+<!-- PÁGINA 7 -->
+<section class="page">
+  <h2>🔗 9. HABLA NATURAL (ENLACE)</h2>
+  <div class="ph"><b>🖼️ Onda sonora</b><span class="sz">Faixa 17 × 3 cm · reaproveitável</span></div>
+  <p class="es" style="font-size:17px">si‿hubiera‿sabido • lo‿habría‿hecho • se‿me‿ha‿olvidado • se‿me‿ha‿roto • menos‿mal‿que • ¡lo‿que‿faltaba!</p>
+  <p>Na fala real, <span class="es">si hubiera</span> vira <b>"siubiéra"</b> e <span class="es">lo habría hecho</span> vira <b>"loabría-êtcho"</b>. Como o <b>h</b> é mudo, as palavras se colam. E <span class="es">se me ha olvidado</span> soa quase <b>"semaolbidádo"</b>: uma única "palavra" de cinco sílabas.</p>
+  <div class="cols" style="margin-top:20px">
+    <div>
+      <h2>🎤 6. RETO ORAL</h2><p class="sub">Mi día desastre (1 min ⏱️)</p>
+      <div class="ph"><b>🖼️ Micrófono</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <ul class="steps"><li>cuándo fue y qué tenías que hacer</li><li>3 problemas (indefinido + <span class="es">se me…</span>)</li><li>cómo te sentías (imperfecto)</li><li>2 frases con <span class="es">si hubiera…, habría…</span></li><li>cómo terminó y qué aprendiste</li></ul>
+      <div class="box"><i class="es">Ejemplo: El día de mi entrevista de trabajo, se me olvidó poner el despertador. Salí corriendo y se me cayó el café encima. Si hubiera preparado todo la noche anterior…</i></div>
+    </div>
+    <div>
+      <h2>✍️ 7. RETO ESCRITO</h2><p class="sub">Carta a mi «yo» del pasado</p>
+      <div class="ph"><b>🖼️ Cuaderno</b><span class="sz">3 × 3 cm · reaproveitável</span></div>
+      <p>Escribe <b>6–8 frases</b> a ti mismo/a hace diez años: consejos sobre lo que habrías hecho diferente. (Compárala con tu carta de la Unidad 6.)</p>
+      <ul class="steps"><li>3 condicionales irreales del pasado</li><li>1 frase con <span class="es">ojalá hubiera…</span></li><li>1 con <span class="es">deberías haber…</span></li><li>algo que no cambiarías</li></ul>
+      <div class="box"><i class="es">Ejemplo: Querido yo de hace diez años: si hubieras empezado a estudiar español antes, ahora lo hablarías perfectamente. Pero no te preocupes…</i></div>
+      <div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <span class="pno">7</span>
+</section>
+
+<!-- PÁGINA 8 -->
+<section class="page">
+  <h2>🎭 8. MINI JUEGO DE ROLES</h2><p class="sub">Una reclamación por teléfono</p>
+  <div class="ph"><b>🖼️ Escena del juego de roles</b><span class="sz">8 × 6 cm</span>Tela dividida: à esquerda, um cliente (A) de camiseta vermelha ao telefone, sentado no chão de uma sala às escuras ao lado de uma geladeira aberta e apagada; à direita, uma atendente (B) de headset e blusa amarela numa central de atendimento, calma e sorridente. Estilo flat editorial, sem texto.</div>
+  <div class="chat es">
+    <p class="b">🟡 B: Compañía Eléctrica, buenas tardes. Le atiende Laura. ¿En qué puedo ayudarle?</p>
+    <p class="a">🔴 A: Buenas tardes. Llevo seis horas sin luz y nadie me ha avisado de nada.</p>
+    <p class="b">🟡 B: Lo siento mucho. ¿Me podría dar su número de cliente?</p>
+    <p class="a">🔴 A: Sí, es el 4-5-8-2-1. Tenía la nevera llena y se me ha estropeado toda la comida.</p>
+    <p class="b">🟡 B: Ya veo. Hubo una avería en su zona. Si nos hubiera dado su correo, le habríamos enviado un aviso.</p>
+    <p class="a">🔴 A: Ya, pero si me hubieran llamado, habría podido sacar la comida a tiempo. ¿Qué solución me dan?</p>
+    <p class="b">🟡 B: Puede poner una reclamación y le devolveremos el coste de la comida. El técnico llegará en una hora.</p>
+    <p class="a">🔴 A: Bueno, menos mal. Gracias por su ayuda.</p>
+  </div>
+  <p><i>🔁 Cambiad los papeles. Después, inventad otra reclamación: internet que no funciona, un pedido que no llega…</i></p>
+  <h2 style="margin-top:26px">🎯 10. GRAMÁTICA EN CONTEXTO</h2>
+  <ol class="es">
+    <li><span class="hl">Si hubiera salido</span> antes, <span class="hl">no habría pasado</span> nada de esto.</li>
+    <li><span class="hl">Si hubiera cargado</span> el móvil, <span class="hl">habría podido</span> avisar a alguien.</li>
+    <li>¡<span class="hl">Ojalá hubiera escuchado</span> a mi madre!</li>
+    <li><span class="hl">Si no hubieras llegado</span> así, <span class="hl">no habría sido</span> nuestra boda.</li>
+    <li>Se le <span class="hl">cayeron</span> las llaves; se le <span class="hl">rompió</span> la pantalla. (indefinido + <span class="es">se le</span>)</li>
+  </ol>
+  <div class="box"><b>¿Por qué usamos esta estructura?</b><br>En las frases 1, 2 y 4, Rubén y Mariela imaginan un <b>pasado que no existió</b>: él no salió antes y no cargó el móvil, así que esas condiciones son <b>irreales</b> → <span class="es">si + hubiera + participio</span>, y la consecuencia imaginada va en <span class="es">habría + participio</span>. La frase 3 expresa <b>arrepentimiento</b>. La frase 5 muestra el "se" accidental: <span class="es">se le cayeron</span> = le pasó sin querer. ¡En español, las cosas "se caen solas"!</div>
+  <span class="pno">8</span>
+</section>
+
+<!-- PÁGINA 9 -->
+<section class="page">
+  <h2>🚀 MISIÓN ORAL</h2>
+  <div class="ph big" style="min-height:160px"><b>🖼️ Sendero de la misión</b><span class="sz">Página inteira, de fundo · reaproveitável</span></div>
+  <ul class="steps">
+    <li><b>PASO 1</b> · Lee la historia en voz alta tres veces.</li>
+    <li><b>PASO 2</b> · Responde a las preguntas sin mirar la traducción.</li>
+    <li><b>PASO 3</b> · Practica la reclamación por teléfono con otra persona.</li>
+    <li><b>PASO 4</b> · Grábate 1 minuto contando tu "día desastre".</li>
+    <li><b>PASO 5</b> · Solo después, consulta los Anexos A y B.</li>
+  </ul>
+  <span class="pno">9</span>
+</section>
+
+<!-- PÁGINAS 10–11 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice A · Tradução · Unidad 14</div>
+  <h2>📎 ANEXO A · TRADUCCIÓN</h2>
+  <div class="ph" style="width:120px"><b>🖼️ Sello</b><span class="sz">2,5 × 2,5 cm · reaproveitável</span></div>
+  <h3>Historia: <i>O pior dia para tudo dar errado</i></h3>
+  <p>No sábado passado, Mariela, a irmã de Rubén, ia se casar numa igreja do Casco Antiguo do Panamá. Ele era o padrinho e tinha uma única missão: levar as alianças. A cerimônia começava às cinco. Às três, Rubén estava tranquilo em casa, passando a camisa. "Tenho tempo de sobra", pensou. Foi o seu primeiro erro.</p>
+  <p>Primeiro, ele derramou café na camisa branca. Depois, ao sair, as chaves do carro caíram num bueiro. Chamou um táxi, mas, na pressa, a tela do celular quebrou. E quando finalmente entrou no táxi, começou a chover como só chove nos trópicos. Dez minutos depois, o pneu do táxi furou.</p>
+  <p>Enquanto o taxista trocava o pneu na chuva, Rubén se lamentava: "Se eu tivesse saído antes, nada disso teria acontecido. Se eu tivesse carregado o celular ontem à noite, poderia ter avisado alguém. Quem me dera eu tivesse ouvido minha mãe!". O taxista, um senhor muito tranquilo, disse: "Rapaz, lamentar não conserta pneu. Me ajude com o macaco".</p>
+  <p>Chegaram à igreja às cinco e vinte, encharcados. Rubén entrou correndo… e descobriu que a cerimônia ainda não tinha começado: a noiva também estava atrasada, por causa de um engarrafamento. Mariela o viu com a camisa manchada e caiu na risada. "Se você não tivesse chegado assim, não teria sido o nosso casamento". Desde então, na família, quando algo dá errado, sempre alguém diz: "Calma, é um dia Rubén".</p>
+  <h3>Preguntas</h3>
+  <ol><li>Você é uma pessoa distraída ou organizada?</li><li>O que você esquece com mais frequência?</li><li>Conte um dia em que tudo deu errado. O que aconteceu?</li><li>O que você teria feito no lugar de Rubén?</li><li>Há algo na sua vida que você teria feito de outra forma? Por quê?</li><li>Você acha que os problemas nos tornam mais fortes, ou isso é só algo que dizemos para nos consolar? Argumente com exemplos.</li></ol>
+  <h3>Expresiones útiles</h3>
+  <div class="tw"><table><tr><th>Español</th><th>Português</th></tr>
+  <tr><td class="es">¡Lo que faltaba!</td><td>Só faltava essa!</td></tr>
+  <tr><td class="es">Se me ha olvidado…</td><td>Esqueci… / Me esqueci de…</td></tr>
+  <tr><td class="es">¿Me podría echar una mano?</td><td>Poderia me dar uma mão?</td></tr>
+  <tr><td class="es">No funciona / Está estropeado.</td><td>Não funciona / Está quebrado.</td></tr>
+  <tr><td class="es">Si lo hubiera sabido…</td><td>Se eu soubesse… / Se eu tivesse sabido…</td></tr>
+  <tr><td class="es">Debería haber…</td><td>Eu deveria ter…</td></tr>
+  <tr><td class="es">¡Menos mal que…!</td><td>Ainda bem que…!</td></tr>
+  <tr><td class="es">No hay mal que por bien no venga.</td><td>Há males que vêm para o bem.</td></tr></table></div>
+  <h3>Reto oral</h3><p>Conte o seu "dia desastre": quando foi e o que você tinha que fazer, três problemas, como você se sentia, duas frases com "se eu tivesse…, teria…" e como terminou e o que aprendeu.</p>
+  <span class="pno">10–11</span>
+</section>
+
+<!-- PÁGINAS 12–13 -->
+<section class="page appx">
+  <div class="eyebrow">Apêndice B · Guia de pronúncia · Unidad 14</div>
+  <h2>🔊 ANEXO B · GUÍA DE PRONUNCIACIÓN</h2>
+  <div class="grid">
+    <div class="card"><span class="es">avería</span> — pane, defeito<br>🇧🇷 <i>abería</i></div>
+    <div class="card"><span class="es">pinchazo</span> — pneu furado<br>🇧🇷 <i>pintcháθo / pintcháso</i></div>
+    <div class="card"><span class="es">apagón</span> — apagão<br>🇧🇷 <i>apagón</i> (não "apagão")</div>
+    <div class="card"><span class="es">atasco</span> — engarrafamento<br>🇧🇷 <i>atásco</i></div>
+    <div class="card"><span class="es">gotera</span> — goteira<br>🇧🇷 <i>gotêra</i></div>
+    <div class="card"><span class="es">llaves</span> — chaves<br>🇧🇷 <i>jábes</i></div>
+    <div class="card"><span class="es">despistado</span> — distraído<br>🇧🇷 <i>despistádo</i></div>
+    <div class="card"><span class="es">estropeado</span> — quebrado<br>🇧🇷 <i>estropeádo</i></div>
+    <div class="card"><span class="es">malentendido</span> — mal-entendido<br>🇧🇷 <i>malentendído</i></div>
+    <div class="card"><span class="es">hubiera</span> — tivesse (aux.)<br>🇧🇷 <i>ubiêra</i></div>
+    <div class="card"><span class="es">habría</span> — teria (aux.)<br>🇧🇷 <i>abría</i></div>
+    <div class="card"><span class="es">empapado</span> — encharcado<br>🇧🇷 <i>empapádo</i></div>
+  </div>
+  <h3>🔤 Sonidos de esta unidad</h3>
+  <div class="ph"><b>🖼️ Articulación</b><span class="sz">5 × 5 cm</span>Infográfico com as palavras "hubiera" e "habría" decompostas em sílabas, com o "h" riscado (mudo), o "b" entre vogais desenhado suave, e a sílaba tônica destacada em vermelho (u-BIE-ra / ha-BRÍ-a). Estilo limpo.</div>
+  <ul>
+    <li><b>HUBIERA / HABRÍA</b> → h mudo e b suave entre vogais: <i>u-βiê-ra</i>, <i>a-βrí-a</i>. A tônica de <span class="es">habría</span> está no <b>í</b>: <i>a-brí-a</i>, três sílabas.</li>
+    <li><b>Ditongo IE em "hubiera"</b> → <i>u-biê-ra</i>, com o "ie" numa sílaba só.</li>
+    <li><b>Entonação de lamento</b> → <span class="es">¡Si lo hubiera sabido…!</span> com a voz subindo em <i>sabido</i> e ficando "no ar", sem concluir: o resto da frase fica implícito.</li>
+    <li><b>Sotaque panamenho</b> → como no Caribe, o <b>s</b> final vira "h" e o <b>d</b> entre vogais cai: <span class="es">empapado</span> → <i>empapao</i>. É muito expressivo e rápido!</li>
+  </ul>
+  <h3>Pronunciación de las expresiones</h3>
+  <div class="tw"><table><tr><th>Español</th><th>🇧🇷 Pronúncia aproximada</th></tr>
+  <tr><td class="es">¡Lo que faltaba!</td><td>Lo ke faltába!</td></tr>
+  <tr><td class="es">Se me ha olvidado.</td><td>Se meaolbidádo.</td></tr>
+  <tr><td class="es">¿Me podría echar una mano?</td><td>Me podría etchár úna máno?</td></tr>
+  <tr><td class="es">Si lo hubiera sabido…</td><td>Si loubiêra sabído…</td></tr>
+  <tr><td class="es">Debería haber salido antes.</td><td>Debería abêr salído ántes.</td></tr>
+  <tr><td class="es">No hay mal que por bien no venga.</td><td>No ái mal ke por biên no bênga.</td></tr></table></div>
+  <h3>📌 Verbos importantes</h3>
+  <div class="tw"><table><tr><th>Infinitivo</th><th>Significado</th><th>Tipo</th><th>Hipótesis del pasado</th><th>🇧🇷 Pronúncia</th></tr>
+  <tr><td class="es">haber</td><td>haver (aux.)</td><td>irregular</td><td>hubiera · habría</td><td>ubiêra · abría</td></tr>
+  <tr><td class="es">salir</td><td>sair</td><td>irregular</td><td>si hubiera salido · habría salido</td><td>salído</td></tr>
+  <tr><td class="es">romperse</td><td>quebrar</td><td>part. irregular</td><td>se me ha roto · se habría roto</td><td>RRôto</td></tr>
+  <tr><td class="es">caerse</td><td>cair</td><td>irregular</td><td>se me cayó · se me habría caído</td><td>se me cajó</td></tr>
+  <tr><td class="es">arreglar</td><td>consertar</td><td>regular</td><td>lo habría arreglado</td><td>aRRegládo</td></tr>
+  <tr><td class="es">estropearse</td><td>quebrar, estragar</td><td>regular</td><td>se ha estropeado</td><td>estropeádo</td></tr></table></div>
+  <span class="pno">12–13</span>
+</section>
+
+<!-- PÁGINA 14 -->
+<section class="page">
+  <h2>⭐ LAS FRASES MÁS IMPORTANTES</h2><p class="sub">✂️ Recorta y usa como tarjetas</p>
+  <div class="grid">
+    <div class="flash"><span class="es">Si hubiera salido antes, habría llegado a tiempo.</span><br><span class="p">🇧🇷 Si ubiêra salído ántes, abría jegádo a tiêmpo.</span><br><span class="pt">Se eu tivesse saído antes, teria chegado a tempo.</span></div>
+    <div class="flash"><span class="es">Se me ha olvidado la contraseña.</span><br><span class="p">🇧🇷 Se meaolbidádo la contrassênha.</span><br><span class="pt">Esqueci a senha.</span></div>
+    <div class="flash"><span class="es">Se me ha roto el móvil. ¡Lo que faltaba!</span><br><span class="p">🇧🇷 Se meá RRôto el móbil. Lo ke faltába!</span><br><span class="pt">Meu celular quebrou. Só faltava essa!</span></div>
+    <div class="flash"><span class="es">¡Ojalá hubiera escuchado tu consejo!</span><br><span class="p">🇧🇷 ORRalá ubiêra escutchádo tu konsêRRo!</span><br><span class="pt">Quem me dera eu tivesse ouvido seu conselho!</span></div>
+    <div class="flash"><span class="es">Debería haber cargado el móvil.</span><br><span class="p">🇧🇷 Debería abêr cargádo el móbil.</span><br><span class="pt">Eu deveria ter carregado o celular.</span></div>
+    <div class="flash"><span class="es">¿Me podría echar una mano, por favor?</span><br><span class="p">🇧🇷 Me podría etchár úna máno, por fabór?</span><br><span class="pt">Poderia me dar uma mão, por favor?</span></div>
+    <div class="flash"><span class="es">No hay mal que por bien no venga.</span><br><span class="p">🇧🇷 No ái mal ke por biên no bênga.</span><br><span class="pt">Há males que vêm para o bem.</span></div>
+  </div>
+  <div class="ph"><b>🖼️ Cierre</b><span class="sz">17 × 5 cm, rodapé</span>Festa de casamento à noite num pátio colonial do Casco Antiguo, com luzes penduradas: Rubén, ainda com a camisa manchada, dança feliz com a irmã noiva, e o taxista de chapéu panamá aparece entre os convidados levantando uma taça. Estilo e paleta do livro, sem texto.</div>
+  <p><b>¡Muy bien! Has terminado la Unidad 14. 🇪🇸</b></p>
+</section>
+
+<!-- PÁGINA 15 — FIN DEL LIBRO -->
+<section class="page opener">
+  <div class="eyebrow">🟢 A1 → 🟡 A2 → 🟠 B1 → 🔴 B2</div>
+  <h1>¡ENHORABUENA!</h1>
+  <p class="t2">HAS TERMINADO EL CURSO</p>
+  <div class="ph big"><b>🖼️ Espacio para imagen · Página final</b><span class="sz">Página inteira, sangrada</span>Ilustração de encerramento reunindo todos os protagonistas do livro numa grande mesa ao ar livre ao pôr do sol, como uma festa: Lucía (Valência), Tomás (Madri), Marcos e Valeria (México), Inés e Joaquín (Lima), Valentina (Santiago), Ernesto e Mariana (Bogotá), Clara e Lucas (Montevidéu), Rosa e Tito (Buenos Aires), Andrea (Porto Rico), Mateo (Costa Rica), Gabriel e a mãe (Quito), Íñigo e a avó Begoña (Bilbao), Yeimi (Santo Domingo) e Rubén (Panamá). Bandeirinhas de todos os países hispânicos e uma cadeira vazia no centro com uma plaquinha "¿Y tú?". Paleta do livro, estilo flat, sem texto além da plaquinha.</div>
+  <h3>AHORA YA PUEDES…</h3>
+  <p class="es" style="font-size:17px">comprender → responder → conversar → narrar → explicar → argumentar → interactuar</p>
+  <p>Has viajado por <b>14 países y ciudades</b>, has conocido a más de <b>20 personajes</b> y has recorrido el camino del presente al subjuntivo. Ahora te toca a ti: busca conversaciones reales, mira series en español, viaja, equivócate y sigue hablando.</p>
+  <p style="font-size:1.4rem;font-family:var(--display);font-weight:800;color:var(--red)">🇪🇸 PENSAR, ENTENDER Y HABLAR ESPAÑOL CON CONFIANZA.</p>
+  <span class="pno">15</span>
+</section>
